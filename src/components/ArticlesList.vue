@@ -1,71 +1,94 @@
 <template>
   <div>
-    <router-link
-      v-for="article in leftArticles"
-      :to="{ path: '/article/' + article.id }"
-      :key="article.id"
-    >
-      <div class="header">
-        <h1 class="header-left">Josh is supo</h1>
-        <img
-          class="header-right"
-          :src="api_url + article.image[0].url"
-          alt=""
-        />
+    <div class="header">
+      <div class="header-container">
+        <h1 class="header-left">
+          Hi, I'm Josh! Welcome to my portfolio. I am a UX/UI designer based in
+          Stuttgart, Germany. Currently I'm getting ready for my master studies.
+          Meanwhile I'm working as a freelancer in my field. I would describe
+          myself as a professional generalist. But see for yourself.
+        </h1>
+        <div class="header-right">
+          <img
+            class="header-image"
+            src="http://localhost:1337/uploads/Josh_Cornau_daaeb09d3d.jpg"
+            alt=""
+          />
+        </div>
       </div>
-    </router-link>
+    </div>
 
-    <div class="uk-child-width-1-2" uk-grid>
-      <div>
+    <div>
+      <!--   
         <router-link
-          v-for="article in leftArticles"
+          v-for="article in article"
           :to="{ path: '/article/' + article.id }"
-          class="uk-link-reset"
+          class=""
           :key="article.id"
         >
-          <div class="uk-card uk-card-muted">
-            <div class="uk-card-media-top">
+          <div class="Articles-left">
+          <div class="">
+            <div class="">
               <img :src="api_url + article.image[0].url" alt="" height="100" />
             </div>
-            <div class="uk-card-body">
+            <div class="">
               <p
                 id="category"
                 v-if="article.category"
-                class="uk-text-uppercase"
+                class=""
               >
                 {{ article.category.name }}
               </p>
-              <p id="title" class="uk-text-large">{{ article.title }}</p>
+              <p id="title" class="">{{ article.title }}</p>
             </div>
           </div>
         </router-link>
       </div>
+       -->
       <div>
-        <div class="uk-child-width-1-2@m uk-grid-match" uk-grid>
+        <div class="articles">
           <router-link
             v-for="article in rightArticles"
             :to="{ path: '/article/' + article.id }"
-            class="uk-link-reset"
+            class=""
             :key="article.id"
           >
-            <div class="uk-card uk-card-muted">
-              <div class="uk-card-media-top">
+            <div class="articles-left">
+              <div class="info red">
+                <p>2019/2020</p>
+                <h2>ADAC E-Mobility-Test</h2>
+                <p> E-mobility raises many questions, especially for people without their own charging facilities. The digital service provides clarity and checks what the change to an e-vehicle means. </p>
+                <!-- <p id="title" class="">{{ article.title }}</p> -->
+                <div class="tag-container red">
+                  <div class="tag">
+                    <i class="fas fa-clock" style="font-size:24px;"></i>
+                    <p>6-Month</p>
+                    </div>
+                    <div class="tag">
+                    <i class="fas fa-clock" style="font-size:24px;"></i>
+                    <p>6-Month</p>
+                    </div>
+                    <div class="tag">
+                    <i class="fas fa-clock" style="font-size:24px;"></i>
+                    <p>6-Month</p>
+                    </div>
+              </div>
+              </div>
+
+              <div class="image-box red ">
                 <img
+                class="header-image"
                   :src="api_url + article.image[0].url"
                   alt=""
-                  height="100"
                 />
               </div>
-              <div class="uk-card-body">
-                <p
-                  id="category"
-                  v-if="article.category"
-                  class="uk-text-uppercase"
-                >
+
+<!--               
+              <div class="tags red">
+                <p id="category" v-if="article.category" class="">
                   {{ article.category.name }}
                 </p>
-                <p id="title" class="uk-text-large">{{ article.title }}</p>
-              </div>
+              </div> -->
             </div>
           </router-link>
         </div>
