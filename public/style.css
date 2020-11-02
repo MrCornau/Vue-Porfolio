@@ -87,6 +87,38 @@ width: 100%;
   margin-left:16px;
 }
 
+nav{
+  list-style-type: none;
+  background-color: yellow;
+}
+
+.menu {
+  display: flex;
+  align-items: flex-start;    
+  flex-wrap: nowrap;
+  background: none;
+  list-style-type: none;
+}
+.logo {
+
+  font-size: 20px;
+    padding: 7.5px 10px 7.5px 0;
+  flex: 1;
+  order: 0;
+}
+
+.push {
+  margin-left: auto;
+}
+    
+
+.item {
+  padding: 10px;
+  order: 1;
+  position: relative;
+  display: block; 
+  width: auto;
+}
 
 /* 
 max-width: 90vw;
