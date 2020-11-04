@@ -2,8 +2,7 @@
   <div>
     <div class="uk-section">
       <div class="uk-container uk-container-large">
-        <h1>Josh Cornau</h1>
-
+       <FrontView />
         <ArticlesList :articles="articles"></ArticlesList>
       </div>
     </div>
@@ -12,11 +11,13 @@
 
 <script>
 import ArticlesList from "../components/ArticlesList.vue";
+import FrontView from "../components/FrontView";
 import gql from "graphql-tag";
 
 export default {
   components: {
-    ArticlesList
+    ArticlesList,
+    FrontView
   },
   data() {
     return {

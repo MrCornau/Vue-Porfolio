@@ -1,22 +1,19 @@
 <template>
-  <div>
+  <!-- <div>
     <div class="header">
       <div class="header-container">
         <h1 class="header-left">
-          Hi, I'm Josh! Welcome to my portfolio. I am a UX/UI designer based in
-          Stuttgart, Germany. Currently I'm getting ready for my master studies.
-          Meanwhile I'm working as a freelancer in my field. I would describe
-          myself as a professional generalist. But see for yourself.
+          {{header.text}}
         </h1>
         <div class="header-right">
           <img
             class="header-image"
-            src="http://localhost:1337/uploads/Josh_Cornau_daaeb09d3d.jpg"
+            :src="api_url + header.image.url"
             alt=""
           />
         </div>
       </div>
-    </div>
+    </div> -->
 
     <div>
       <!--   
@@ -98,14 +95,28 @@
 </template>
 
 <script>
+import gql from "graphql-tag";
+
 export default {
   data: function() {
     return {
       api_url: process.env.VUE_APP_STRAPI_API_URL,
+      header: [],
     };
   },
+  apollo: {
+    header: gql`
+      query header {
+        header {
+          text,
+          image{url}
+        }
+      }
+    `,
+  }
+  ,
   props: {
-    articles: Array,
+    articles: Array
   },
   computed: {
     leftArticlesCount() {
@@ -120,3 +131,5 @@ export default {
   },
 };
 </script>
+
+
