@@ -1,12 +1,7 @@
 <template>
  <div class="header">
       <div class="header-container">
-        <VueMarkdownIt 
-        class="header-left"
-          v-if="header.text"
-          :source="header.text"
-          id="editor"
-/>
+        <h1 class="header-left" v-html="header.text" />
         <div class="header-right">
           <img
             class="header-image"
@@ -19,8 +14,6 @@
 </template>
 <script>
 import gql from "graphql-tag";
-import VueMarkdownIt from "vue-markdown-it";
-
 export default {
   data: function() {
     return {
@@ -29,7 +22,6 @@ export default {
     };
   },
   components: {
-    VueMarkdownIt
   },
   apollo: {
     header: gql`

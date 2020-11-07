@@ -1,23 +1,7 @@
 <template>
-  <!-- <div>
-    <div class="header">
-      <div class="header-container">
-        <h1 class="header-left">
-          {{header.text}}
-        </h1>
-        <div class="header-right">
-          <img
-            class="header-image"
-            :src="api_url + header.image.url"
-            alt=""
-          />
-        </div>
-      </div>
-    </div> -->
-
     <div>
-      <!--   
-        <router-link
+      <!--    -->
+        <!-- <router-link
           v-for="article in article"
           :to="{ path: '/article/' + article.id }"
           class=""
@@ -39,9 +23,8 @@
               <p id="title" class="">{{ article.title }}</p>
             </div>
           </div>
-        </router-link>
-      </div>
-       -->
+        </router-link> -->
+
       <div>
         <div class="articles">
           <router-link
@@ -74,7 +57,7 @@
 
               <div class="image-box red ">
                 <img
-                class="header-image"
+                class="Article-Image"
                   :src="api_url + article.image[0].url"
                   alt=""
                 />
