@@ -28,6 +28,10 @@ const router = new VueRouter({
     {
       path: "/category/:id",
       components: require("./containers/Category.vue")
+    },
+    {
+      path: "/testside",
+      components: require("./containers/TestSide.vue")
     }
   ]
 });
