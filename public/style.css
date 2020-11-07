@@ -7,9 +7,56 @@ font-weight: 100;
   margin:0px;
 }
 
+/* Navigation */
+
+nav{
+  list-style-type: none;
+  box-shadow: 0 1px 2px 0 rgba(79, 58, 58, 0.1), 0 2.5px 5px 0 rgba(0, 0, 0, 0.05);
+  background-color: #ffffff;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.menu {
+  max-width: 95vw;
+  margin:10px auto 10px auto;
+  display: flex;
+  justify-content: flex-end;   
+  flex-wrap: nowrap;
+  background: none;
+  list-style-type: none;
+  font-family: NHaasGroteskDSPro-75Bd;
+}
+
+.logo {
+  padding: 10px;
+  font-size: 20px;
+
+  order: 0; 
+  align-self: center;
+}
+
+.push {
+  margin-left: auto;
+}
+    
+
+.item {
+  padding: 10px;
+  justify-self: ends;
+  order: 1;
+  position: relative; 
+  margin-right: 30px;
+  width: auto;
+  text-transform: uppercase;
+}
 
 
-
+/* Navigation */
 
 
 
@@ -159,44 +206,7 @@ margin-top: auto;
   margin-left:16px;
 }
 
-nav{
-  list-style-type: none;
-  background-color: yellow;
-}
-
-.menu {
-  display: flex;
-  align-items: flex-start;    
-  flex-wrap: nowrap;
-  background: none;
-  list-style-type: none;
-}
-.logo {
-
-  font-size: 20px;
-    padding: 7.5px 10px 7.5px 0;
-  flex: 1;
-  order: 0;
-}
-
-.push {
-  margin-left: auto;
-}
-    
-
-.item {
-  padding: 10px;
-  order: 1;
-  position: relative;
-  display: block; 
-  width: auto;
-}
 
 /* 
 max-width: 90vw;
 margin: auto; */
-
-
-a{
-  text-decoration: none;
-}

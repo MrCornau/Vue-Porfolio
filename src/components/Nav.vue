@@ -1,10 +1,25 @@
 /* eslint-disable */
 <template>
-  <nav>
+  <nav class="sticky">
     <ul class="menu">
-      <li><a class="logo" href="/">Josh Cornau</a></li>
-      <li class="push"></li>
+      <li class="logo" >
       
+       <router-link
+         
+          :to="{ path: '/'}"
+        >
+         Josh Cornau
+        </router-link>
+      </li>
+      <li class="push"></li>
+      <li class="item">
+        <router-link
+         
+          :to="{ path: '/'}"
+        >
+         Work
+        </router-link>
+      </li>
       <li  class="item"
        v-for="category in categories" v-bind:key="category.id">
         <router-link
@@ -43,7 +58,4 @@ export default {
 </script>
 
 <style lang="css">
-.uk-navbar-nav {
-  font-family: Staatliches;
-}
 </style>
