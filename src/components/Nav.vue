@@ -2,28 +2,19 @@
 <template>
   <nav class="sticky">
     <ul class="menu">
-      <li class="logo" >
-      
-       <router-link
-         
-          :to="{ path: '/'}"
-        >
-         Josh Cornau
+      <li class="logo">
+        <router-link :to="{ path: '/' }">
+          Josh Cornau
         </router-link>
       </li>
       <li class="push"></li>
       <li class="item">
-        <router-link
-         
-          :to="{ path: '/'}"
-        >
-         Work
+        <router-link :to="{ path: '/' }">
+          Work
         </router-link>
       </li>
-      <li  class="item"
-       v-for="category in categories" v-bind:key="category.id">
+      <li class="item" v-for="category in categories" v-bind:key="category.id">
         <router-link
-         
           :to="{ path: '/category/' + category.id }"
           :key="category.id"
         >
@@ -57,5 +48,4 @@ export default {
 };
 </script>
 
-<style lang="css">
-</style>
+<style lang="css"></style>
