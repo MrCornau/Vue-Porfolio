@@ -57,18 +57,26 @@ nav{
 
 
 /*responsive Nav*/
+
+.mobileNav {
+  max-width: 90vw;
+  margin:20px auto 10px auto;
+  display: flex;
+  justify-content: space-between;   
+  flex-wrap: nowrap;
+  font-family: NHaasGroteskDSPro-75Bd;
+}
+
 #navigation-icon {
-  position: fixed;
-  z-index: 9999;
   top: 0;
-  width: 100%;
-  padding: 20px 0px 0px 20px;
   cursor: pointer;
 }
 
 .menue-mobile{
+  height: 100vh;
   transition: 1s cubic-bezier(.17,.67,.19,1.04)
 }
+
 
 
 /* Navigation */

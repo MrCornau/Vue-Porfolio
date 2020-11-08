@@ -1,12 +1,7 @@
 /* eslint-disable */
 <template>
-  <nav class="sticky">
-    <ul class="menu-mobile">
-      <li class="logo">
-        <router-link :to="{ path: '/' }">
-          Josh Cornau
-        </router-link>
-      </li>
+  <nav class="sticky menue-mobile">
+    <ul class="">
       <li class="item">
         <router-link :to="{ path: '/' }">
           Work
