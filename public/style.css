@@ -74,10 +74,26 @@ nav{
 
 .menue-mobile{
   height: 100vh;
-  transition: 1s cubic-bezier(.17,.67,.19,1.04)
+  transition: 1s cubic-bezier(.17,.67,.19,1.04);
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background: none;
+  font-family: NHaasGroteskDSPro-75Bd;
+  text-align: center;
 }
 
-
+.item-mobile{
+  padding: 0px 40px 40px 40px;
+  justify-self: ends;
+  order: 1;
+  position: relative; 
+  margin-right: 30px;
+  width: auto;
+  text-transform: uppercase;
+  font-size: x-large;
+}
 
 /* Navigation */
 

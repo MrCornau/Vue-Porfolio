@@ -1,21 +1,37 @@
 /* eslint-disable */
 <template>
-  <nav class="sticky menue-mobile">
-    <ul class="">
-      <li class="item">
-        <router-link :to="{ path: '/' }">
-          Work
-        </router-link>
-      </li>
-      <li class="item" v-for="category in categories" v-bind:key="category.id">
-        <router-link
-          :to="{ path: '/category/' + category.id }"
-          :key="category.id"
+  <nav class="sticky ">
+    <div>
+      <div class="mobileNav">
+        <div id="Mobile-Logo">
+          <router-link :to="{ path: '/' }">
+            Josh Cornau
+          </router-link>
+        </div>
+        <div id="navigation-icon" @click="showNav = !showNav">
+          <i class="fas fa-bars" />
+        </div>
+      </div>
+    </div>
+    <div class="" v-if="showNav">
+      <ul class="menue-mobile">
+        <li class="item-mobile">
+          <router-link :to="{ path: '/' }"> Work {{ mobileView }} </router-link>
+        </li>
+        <li
+          class="item-mobile"
+          v-for="category in categories"
+          v-bind:key="category.id"
         >
-          {{ category.name }}
-        </router-link>
-      </li>
-    </ul>
+          <router-link
+            :to="{ path: '/category/' + category.id }"
+            :key="category.id"
+          >
+            {{ category.name }}
+          </router-link>
+        </li>
+      </ul>
+    </div>
   </nav>
 </template>
 
@@ -27,8 +43,14 @@ export default {
   data() {
     return {
       categories: [],
+      showNav:false
     };
   },
+  // props: {
+  //   mobileView: {
+  //     type: Boolean,
+  //   },
+  // },
   apollo: {
     categories: gql`
       query Categories {
