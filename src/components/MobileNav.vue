@@ -15,15 +15,16 @@
       </div>
     </div>
     <div class="menue-mobile"
-          v-bind:class="{ mobileMenueFolded : showNav}">
+          v-bind:class="{ mobileMenueFolded : showNav, shadow: showNav}">
       <ul  class="ul-mobile" >
-        <li class="item-mobile">
-          <router-link :to="{ path: '/' }"> Work {{ mobileView }} </router-link>
+        <li class="item-mobile" @click="showNav = !showNav">
+          <router-link :to="{ path: '/' }"> Work</router-link>
         </li>
         <li
           class="item-mobile"
           v-for="category in categories"
           v-bind:key="category.id"
+          @click="showNav = !showNav"
         >
           <router-link
             :to="{ path: '/category/' + category.id }"

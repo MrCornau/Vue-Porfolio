@@ -77,10 +77,10 @@ nav{
 }
 
 .menue-mobile{
-  position: absolute;
-  transition: 1s cubic-bezier(.17,.67,.19,1.04);
-
-
+  position: fixed;
+  transition: 1s cubic-bezier(.52,.49,.19,1.04);
+  width: 100%;
+  background: white;
   font-family: NHaasGroteskDSPro-75Bd;
   text-align: center;
   transform: translate(0px, -100%);
@@ -89,8 +89,9 @@ nav{
 
 .ul-mobile{
   height: 100vh;
+
   list-style-type: none;
-  background: white;
+
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -98,8 +99,8 @@ nav{
 }
 
 .mobileMenueFolded{
-  position: fixed;
-  width: 100%;
+ 
+
   transform: translate(0px, 0px);
   overflow: hidden
 
