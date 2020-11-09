@@ -1,22 +1,27 @@
 /* eslint-disable */
 <template>
-  <nav >
-    <div class="sticky"
-    >
+  <nav>
+    <div class="sticky">
       <div class="mobileNav">
-        <div id="Mobile-Logo"> 
+        <div id="Mobile-Logo">
           <router-link :to="{ path: '/' }">
             Josh Cornau
           </router-link>
         </div>
-        <div id="navigation-icon" @click="showNav = !showNav">
-          <i class="fas fa-bars" />
+        <div class="hamburger-nav">
+        <button class="hamburger-nav hamburger hamburger--collapse " type="button" @click="showNav = !showNav" v-bind:class="{ 'is-active': showNav }">
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        </button>
         </div>
       </div>
     </div>
-    <div class="menue-mobile shadow"
-          v-bind:class="{ mobileMenueFolded : showNav}">
-      <ul  class="ul-mobile" >
+    <div
+      class="menue-mobile shadow"
+      v-bind:class="{ mobileMenueFolded: showNav }"
+    >
+      <ul class="ul-mobile">
         <li class="item-mobile" @click="showNav = !showNav">
           <router-link :to="{ path: '/' }"> Work</router-link>
         </li>
@@ -34,7 +39,7 @@
           </router-link>
         </li>
       </ul>
-      </div>
+    </div>
   </nav>
 </template>
 
@@ -46,7 +51,7 @@ export default {
   data() {
     return {
       categories: [],
-      showNav:false
+      showNav: false,
     };
   },
   // props: {
