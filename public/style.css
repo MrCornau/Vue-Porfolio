@@ -137,12 +137,15 @@ nav{
   top: 1.5em;
   background-color:blue;
   visibility: hidden;
-  transition: all 0.3s ease-in-out;
+  transition: all 0s ease-in-out;
+
 }
 
 .blueline-selected::before {
   visibility: visible;
   width: 100%;
+  transition: all 0.3s ease-in-out;
+
 }
 /* Navigation */
 

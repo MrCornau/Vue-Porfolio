@@ -9,7 +9,7 @@
       </li>
       <li class="push"></li>
       <li class="item">
-        <router-link :to="{ path: '/' }">
+        <router-link :to="{ path: '/' }" class="blueline" v-bind:class="{ 'blueline-selected' : '/' == route}">
           Work
         </router-link>
       </li>
@@ -17,6 +17,8 @@
         <router-link
           :to="{ path: '/category/' + category.id }"
           :key="category.id"
+           class="blueline"
+             v-bind:class="{ 'blueline-selected' : '/category/' + category.id == route}"
         >
           {{ category.name }}
         </router-link>
@@ -34,6 +36,11 @@ export default {
     return {
       categories: [],
     };
+  },
+  props: {
+     route: {
+      type: String,
+    },
   },
   apollo: {
     categories: gql`
