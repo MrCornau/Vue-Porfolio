@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <MobileNav v-if="mobileView" />
+    <MobileNav v-if="mobileView" v-bind:route="$route.fullPath"/>
     <Nav v-if="!mobileView" />
     <router-view :key="$route.fullPath"></router-view>
   </div>

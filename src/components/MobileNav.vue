@@ -1,11 +1,11 @@
 /* eslint-disable */
 <template>
-  <nav>
+  <nav >
     <div class="sticky">
       <div class="mobileNav">
         <div id="Mobile-Logo">
-          <router-link :to="{ path: '/' }">
-            Josh Cornau
+          <router-link :to="{ path: '/' }" :key="routepath">
+            Josh Cornau {{route}}
           </router-link>
         </div>
         <div class="hamburger-nav">
@@ -22,7 +22,7 @@
       v-bind:class="{ mobileMenueFolded: showNav }"
     >
       <ul class="ul-mobile">
-        <li class="item-mobile" @click="showNav = !showNav">
+        <li class="item-mobile" @click="showNav = !showNav;" >
           <router-link :to="{ path: '/' }"> Work</router-link>
         </li>
         <li
@@ -52,13 +52,14 @@ export default {
     return {
       categories: [],
       showNav: false,
+     
     };
   },
-  // props: {
-  //   mobileView: {
-  //     type: Boolean,
-  //   },
-  // },
+  props: {
+     route: {
+      type: String,
+    },
+  },
   apollo: {
     categories: gql`
       query Categories {
