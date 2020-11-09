@@ -22,7 +22,10 @@
       v-bind:class="{ mobileMenueFolded: showNav }"
     >
       <ul class="ul-mobile">
-        <li class="item-mobile" @click="showNav = !showNav;" >
+        <li class="item-mobile" 
+     v-bind:class="{ blueline : '/' == route}"
+
+        @click="showNav = !showNav;" >
           <router-link :to="{ path: '/' }"> Work</router-link>
         </li>
         <li
@@ -30,6 +33,7 @@
           v-for="category in categories"
           v-bind:key="category.id"
           @click="showNav = !showNav"
+            v-bind:class="{ blueline : '/category/' + category.id == route}"
         >
           <router-link
             :to="{ path: '/category/' + category.id }"
