@@ -5,8 +5,8 @@
  * @site https://jonsuh.com/hamburgers
  * @link https://github.com/jonsuh/hamburgers
  */
-.hamburger {
-  padding: 10px 10px;
+ .hamburger {
+  padding: 15px 15px;
   display: inline-block;
   cursor: pointer;
   transition-property: opacity, filter;
@@ -36,11 +36,11 @@
 
 .hamburger-inner {
   display: block;
-  top: 10%;
+  top: 50%;
   margin-top: -2px; }
   .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
-    width: 20px;
-    height: 2px;
+    width: 40px;
+    height: 4px;
     background-color: #000;
     border-radius: 4px;
     position: absolute;
@@ -51,9 +51,9 @@
     content: "";
     display: block; }
   .hamburger-inner::before {
-    top: -7px; }
+    top: -10px; }
   .hamburger-inner::after {
-    top: -20px; }
+    bottom: -10px; }
 
 /*
    * 3DX
@@ -269,8 +269,11 @@
   transition-duration: 0.13s;
   transition-delay: 0.13s;
   transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+  .gögeeee{
+    color: white;
+  }
   .hamburger--collapse .hamburger-inner::after {
-    top: -15px;
+    top: -20px;
     transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), opacity 0.1s linear; }
   .hamburger--collapse .hamburger-inner::before {
     transition: top 0.12s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
