@@ -18,7 +18,11 @@ nav{
   top: 0;
   width: 100%;
   z-index: 999999;
-  background-color: #ffffff;
+  background-color: white;
+}
+
+.white-background{
+  background-color: white;
 }
 
 .shadow{
@@ -69,6 +73,7 @@ nav{
   justify-content: space-between;   
   flex-wrap: nowrap;
   font-family: NHaasGroteskDSPro-75Bd;
+
 }
 
 #navigation-icon {
@@ -83,7 +88,7 @@ nav{
   background: white;
   font-family: NHaasGroteskDSPro-75Bd;
   text-align: center;
-  transform: translate(0px, -100%);
+  transform: translate(0px, -93%);
 
 }
 

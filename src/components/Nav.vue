@@ -1,6 +1,6 @@
 /* eslint-disable */
 <template>
-  <nav class="sticky">
+  <nav class="sticky white-background shadow">
     <ul class="menu">
       <li class="logo">
         <router-link :to="{ path: '/' }">

@@ -1,8 +1,8 @@
 /* eslint-disable */
 <template>
   <nav >
-    <div class="sticky "
-    v-bind:class="{ shadow: !showNav}">
+    <div class="sticky"
+    >
       <div class="mobileNav">
         <div id="Mobile-Logo"> 
           <router-link :to="{ path: '/' }">
@@ -14,8 +14,8 @@
         </div>
       </div>
     </div>
-    <div class="menue-mobile"
-          v-bind:class="{ mobileMenueFolded : showNav, shadow: showNav}">
+    <div class="menue-mobile shadow"
+          v-bind:class="{ mobileMenueFolded : showNav}">
       <ul  class="ul-mobile" >
         <li class="item-mobile" @click="showNav = !showNav">
           <router-link :to="{ path: '/' }"> Work</router-link>
