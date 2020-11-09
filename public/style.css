@@ -85,7 +85,7 @@ nav{
 
 .menue-mobile{
   position: fixed;
-  transition: 0.5s cubic-bezier(.52,.49,.19,1.04);
+  transition: 1s cubic-bezier(.52,.49,.19,1.04);
   width: 100%;
   background: white;
   font-family: NHaasGroteskDSPro-75Bd;
@@ -125,9 +125,24 @@ nav{
   font-size: x-large;
 }
 
-
 .blueline{
-  background-color: yellow;
+  position: relative;
+}
+
+.blueline::before {
+  content:"";
+  position: absolute;
+  width: 0;
+  height: 6px;
+  top: 1.5em;
+  background-color:blue;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.blueline-selected::before {
+  visibility: visible;
+  width: 100%;
 }
 /* Navigation */
 

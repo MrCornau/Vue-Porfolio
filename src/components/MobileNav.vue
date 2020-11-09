@@ -23,21 +23,24 @@
     >
       <ul class="ul-mobile">
         <li class="item-mobile" 
-     v-bind:class="{ blueline : '/' == route}"
+    
 
         @click="showNav = !showNav;" >
-          <router-link :to="{ path: '/' }"> Work</router-link>
+          <router-link :to="{ path: '/' }" class="blueline" v-bind:class="{ 'blueline-selected' : '/' == route}"> Work</router-link>
         </li>
         <li
           class="item-mobile"
           v-for="category in categories"
           v-bind:key="category.id"
           @click="showNav = !showNav"
-            v-bind:class="{ blueline : '/category/' + category.id == route}"
+            
         >
           <router-link
             :to="{ path: '/category/' + category.id }"
             :key="category.id"
+            class="blueline"
+             v-bind:class="{ 'blueline-selected' : '/category/' + category.id == route}"
+           
           >
             {{ category.name }}
           </router-link>
