@@ -1,9 +1,10 @@
 /* eslint-disable */
 <template>
-  <nav class="sticky ">
-    <div>
+  <nav >
+    <div class="sticky "
+    v-bind:class="{ shadow: !showNav}">
       <div class="mobileNav">
-        <div id="Mobile-Logo">
+        <div id="Mobile-Logo"> 
           <router-link :to="{ path: '/' }">
             Josh Cornau
           </router-link>
@@ -13,8 +14,9 @@
         </div>
       </div>
     </div>
-    <div class="" v-if="showNav">
-      <ul class="menue-mobile">
+    <div class="menue-mobile"
+          v-bind:class="{ mobileMenueFolded : showNav}">
+      <ul  class="ul-mobile" >
         <li class="item-mobile">
           <router-link :to="{ path: '/' }"> Work {{ mobileView }} </router-link>
         </li>
@@ -31,7 +33,7 @@
           </router-link>
         </li>
       </ul>
-    </div>
+      </div>
   </nav>
 </template>
 
