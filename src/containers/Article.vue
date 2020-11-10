@@ -50,6 +50,8 @@ export default {
             id
             title
             content
+            Tags
+            Description
             image {
               url
             }

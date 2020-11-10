@@ -1,5 +1,6 @@
 <template>
     <div>
+
       <!--    -->
         <!-- <router-link
           v-for="article in article"
@@ -26,9 +27,12 @@
         </router-link> -->
 
       <div>
+      <div class="heading">
+        <h1>Selected Projects </h1>
+      </div>
         <div class="articles">
           <router-link
-            v-for="article in rightArticles"
+            v-for="article in articles"
             :to="{ path: '/article/' + article.id }"
             class=""
             :key="article.id"
@@ -36,22 +40,13 @@
             <div class="articles-left">
               <div class="info red">
                 <p>2019/2020</p>
-                <h2>ADAC E-Mobility-Test</h2>
-                <p> E-mobility raises many questions, especially for people without their own charging facilities. The digital service provides clarity and checks what the change to an e-vehicle means. </p>
-                <!-- <p id="title" class="">{{ article.title }}</p> -->
+                <h2> {{ article.title }}</h2>
+                <p> {{article.Description}}</p>
                 <div class="tag-container red">
-                  <div class="tag">
+                  <div class="tag" v-for="tag in article.Tags.tags" :key="tag.id">
                     <i class="fas fa-clock" style="font-size:24px;"></i>
-                    <p>6-Month</p>
-                    </div>
-                    <div class="tag">
-                    <i class="fas fa-clock" style="font-size:24px;"></i>
-                    <p>6-Month</p>
-                    </div>
-                    <div class="tag">
-                    <i class="fas fa-clock" style="font-size:24px;"></i>
-                    <p>6-Month</p>
-                    </div>
+                    <p>{{tag.content}}</p>
+                  </div>
               </div>
               </div>
 
@@ -59,7 +54,7 @@
                 <img
                 class="Article-Image"
                   :src="api_url + article.image[0].url"
-                  alt=""
+                  alt="nothing"
                 />
               </div>
 
@@ -74,11 +69,10 @@
         </div>
       </div>
     </div>
-  </div>
+
 </template>
 
 <script>
-import gql from "graphql-tag";
 
 export default {
   data: function() {
@@ -86,32 +80,17 @@ export default {
       api_url: process.env.VUE_APP_STRAPI_API_URL,
       header: [],
     };
-  },
-  apollo: {
-    header: gql`
-      query header {
-        header {
-          text,
-          image{url}
-        }
-      }
-    `,
   }
   ,
   props: {
     articles: Array
   },
   computed: {
-    leftArticlesCount() {
-      return Math.ceil(this.articles.length / 5);
-    },
-    leftArticles() {
-      return this.articles.slice(0, this.leftArticlesCount);
-    },
-    rightArticles() {
-      return this.articles.slice(this.leftArticlesCount, this.articles.length);
-    },
   },
+  created: function () {
+    // `this` points to the vm instance
+    console.log('a is: ' + this.articles)
+  }
 };
 </script>
 

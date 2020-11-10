@@ -4,8 +4,8 @@
     <div class="sticky">
       <div class="mobileNav">
         <div id="Mobile-Logo">
-          <router-link :to="{ path: '/' }" :key="routepath">
-            Josh Cornau {{route}}
+          <router-link :to="{ path: '/' }" >
+            Josh Cornau {{getIndicatorText(route, categories)}}
           </router-link>
         </div>
         <div class="hamburger-nav">
@@ -59,7 +59,7 @@ export default {
     return {
       categories: [],
       showNav: false,
-     
+      page:0
     };
   },
   props: {
@@ -67,11 +67,21 @@ export default {
       type: String,
     },
   },
+  methods:{
+    getIndicatorText(route, categories){
+      if(route === '/'){return 'work'}
+      else{
+        console.log(route.match(/\d+/)[0]);
+        return categories.[route.match(/\d+/)[0]].name;
+      }
+    }
+  },
   apollo: {
     categories: gql`
       query Categories {
         categories {
           id
+          count
           name
         }
       }

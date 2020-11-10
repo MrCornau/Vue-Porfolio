@@ -29,14 +29,15 @@ export default {
       query Articles {
         articles {
           id
-          title
-          content
-          image {
-            url
-          }
-          category {
-            name
-          }
+            title
+            content
+            Tags
+            Description
+            image {
+              url
+            }
+            published_at
+          
         }
       }
     `
