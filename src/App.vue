@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <MobileNav v-if="mobileView" v-bind:route="$route.fullPath"/>
-    <Nav v-if="!mobileView" v-bind:route="$route.fullPath"/>
+    <MobileNav v-if="mobileView" v-bind:route="$route.fullPath" v-bind:pages="pages"/>
+    <Nav v-if="!mobileView" v-bind:route="$route.fullPath" v-bind:pages="pages"/>
     <router-view :key="$route.fullPath"></router-view>
   </div>
 </template>
@@ -16,6 +16,7 @@ export default {
     return {
       mobileView: true,
       showNav: false,
+      pages:[{path:'/blog',name:'Blog'},{path:'/microprojects',name:'Micro-Projects'},{path:'/about',name:'about'}]
     };
   },
   methods: {

@@ -33,13 +33,15 @@ export default {
   name: "Nav",
   data() {
     return {
-      pages:[{path:'/blog',name:'Blog'},{path:'/microprojects',name:'Micro-Projects'},{path:'/about',name:'about'}]
+      
     };
   },
   props: {
      route: {
       type: String,
-    },
+    },pages:{
+      type: Array,
+    }
   }
 };
 </script>
