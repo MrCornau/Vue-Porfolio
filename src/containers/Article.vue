@@ -3,7 +3,7 @@
     <div
       v-if="article.image"
       id="banner"
-      class="uk-height-small uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light uk-padding"
+      class=""
       :data-src="api_url + article.image[0].url"
       uk-img
     >

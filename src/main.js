@@ -32,6 +32,18 @@ const router = new VueRouter({
     {
       path: "/testside",
       components: require("./containers/TestSide.vue")
+    },
+    {
+      path: "/blog",
+      components: require("./containers/blog.vue")
+    },
+    {
+      path: "/microprojects",
+      components: require("./containers/microProjects.vue")
+    },
+    {
+      path: "/about",
+      components: require("./containers/about.vue")
     }
   ]
 });

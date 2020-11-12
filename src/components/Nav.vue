@@ -35,6 +35,7 @@ export default {
   data() {
     return {
       categories: [],
+      pages:[{path:'/blog',name:'Blog'},{path:'/microprojects',name:'Micro-Projects'},{path:'/about',name:'about'}]
     };
   },
   props: {
