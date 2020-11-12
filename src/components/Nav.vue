@@ -13,14 +13,14 @@
           Work
         </router-link>
       </li>
-      <li class="item" v-for="category in categories" v-bind:key="category.id">
+      <li class="item" v-for="page in pages" v-bind:key="page.name">
         <router-link
-          :to="{ path: '/category/' + category.id }"
-          :key="category.id"
+          :to="{ path: page.path }"
+          :key="page.name"
            class="blueline"
-             v-bind:class="{ 'blueline-selected' : '/category/' + category.id == route}"
+             v-bind:class="{ 'blueline-selected' : page.path == route}"
         >
-          {{ category.name }}
+          {{ page.name }}
         </router-link>
       </li>
     </ul>
@@ -28,13 +28,11 @@
 </template>
 
 <script>
-import gql from "graphql-tag";
 
 export default {
   name: "Nav",
   data() {
     return {
-      categories: [],
       pages:[{path:'/blog',name:'Blog'},{path:'/microprojects',name:'Micro-Projects'},{path:'/about',name:'about'}]
     };
   },
@@ -42,17 +40,7 @@ export default {
      route: {
       type: String,
     },
-  },
-  apollo: {
-    categories: gql`
-      query Categories {
-        categories {
-          id
-          name
-        }
-      }
-    `,
-  },
+  }
 };
 </script>
 
