@@ -6,15 +6,14 @@
       </div>
         <div class="articles">
           <router-link
-            v-for="(article, index) in articles"
+            v-for="article in articles"
             :to="{ path: '/article/' + article.id }"
             class=""
             :key="article.id"
           >
-            <div class="articles-main">
-              <div class="info " v-bind:class="{ order : index%2 == 0}">
-                <p>{{ article.Year}}</p>
-                <p>test{{ index}}</p>
+            <div class="articles-left">
+              <div class="info red">
+                <p>2019/2020</p>
                 <h2> {{ article.title }}</h2>
                 <p> {{article.Description}}</p>
                 <div class="tag-container red">

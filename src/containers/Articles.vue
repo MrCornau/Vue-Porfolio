@@ -4,7 +4,7 @@
       <div class="uk-container uk-container-large">
        <FrontView />
         <ArticlesList :articles="this.categories[3].articles || []"></ArticlesList>
-         <ArticlesList :articles="this.categories[4].articles || []"></ArticlesList>
+         <OtherArticles :articles="this.categories[4].articles || []"></OtherArticles>
       </div>
     </div>
   </div>
@@ -13,12 +13,14 @@
 <script>
 import ArticlesList from "../components/ArticlesList.vue";
 import FrontView from "../components/FrontView";
+import OtherArticles from "../components/OtherArticles.vue";
 import gql from "graphql-tag";
 
 export default {
   components: {
     ArticlesList,
-    FrontView
+    FrontView,
+    OtherArticles
   },
   data() {
     return {
@@ -34,7 +36,7 @@ export default {
           articles{
             id
               title
-              content
+              Year
               Tags
               Description
               image {
