@@ -12,7 +12,7 @@
             :key="article.id"
           >
             <div class="articles-main">
-              <div class="info " v-bind:class="{ order : index%2 == 0}">
+              <div class="info " v-bind:class="{ 'order-info' : index%2 == 1, }">
                 <p>{{ article.Year}}</p>
                 <p>test{{ index}}</p>
                 <h2> {{ article.title }}</h2>
@@ -23,9 +23,10 @@
                     <p>{{tag.content}}</p>
                   </div>
               </div>
+              
               </div>
-
-              <div class="image-box red ">
+                <div class="distance-articles" v-bind:class="{ 'order-margin' : index%2 == 1 }"> </div>
+              <div class="image-box">
                 <img
                 class="Article-Image"
                   :src="api_url + article.image[0].url"
