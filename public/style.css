@@ -147,6 +147,12 @@ nav{
   transition: all 0.3s ease-in-out;
 
 }
+
+
+.nav-indicator-mobile{
+  font-style: italic;
+  font-weight: 400;
+}
 /* Navigation */
 
 

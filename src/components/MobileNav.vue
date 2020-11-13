@@ -5,7 +5,7 @@
       <div class="mobileNav">
         <div id="Mobile-Logo">
           <router-link :to="{ path: '/' }" >
-            Josh Cornau {{getIndicatorText(route, categories)}}
+            Josh Cornau <span class="nav-indicator-mobile">{{route.replace("/","")}}</span>
           </router-link>
         </div>
         <div class="hamburger-nav">
@@ -30,19 +30,19 @@
         </li>
         <li
           class="item-mobile"
-          v-for="category in categories"
-          v-bind:key="category.id"
+          v-for="page in pages"
+          v-bind:key="page.name"
           @click="showNav = !showNav"
             
         >
           <router-link
-            :to="{ path: '/category/' + category.id }"
-            :key="category.id"
+            :to="{ path: page.path }"
+            :key="page.name"
             class="blueline"
-             v-bind:class="{ 'blueline-selected' : '/category/' + category.id == route}"
+             v-bind:class="{ 'blueline-selected' : page.path == route}"
            
           >
-            {{ category.name }}
+            {{ page.name }}
           </router-link>
         </li>
       </ul>
@@ -65,7 +65,9 @@ export default {
   props: {
      route: {
       type: String,
-    },
+    },pages:{
+      type: Array,
+    }
   },
   methods:{
     getIndicatorText(route, categories){

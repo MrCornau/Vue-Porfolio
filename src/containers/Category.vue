@@ -27,8 +27,8 @@ export default {
   apollo: {
     category: {
       query: gql`
-        query Category($id: ID!) {
-          category(id: $id) {
+        query Category {
+          category(id: 6) {
             name
             articles {
               id

@@ -1,31 +1,5 @@
 <template>
     <div>
-
-      <!--    -->
-        <!-- <router-link
-          v-for="article in article"
-          :to="{ path: '/article/' + article.id }"
-          class=""
-          :key="article.id"
-        >
-          <div class="Articles-left">
-          <div class="">
-            <div class="">
-              <img :src="api_url + article.image[0].url" alt="" height="100" />
-            </div>
-            <div class="">
-              <p
-                id="category"
-                v-if="article.category"
-                class=""
-              >
-                {{ article.category.name }}
-              </p>
-              <p id="title" class="">{{ article.title }}</p>
-            </div>
-          </div>
-        </router-link> -->
-
       <div>
       <div class="heading">
         <h1>Selected Projects </h1>
