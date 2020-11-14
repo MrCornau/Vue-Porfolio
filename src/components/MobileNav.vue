@@ -1,7 +1,7 @@
 /* eslint-disable */
 <template>
-  <nav >
-    <div class="nav--sticky">
+  <nav style="position:fixed">
+    <div class=" nav-mobile--sticky">
       <div class="nav-mobile">
         <div id="nav-mobile__logo">
           <router-link :to="{ path: '/' }" >

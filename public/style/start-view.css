@@ -3,7 +3,7 @@
 
 .start-view {
     background-color: #f4f6f5;
-    width: 100%;
+    max-width: 100%;
     height: 100vh;
   }
   

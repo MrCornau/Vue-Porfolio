@@ -4,7 +4,7 @@ nav{
     list-style-type: none;
   }
   
-.nav--sticky {
+.nav-big--sticky {
     position: fixed;
     top: 0;
     width: 100%;
@@ -12,7 +12,7 @@ nav{
     background-color: white;
   }
   
-  .nav--white-background{
+  .nav-big--white-background{
     background-color: white;
   }
   
@@ -20,7 +20,7 @@ nav{
     box-shadow: 0 1px 2px 0 rgba(79, 58, 58, 0.1), 0 2.5px 5px 0 rgba(0, 0, 0, 0.05);
   }
   
-  .nav__menu {
+  .nav-big__menu {
     margin:10px auto 10px auto;
     display: flex;
     justify-content: flex-end;   
@@ -30,7 +30,7 @@ nav{
     font-family: NHaasGroteskDSPro-75Bd;
   }
   
-  .nav__logo {
+  .nav-big__logo {
     padding: 10px 10px 10px 0;
     font-size: 20px;
   
@@ -38,12 +38,12 @@ nav{
     align-self: center;
   }
   
-  .nav__push {
+  .nav-big__push {
     margin-left: auto;
   }
       
   
-  .nav__item {
+  .nav-big__item {
     padding: 10px;
     justify-self: ends;
     order: 1;
@@ -57,17 +57,23 @@ nav{
  /* --------------------- Navigation Mobile --------------------- */ 
   
   .nav-mobile {
-    width: 95vw;
+    width: 90vw;
     margin:20px auto 10px auto;
     display: flex;
     justify-content: space-between;   
     flex-wrap: nowrap;
     font-family: NHaasGroteskDSPro-75Bd;
   }
-  
- #nav-mobile__logo{
-   font-size: 1em;
- }
+
+    
+.nav-mobile--sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 999999;
+  background-color: white;
+}
   
   #navigation-icon {
     top: 0;
@@ -77,7 +83,7 @@ nav{
   .nav-mobile__menue-mobile{
     position: fixed;
     transition: 1s cubic-bezier(.52,.49,.19,1.04);
-    width: 100%;
+    width: 100vw;
     background: white;
     font-family: NHaasGroteskDSPro-75Bd;
     text-align: center;
