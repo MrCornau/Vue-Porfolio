@@ -1,3 +1,9 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html {
   font-size: 16px; /* font-size 1em = 10px on default browser settings */
 }
@@ -12,11 +18,16 @@ primary-font-color {
 }
 
 /* styles */
-
-
 a{
   text-decoration: none;
   color: #253031;
+}
+
+
+h4{
+  font-size: 1.2em;
+  color: #969696;
+  font-weight: 600;
 }
 
 

@@ -112,6 +112,8 @@ margin-top: auto;
 
 }
 
+
+
 /* Articles */
 
 
@@ -143,6 +145,16 @@ margin-top: auto;
   flex: 5%;
   max-width: auto;
 }
+
+.articles-preview-margins{
+  margin-bottom: 0.5em;
+}
+
+.articles-preview-marginl{
+  margin-bottom: 2em;
+}
+
+
 
 
 .image-box{
@@ -185,6 +197,10 @@ margin-top: auto;
 }
 
 
-/* 
-max-width: 90vw;
-margin: auto; */
+/* articles-preview */
+
+.articles-preview-year{
+
+}
+
+
