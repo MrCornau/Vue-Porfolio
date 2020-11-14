@@ -12,14 +12,14 @@
           <div class="articles__container__info" v-bind:class="{ 'articles__container__info--order': index % 2 == 1 }">
             <h4 class="articles__container--marginSM articles__container__info__time">{{ article.Year }}</h4>
             <h2 class="articles__container--marginSM articles__container__info--order">{{ article.title }}</h2>
-            <p class="articles__container--marginL articles__container__info--order">{{ article.Description }}</p>
+            <p class="articles__container--marginL articles__container__info--order articles__container__info__description">{{ article.Description }}</p>
             <ArticlesTag
               class="articles__container--marginL articles__container__tag"
               v-bind:tags="article.Tags.tags"
             />
             <router-link :to="{ path: '/article/' + article.id }" class="articles__container__info--order">
               <button class="article-preview__button ">
-                more info
+                <span>more info</span>
               </button></router-link
             >
           </div>

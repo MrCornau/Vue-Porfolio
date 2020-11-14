@@ -17,7 +17,8 @@ body {
 .article-preview__button {
   display: inline-block;
   border: none;
-  padding: 12px 120px 10px 120px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   border-radius: 2.5px;
   box-shadow: 0 1px 3px 0 rgba(77, 7, 7, 0.15), 0 2.5px 5px 0 rgba(0, 0, 0, 0.1),
     inset 0 -1px 2.5px 0 rgba(255, 255, 255, 0.1);
@@ -25,7 +26,6 @@ body {
   margin: 0;
   text-decoration: none;
   text-transform: uppercase;
-  color: #ffffff;
   cursor: pointer;
   text-align: center;
   -webkit-appearance: none;
@@ -37,7 +37,12 @@ body {
     inset 0 -1px 2.5px 0 rgba(255, 255, 255, 0.3);
 }
 
+.article-preview__button span {
+  color: white;
+ margin-left: 50px;
+ margin-right: 50px;
 
+}
 
 /* --------------------- Articles  --------------------- */ 
 
@@ -107,7 +112,77 @@ body {
 
 
 
-@media only screen and (min-width:600px) and (max-width: 1200px) {
+@media only screen and (min-width:600px) and (max-width: 1200px) and (orientation: portrait) {
+
+
+  .articles__heading {
+    margin: 20px auto 40px auto;
+  }
+
+
+  .articles__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px auto 5em auto;
+    max-height: auto;
+  }
+
+
+  .articles__container__info{
+    display: flex;
+    flex-direction: column;
+    order: 4;
+    margin-top: 1em;
+ 
+    word-wrap:break-word;
+  }
+
+  .articles__container--marginSM {
+    margin-bottom: 0.5em;
+  }
+  
+  .articles__container--marginL {
+    margin-bottom: 0.5em;
+  }
+
+  .articles__container__image {
+    height: 40vh;
+    background-color: #f5f5f5;
+    padding: 2vh 2vw 2vh 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .articles__container__image--size {
+    max-width: 90%;
+    max-height: 90%;
+    margin: auto;
+  }
+
+  .articles__container__tag{
+    order: 0;
+  }
+
+  .articles__container__info--order{
+    order:1;
+  }
+
+  .articles__container__info__time{
+    order:1;
+  }
+.article-preview__button {
+  display: none;
+}
+
+.articles__container__info__description{
+  max-width: 500px;
+}
+
+}
+
+@media only screen and (min-width:600px) and (max-width: 1200px) and (orientation: landscape) {
 
 
   .articles__heading {
@@ -123,7 +198,7 @@ body {
   }
   
   .articles__container__info {
-    flex: 30%;
+    flex: 40%;
     height: auto;
   }
   
@@ -150,8 +225,8 @@ body {
   
   .articles__container__image {
     order: 2;
-    flex: 65%;
-    height: 70vh;
+    flex: 55%;
+    height: 50vh;
     background-color: #f5f5f5;
     padding: 2vh 2vw 2vh 2vw;
     display: flex;
@@ -167,8 +242,6 @@ body {
 
 
 }
-
-
 
 
 
