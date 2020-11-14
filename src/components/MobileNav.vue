@@ -1,8 +1,8 @@
 /* eslint-disable */
 <template>
   <nav >
-    <div class="sticky">
-      <div class="mobileNav">
+    <div class="nav--sticky">
+      <div class="nav-mobile">
         <div id="Mobile-Logo">
           <router-link :to="{ path: '/' }" >
             Josh Cornau <span class="nav-indicator-mobile">{{route.replace("/","")}}</span>
@@ -18,7 +18,7 @@
       </div>
     </div>
     <div
-      class="menue-mobile shadow"
+      class="menue-mobile nav--shadow"
       v-bind:class="{ mobileMenueFolded: showNav }"
     >
       <ul class="ul-mobile">
@@ -26,7 +26,7 @@
     
 
         @click="showNav = !showNav;" >
-          <router-link :to="{ path: '/' }" class="blueline" v-bind:class="{ 'blueline-selected' : '/' == route}"> Work</router-link>
+          <router-link :to="{ path: '/' }" class="nav__blueline" v-bind:class="{ 'nav__blueline--selected' : '/' == route}"> Work</router-link>
         </li>
         <li
           class="item-mobile"
@@ -38,8 +38,8 @@
           <router-link
             :to="{ path: page.path }"
             :key="page.name"
-            class="blueline"
-             v-bind:class="{ 'blueline-selected' : page.path == route}"
+            class="nav__blueline"
+             v-bind:class="{ 'nav__blueline--selected' : page.path == route}"
            
           >
             {{ page.name }}

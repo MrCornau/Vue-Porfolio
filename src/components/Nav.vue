@@ -1,24 +1,24 @@
 /* eslint-disable */
 <template>
-  <nav class="sticky white-background shadow">
-    <ul class="menu width">
-      <li class="logo">
+  <nav class="nav--sticky nav--white-background nav--shadow">
+    <ul class="nav__menu global--width">
+      <li class="nav__logo">
         <router-link :to="{ path: '/' }">
           Josh Cornau
         </router-link>
       </li>
-      <li class="push"></li>
-      <li class="item">
-        <router-link :to="{ path: '/' }" class="blueline" v-bind:class="{ 'blueline-selected' : '/' == route}">
+      <li class="nav__push"></li>
+      <li class="nav__item">
+        <router-link :to="{ path: '/' }" class="nav__blueline" v-bind:class="{ 'nav__blueline--selected' : '/' == route}">
           Work
         </router-link>
       </li>
-      <li class="item" v-for="page in pages" v-bind:key="page.name">
+      <li class="nav__item" v-for="page in pages" v-bind:key="page.name">
         <router-link
           :to="{ path: page.path }"
           :key="page.name"
-           class="blueline"
-             v-bind:class="{ 'blueline-selected' : page.path == route}"
+           class="nav__blueline"
+             v-bind:class="{ 'nav__blueline--selected' : page.path == route}"
         >
           {{ page.name }}
         </router-link>

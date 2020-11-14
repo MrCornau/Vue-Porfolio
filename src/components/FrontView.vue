@@ -1,6 +1,6 @@
 <template>
  <div class="header">
-      <div class="header-container width">
+      <div class="header-container global--width">
         <h1 class="header-left" v-html="header.text" />
         <div class="header-right">
           <img

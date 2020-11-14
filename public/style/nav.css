@@ -4,7 +4,7 @@ nav{
     list-style-type: none;
   }
   
-  .sticky {
+.nav--sticky {
     position: fixed;
     top: 0;
     width: 100%;
@@ -12,15 +12,15 @@ nav{
     background-color: white;
   }
   
-  .white-background{
+  .nav--white-background{
     background-color: white;
   }
   
-  .shadow{
+  .nav--shadow{
     box-shadow: 0 1px 2px 0 rgba(79, 58, 58, 0.1), 0 2.5px 5px 0 rgba(0, 0, 0, 0.05);
   }
   
-  .menu {
+  .nav__menu {
     margin:10px auto 10px auto;
     display: flex;
     justify-content: flex-end;   
@@ -30,7 +30,7 @@ nav{
     font-family: NHaasGroteskDSPro-75Bd;
   }
   
-  .logo {
+  .nav__logo {
     padding: 10px 10px 10px 0;
     font-size: 20px;
   
@@ -38,12 +38,12 @@ nav{
     align-self: center;
   }
   
-  .push {
+  .nav__push {
     margin-left: auto;
   }
       
   
-  .item {
+  .nav__item {
     padding: 10px;
     justify-self: ends;
     order: 1;
@@ -56,7 +56,7 @@ nav{
   
   /*responsive Nav*/
   
-  .mobileNav {
+  .nav-mobile {
     width: 95vw;
     margin:20px auto 10px auto;
     display: flex;
@@ -115,11 +115,11 @@ nav{
     font-size: x-large;
   }
   
-  .blueline{
+  .nav__blueline{
     position: relative;
   }
   
-  .blueline::before {
+  .nav__blueline::before {
     content:"";
     position: absolute;
     width: 0;
@@ -131,7 +131,7 @@ nav{
   
   }
   
-  .blueline-selected::before {
+  .nav__blueline--selected::before {
     visibility: visible;
     width: 100%;
     transition: all 0.3s ease-in-out;

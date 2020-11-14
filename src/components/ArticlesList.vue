@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      <div class="heading width">
+      <div class="heading global--width">
         <h1>Selected Projects</h1>
       </div>
       <div class="articles">
@@ -11,13 +11,13 @@
           class=""
           :key="article.id"
         >
-          <div class="articles-main width">
+          <div class="articles-main global--width">
             <div class="info" v-bind:class="{ 'order-info': index % 2 == 1 }">
               <h4 class="articles-preview-margins">{{ article.Year }}</h4>
               <h2 class="articles-preview-margins">{{ article.title }}</h2>
               <p class="articles-preview-marginl">{{ article.Description }}</p>
               <TagPreview class="articles-preview-marginl" v-bind:tags="article.Tags.tags" />
-              <button class="button ">more info</button>
+              <button class="article-preview__button ">more info</button>
             </div>
             <div
               class="distance-articles"
