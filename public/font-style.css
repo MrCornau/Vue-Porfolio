@@ -8,21 +8,40 @@ html {
   font-size: 16px; /* font-size 1em = 10px on default browser settings */
 }
 
-primary-font-color {
+
+/* Colors */
+
+.primary-font-color {
   color: #374cff;
 }
 
-.test-paragraph{
-  width: 50%;
-  margin-left: 40px;
+.base-font-color{
+  color: #253031;
 }
 
-/* styles */
+/* Fonts */
+
 a{
   text-decoration: none;
   color: #253031;
 }
 
+.caption{
+  font-weight: 530;
+  font-size: 0.8em !important;
+  font-size: x-small;
+}
+
+.icon{
+  font-size:0.8em !important;
+  height: 1.5em;
+}
+
+.button{
+  font-weight: 500;
+  font-size: 1em;
+  text-transform: uppercase;
+}
 
 h4{
   font-size: 1.2em;

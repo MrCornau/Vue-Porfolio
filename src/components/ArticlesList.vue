@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      <div class="heading">
+      <div class="heading width">
         <h1>Selected Projects</h1>
       </div>
       <div class="articles">
@@ -11,12 +11,13 @@
           class=""
           :key="article.id"
         >
-          <div class="articles-main">
-            <div class="info " v-bind:class="{ 'order-info': index % 2 == 1 }">
+          <div class="articles-main width">
+            <div class="info" v-bind:class="{ 'order-info': index % 2 == 1 }">
               <h4 class="articles-preview-margins">{{ article.Year }}</h4>
               <h2 class="articles-preview-margins">{{ article.title }}</h2>
               <p class="articles-preview-marginl">{{ article.Description }}</p>
-              <Tags v-bind:tags="article.Tags.tags" />
+              <TagPreview class="articles-preview-marginl" v-bind:tags="article.Tags.tags" />
+              <button class="button ">more info</button>
             </div>
             <div
               class="distance-articles"
@@ -29,13 +30,6 @@
                 alt="nothing"
               />
             </div>
-
-            <!--               
-              <div class="tags red">
-                <p id="category" v-if="article.category" class="">
-                  {{ article.category.name }}
-                </p>
-              </div> -->
           </div>
         </router-link>
       </div>
@@ -44,7 +38,7 @@
 </template>
 
 <script>
-import Tags from "../components/TagPreview.vue";
+import TagPreview from "../components/TagPreview.vue";
 
 export default {
   data: function() {
@@ -57,7 +51,7 @@ export default {
     articles: Array,
   },
   components: {
-    Tags,
+    TagPreview,
   },
   computed: {},
   created: function() {

@@ -1,7 +1,7 @@
 /* eslint-disable */
 <template>
   <nav class="sticky white-background shadow">
-    <ul class="menu">
+    <ul class="menu width">
       <li class="logo">
         <router-link :to="{ path: '/' }">
           Josh Cornau
