@@ -1,15 +1,38 @@
 <template>
   <div class="tag ">
-    <div class="tag__box primary-font-color caption" v-for="tag in tags" :key="tag.id">
-      <box-icon v-bind:name="tag.icon" class="icon" animation='tada-hover' color="#374cff"></box-icon>
+    <div  v-for="(tag, index) in tags" :key="tag.id">
+      <div v-if="mobileView && index < 2" class="tag__box primary-font-color caption">
+        <box-icon v-bind:name="tag.icon" class="icon" animation='tada-hover' color="#374cff"></box-icon>
       <p>{{ tag.content }}</p>
+      </div>
+      
+    <div v-else-if="!mobileView" class="tag__box primary-font-color caption">
+        <box-icon v-bind:name="tag.icon" class="icon" animation='tada-hover' color="#374cff"></box-icon>
+      <p>{{ tag.content }}</p>
+      </div>
+
     </div>
   </div>
 </template>
 <script>
 export default {
+  data: () => {
+    return {
+      mobileView: true,
+    };
+  },
   props: {
     tags: Array,
+   
+  },
+  methods: {
+    handleView() {
+      this.mobileView = window.innerWidth <= 740;
+    },
+  },
+  created() {
+    this.handleView();
+    window.addEventListener("resize", this.handleView);
   },
 };
 </script>

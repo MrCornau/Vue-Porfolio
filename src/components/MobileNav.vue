@@ -1,6 +1,6 @@
 /* eslint-disable */
 <template>
-  <nav style="position:fixed">
+  <nav>
     <div class=" nav-mobile--sticky">
       <div class="nav-mobile">
         <div id="nav-mobile__logo">

@@ -10,14 +10,14 @@
       >
         <div class="articles__container global--width">
           <div class="articles__container__info" v-bind:class="{ 'articles__container__info--order': index % 2 == 1 }">
-            <h4 class="articles__container--marginSM">{{ article.Year }}</h4>
-            <h2 class="articles__container--marginSM">{{ article.title }}</h2>
-            <p class="articles__container--marginL">{{ article.Description }}</p>
+            <h4 class="articles__container--marginSM articles__container__info__time">{{ article.Year }}</h4>
+            <h2 class="articles__container--marginSM articles__container__info--order">{{ article.title }}</h2>
+            <p class="articles__container--marginL articles__container__info--order">{{ article.Description }}</p>
             <ArticlesTag
-              class="articles__container--marginL"
+              class="articles__container--marginL articles__container__tag"
               v-bind:tags="article.Tags.tags"
             />
-            <router-link :to="{ path: '/article/' + article.id }" class="">
+            <router-link :to="{ path: '/article/' + article.id }" class="articles__container__info--order">
               <button class="article-preview__button ">
                 more info
               </button></router-link
@@ -27,13 +27,16 @@
             class="articles__container__distance"
             v-bind:class="{ 'articles__container__distance--order': index % 2 == 1 }"
           ></div>
-          <div class="articles__container__image">
+          <router-link :to="{ path: '/article/' + article.id }" class="articles__container__image" >
+        
+             
             <img
               class="articles__container__image--size"
               :src="api_url + article.image[0].url"
               alt="nothing"
             />
-          </div>
+             </router-link>
+  
         </div>
       </div>
     </div>

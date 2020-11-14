@@ -9,15 +9,16 @@
 </template>
 
 <script>
-import ArticlesList from "../components/ArticlesList.vue";
 import StartView from "../components/StartView";
+import ArticlesList from "../components/ArticlesList.vue";
 import OtherArticles from "../components/OtherArticles.vue";
 import gql from "graphql-tag";
 
 export default {
   components: {
-    ArticlesList,
+   
     StartView,
+    ArticlesList,
     OtherArticles,
   },
   data() {

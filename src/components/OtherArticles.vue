@@ -1,52 +1,47 @@
 <template>
+  <div class="articles">
     <div>
-      <div>
-      <div class="heading">
-        <h1>Selected Projects </h1>
+      <div class="articles__heading global--width">
+        <h1>Selected Projects</h1>
       </div>
-        <div class="articles">
-          <router-link
-            v-for="article in articles"
-            :to="{ path: '/article/' + article.id }"
-            class=""
-            :key="article.id"
-          >
-            <div class="articles-left">
-              <div class="info red">
-                <p>2019/2020</p>
-                <h2> {{ article.title }}</h2>
-                <p> {{article.Description}}</p>
-                <div class="tag-container red">
-                  <div class="tag" v-for="tag in article.Tags.tags" :key="tag.id">
-                    <i class="fas fa-clock" style="font-size:24px;"></i>
-                    <p>{{tag.content}}</p>
-                  </div>
-              </div>
-              </div>
-
-              <div class="image-box red ">
-                <img
-                class="Article-Image"
-                  :src="api_url + article.image[0].url"
-                  alt="nothing"
-                />
-              </div>
-
-<!--               
-              <div class="tags red">
-                <p id="category" v-if="article.category" class="">
-                  {{ article.category.name }}
-                </p>
-              </div> -->
-            </div>
-          </router-link>
+      <div
+        v-for="(article, index) in articles"
+        :key="article.id"
+      >
+        <div class="articles__container global--width">
+          <div class="articles__container__info" v-bind:class="{ 'articles__container__info--order': index % 2 == 1 }">
+            <h4 class="articles__container--marginSM">{{ article.Year }}</h4>
+            <h2 class="articles__container--marginSM">{{ article.title }}</h2>
+            <p class="articles__container--marginL">{{ article.Description }}</p>
+            <ArticlesTag
+              class="articles__container--marginL"
+              v-bind:tags="article.Tags.tags"
+            />
+            <router-link :to="{ path: '/article/' + article.id }" class="">
+              <button class="article-preview__button ">
+                more info
+              </button></router-link
+            >
+          </div>
+          <div
+            class="articles__container__distance"
+            v-bind:class="{ 'articles__container__distance--order': index % 2 == 1 }"
+          ></div>
+          <div class="articles__container__image">
+            <img
+              class="articles__container__image--size"
+              :src="api_url + article.image[0].url"
+              alt="nothing"
+            />
+          </div>
         </div>
       </div>
     </div>
-
+  </div>
 </template>
 
 <script>
+import ArticlesTag from "../components/ArticlesTag.vue";
 
 export default {
   data: function() {
@@ -54,18 +49,16 @@ export default {
       api_url: process.env.VUE_APP_STRAPI_API_URL,
       header: [],
     };
-  }
-  ,
+  },
   props: {
-    articles: Array
+    articles: Array,
   },
-  computed: {
+  components: {
+    ArticlesTag,
   },
-  created: function () {
-    // `this` points to the vm instance
-    console.log('a is: ' + this.articles)
-  }
+  computed: {},
+  created: function() {
+    // `this` points to the vm instanc
+  },
 };
 </script>
-
-
