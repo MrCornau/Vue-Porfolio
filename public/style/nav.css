@@ -1,4 +1,4 @@
-/* Navigation */
+/* --------------------- Navigation Big-Screen  --------------------- */ 
 
 nav{
     list-style-type: none;
@@ -54,7 +54,7 @@ nav{
   }
   
   
-  /*responsive Nav*/
+ /* --------------------- Navigation Mobile --------------------- */ 
   
   .nav-mobile {
     width: 95vw;
@@ -63,17 +63,18 @@ nav{
     justify-content: space-between;   
     flex-wrap: nowrap;
     font-family: NHaasGroteskDSPro-75Bd;
-  
   }
   
-  
+ #nav-mobile__logo{
+   font-size: 1em;
+ }
   
   #navigation-icon {
     top: 0;
     cursor: pointer;
   }
   
-  .menue-mobile{
+  .nav-mobile__menue-mobile{
     position: fixed;
     transition: 1s cubic-bezier(.52,.49,.19,1.04);
     width: 100%;
@@ -84,7 +85,7 @@ nav{
   
   }
   
-  .ul-mobile{
+  .nav-mobile__ul{
     height: 100vh;
   
     list-style-type: none;
@@ -95,16 +96,12 @@ nav{
     
   }
   
-  .mobileMenueFolded{
-   
-  
+  .nav-mobile--folded{
     transform: translate(0px, 0px);
     overflow: hidden
-  
-    /* top:calc(0px-vh); */
   }
   
-  .item-mobile{
+  .nav-mobile__item{
     padding: 0px 40px 40px 40px;
     justify-self: ends;
     order: 1;
@@ -115,6 +112,17 @@ nav{
     font-size: x-large;
   }
   
+
+
+ 
+  
+  
+
+  /* Navigation */
+  
+  
+/* --------------------- Indikators  --------------------- */ 
+   
   .nav__blueline{
     position: relative;
   }
@@ -137,12 +145,8 @@ nav{
     transition: all 0.3s ease-in-out;
   
   }
-  
-  
-  .nav-indicator-mobile{
+
+  .nav-mobile__indicator-mobile{
     font-style: italic;
     font-weight: 400;
   }
-  /* Navigation */
-  
-  

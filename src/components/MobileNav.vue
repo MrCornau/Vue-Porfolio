@@ -3,9 +3,9 @@
   <nav >
     <div class="nav--sticky">
       <div class="nav-mobile">
-        <div id="Mobile-Logo">
+        <div id="nav-mobile__logo">
           <router-link :to="{ path: '/' }" >
-            Josh Cornau <span class="nav-indicator-mobile">{{route.replace("/","")}}</span>
+            Josh Cornau <span class="nav-mobile__indicator-mobile">{{route.replace("/","")}}</span>
           </router-link>
         </div>
         <div class="hamburger-nav">
@@ -18,18 +18,18 @@
       </div>
     </div>
     <div
-      class="menue-mobile nav--shadow"
-      v-bind:class="{ mobileMenueFolded: showNav }"
+      class="nav-mobile__menue-mobile nav--shadow"
+      v-bind:class="{ 'nav-mobile--folded': showNav }"
     >
-      <ul class="ul-mobile">
-        <li class="item-mobile" 
+      <ul class="nav-mobile__ul">
+        <li class="nav-mobile__item" 
     
 
         @click="showNav = !showNav;" >
           <router-link :to="{ path: '/' }" class="nav__blueline" v-bind:class="{ 'nav__blueline--selected' : '/' == route}"> Work</router-link>
         </li>
         <li
-          class="item-mobile"
+          class="nav-mobile__item"
           v-for="page in pages"
           v-bind:key="page.name"
           @click="showNav = !showNav"
