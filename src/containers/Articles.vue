@@ -2,7 +2,7 @@
   <div>
     <div class="uk-section">
       <div class="uk-container uk-container-large">
-       <FrontView />
+       <StartView />
         <ArticlesList :articles="this.categories[3].articles || []"></ArticlesList>
          <OtherArticles :articles="this.categories[4].articles || []"></OtherArticles>
       </div>
@@ -12,14 +12,14 @@
 
 <script>
 import ArticlesList from "../components/ArticlesList.vue";
-import FrontView from "../components/FrontView";
+import StartView from "../components/StartView";
 import OtherArticles from "../components/OtherArticles.vue";
 import gql from "graphql-tag";
 
 export default {
   components: {
     ArticlesList,
-    FrontView,
+    StartView,
     OtherArticles
   },
   data() {

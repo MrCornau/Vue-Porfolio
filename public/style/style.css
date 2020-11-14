@@ -6,25 +6,11 @@ body {
   margin: 0px;
 }
 
-
 .global--width {
   width: 90vw;
   max-width: 1800px;
 }
 
-
-.header {
-  background-color: #f4f6f5;
-  width: 100%;
-  height: 100vh;
-}
-
-.header-container {
-  display: flex;
-  flex-direction: row;
-  margin: auto;
-  height: 100%;
-}
 
 /* Buttons */
 .article-preview__button {
@@ -49,60 +35,8 @@ body {
     inset 0 -1px 2.5px 0 rgba(255, 255, 255, 0.3);
 }
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-}
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-}
 
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-}
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-}
-
-@media only screen and (max-width: 1200px) {
-  .header-left {
-    flex: 60%;
-    max-width: auto;
-    height: auto;
-    align-self: center;
-  }
-
-  .header-right {
-    display: none;
-  }
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-  .header-left {
-    flex: 40%;
-    max-width: auto;
-    height: auto;
-    align-self: center;
-  }
-
-  .header-right {
-    flex: 60%;
-    max-width: auto;
-    height: auto;
-    align-self: flex-end;
-  }
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1900px) {
-}
-
-.header-image {
-  width: 100%;
-  margin-top: auto;
-}
 
 .heading {
   margin: 50px auto 20vh auto;

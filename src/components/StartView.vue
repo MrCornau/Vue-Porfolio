@@ -1,10 +1,10 @@
 <template>
- <div class="header">
-      <div class="header-container global--width">
-        <h1 class="header-left" v-html="header.text" />
-        <div class="header-right">
+ <div class="start-view">
+      <div class="start-view__container global--width">
+        <h1 class="start-view__left" v-html="header.text" />
+        <div class="start-view__right">
           <img
-            class="header-image"
+            class="start-view__right__image"
             :src="api_url + header.image.url"
             alt=""
           />
