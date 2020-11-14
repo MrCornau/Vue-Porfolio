@@ -19,15 +19,11 @@ const router = new VueRouter({
   routes: [
     {
       path: "/",
-      components: require("./containers/Articles.vue")
+      components: require("./containers/Work.vue")
     },
     {
       path: "/article/:id",
       components: require("./containers/Article.vue")
-    },
-    {
-      path: "/category/:id",
-      components: require("./containers/Category.vue")
     },
     {
       path: "/testside",
@@ -35,15 +31,15 @@ const router = new VueRouter({
     },
     {
       path: "/blog",
-      components: require("./containers/blog.vue")
+      components: require("./containers/Blog.vue")
     },
     {
       path: "/microprojects",
-      components: require("./containers/microProjects.vue")
+      components: require("./containers/MicroProjects.vue")
     },
     {
       path: "/about",
-      components: require("./containers/about.vue")
+      components: require("./containers/About.vue")
     }
   ]
 });
