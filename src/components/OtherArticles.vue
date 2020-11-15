@@ -2,40 +2,39 @@
   <div class="articles">
     <div>
       <div class="articles__heading global--width">
-        <h1>Selected Projects</h1>
+        <h1>Other Projects</h1>
       </div>
-      <div
-        v-for="(article, index) in articles"
+      <div class="global--width other-articles__container">
+       <div
+        class="other-articles__box"
+        v-for="(article) in articles"
         :key="article.id"
       >
-        <div class="articles__container global--width">
-          <div class="articles__container__info" v-bind:class="{ 'articles__container__info--order': index % 2 == 1 }">
-            <h4 class="articles__container--marginSM">{{ article.Year }}</h4>
-            <h2 class="articles__container--marginSM">{{ article.title }}</h2>
-            <p class="articles__container--marginL">{{ article.Description }}</p>
+        
+          <div class="articles__container__info articles__container__distance--order" >
+            <h4 class="articles__container--marginSM articles__container__info__time">{{ article.Year }}</h4>
+            <h2 class="articles__container--marginSM articles__container__info--order">{{ article.title }}</h2>
             <ArticlesTag
-              class="articles__container--marginL"
+              class="articles__container--marginL articles__container__tag"
               v-bind:tags="article.Tags.tags"
             />
-            <router-link :to="{ path: '/article/' + article.id }" class="">
-              <button class="article-preview__button ">
-                more info
-              </button></router-link
-            >
+            <p class="articles__container--marginL articles__container__info--order articles__container__info__description">{{ article.Description }}</p>
+            
           </div>
-          <div
-            class="articles__container__distance"
-            v-bind:class="{ 'articles__container__distance--order': index % 2 == 1 }"
-          ></div>
-          <div class="articles__container__image">
+          <router-link :to="{ path: '/article/' + article.id }" class="articles__container__image" >
+        
+             
             <img
               class="articles__container__image--size"
               :src="api_url + article.image[0].url"
               alt="nothing"
             />
-          </div>
-        </div>
+             </router-link>
+  
+       
+      </div> 
       </div>
+      
     </div>
   </div>
 </template>
@@ -58,7 +57,8 @@ export default {
   },
   computed: {},
   created: function() {
-    // `this` points to the vm instanc
+    // `this` points to the vm instance
+    console.log("a is: " + this.articles);
   },
 };
 </script>

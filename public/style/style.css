@@ -304,6 +304,24 @@ body {
   }
 
 
+
+  .other-articles__container{
+    margin: 50px auto 20vh auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-height: auto;
+  }
+
+  .other-articles__box{
+    display: flex;
+
+    max-width: 30%;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 50px auto 20vh auto;
+    max-height: auto;
+  }
 }
 
 
