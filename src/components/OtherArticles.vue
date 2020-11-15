@@ -21,11 +21,11 @@
             <p class="articles__container--marginL articles__container__info--order articles__container__info__description">{{ article.Description }}</p>
             
           </div>
-          <router-link :to="{ path: '/article/' + article.id }" class="articles__container__image" >
+          <router-link :to="{ path: '/article/' + article.id }" class="other-articles__container__image" >
         
              
             <img
-              class="articles__container__image--size"
+              class="other-articles__container__image--size "
               :src="api_url + article.image[0].url"
               alt="nothing"
             />
