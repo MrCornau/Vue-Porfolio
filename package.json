@@ -13,12 +13,10 @@
     "apollo-link": "^1.2.14",
     "apollo-link-http": "^1.5.17",
     "core-js": "^3.6.5",
-    "eslint-loader": "2.1.2",
     "graphql": "^15.4.0",
     "graphql-tag": "^2.11.0",
     "moment": "^2.29.1",
-    "uikit": "^3.5.9",
-    "vue": "^2.6.11",
+    "vue": "^2.6.12",
     "vue-apollo": "^3.0.5",
     "vue-markdown-it": "^0.9.4",
     "vue-router": "^3.4.9"

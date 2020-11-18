@@ -9,6 +9,10 @@ html {
   font-size: 16px; /* font-size 1em = 10px on default browser settings */
 }
 
+.black{
+  color:#253031;
+}
+
 
 /* Colors */
 
@@ -46,8 +50,13 @@ a{
 
 h4{
   font-size: 1.2em;
-  color: #969696;
-  font-weight: 600;
+  color: #a1a1a1;
+  font-weight: 500;
+}
+
+p{
+  font-weight: 500;
+  line-height: 1.3;
 }
 
 

@@ -1,7 +1,7 @@
 <template>
  <div class="start-view">
       <div class="start-view__container global--width">
-        <h1 class="start-view__left" v-html="header.text" />
+        <span class="start-view__left" v-html="header.text" />
         <div class="start-view__right">
           <img
             class="start-view__right__image"

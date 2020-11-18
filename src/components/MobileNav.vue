@@ -51,7 +51,6 @@
 </template>
 
 <script>
-import gql from "graphql-tag";
 
 export default {
   name: "Nav",
@@ -77,18 +76,7 @@ export default {
         return categories.[route.match(/\d+/)[0]].name;
       }
     }
-  },
-  apollo: {
-    categories: gql`
-      query Categories {
-        categories {
-          id
-          count
-          name
-        }
-      }
-    `,
-  },
+  }
 };
 </script>
 
