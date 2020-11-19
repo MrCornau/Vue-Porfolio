@@ -1,0 +1,54 @@
+
+.primary-button {
+    display: inline-block;
+    border: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 2.5px;
+    box-shadow: 0 1px 3px 0 rgba(77, 7, 7, 0.15), 0 2.5px 5px 0 rgba(0, 0, 0, 0.1),
+      inset 0 -1px 2.5px 0 rgba(255, 255, 255, 0.1);
+    background: #0046ff;
+    margin: 0;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-align: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+  
+  .primary-button:hover {
+    box-shadow: 0 5px 10px 0 rgba(77, 7, 7, 0.15), 0 5px 10px 0 rgba(0, 0, 0, 0.1),
+      inset 0 -1px 2.5px 0 rgba(255, 255, 255, 0.3);
+  }
+  
+  .primary-button span {
+    color: white;
+   margin-left: 50px;
+   margin-right: 50px;
+  
+  }
+
+
+  @media only screen and (max-width: 600px) {
+
+
+    .primary-button{
+        display: none;
+    }
+  }
+
+
+@media only screen and (min-width:600px) and (max-width: 1200px) and (orientation: portrait) {
+    .primary-button{
+        display: none;
+    }
+}
+
+
+@media only screen and (min-width: 1200px) {
+    .primary-button span{
+        margin-left: 100px;
+        margin-right: 100px;
+    } 
+}

@@ -48,7 +48,7 @@ nav{
     justify-self: ends;
     order: 1;
     position: relative; 
-    margin-right: 30px;
+    margin-left: 30px;
     width: auto;
     text-transform: uppercase;
   }

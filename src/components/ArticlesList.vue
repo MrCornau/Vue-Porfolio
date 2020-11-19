@@ -17,11 +17,7 @@
               class="articles__container--marginL articles__container__tag"
               v-bind:tags="article.Tags.tags"
             />
-            <router-link :to="{ path: '/article/' + article.id }" class="articles__container__info--order">
-              <button class="article-preview__button ">
-                <span>more info</span>
-              </button></router-link
-            >
+            <Button v-bind:path="'/article/' + article.id" v-bind:name="'more info'" class="articles__container__info--order"/>
           </div>
           <div
             class="articles__container__distance"
@@ -45,6 +41,7 @@
 
 <script>
 import ArticlesTag from "../components/ArticlesTag.vue";
+import Button from"../components/Button.vue";
 
 export default {
   data: function() {
@@ -58,6 +55,7 @@ export default {
   },
   components: {
     ArticlesTag,
+    Button
   },
   computed: {},
   created: function() {

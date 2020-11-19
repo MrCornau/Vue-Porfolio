@@ -5,7 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "build-fragment": "node ./src/schemaQuery.js"
   },
   "dependencies": {
     "apollo-cache-inmemory": "^1.6.6",
@@ -16,6 +17,7 @@
     "graphql": "^15.4.0",
     "graphql-tag": "^2.11.0",
     "moment": "^2.29.1",
+    "node-fetch": "^2.6.1",
     "vue": "^2.6.12",
     "vue-apollo": "^3.0.5",
     "vue-markdown-it": "^0.9.4",
@@ -48,5 +50,17 @@
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "description": "## Project setup ``` yarn install ```",
+  "main": "babel.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/JoshCornau/portfolio.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/JoshCornau/portfolio/issues"
+  },
+  "homepage": "https://gitlab.com/JoshCornau/portfolio#readme"
 }

@@ -2,11 +2,13 @@
   <div>
     <div
       v-if="article.image"
-      id="banner"
       class=""
       :data-src="api_url + article.image[0].url"
-      uk-img
     >
+      <h1>{{ article.title }}</h1>
+      <h1>{{ article.title }}</h1>
+      <h1>{{ article.title }}</h1>
+      <h1>{{ article.title }}</h1>
       <h1>{{ article.title }}</h1>
     </div>
 
@@ -30,6 +32,9 @@ var moment = require("moment");
 import VueMarkdownIt from "vue-markdown-it";
 import gql from "graphql-tag";
 
+
+
+
 export default {
   data() {
     return {
@@ -43,19 +48,43 @@ export default {
     VueMarkdownIt
   },
   apollo: {
+
     article: {
       query: gql`
         query Articles($id: ID!) {
-          article(id: $id) {
+           article(id: $id) {
             id
-            title
-            content
-            Tags
-            Description
-            image {
-              url
-            }
-            published_at
+              title
+            	Year
+              content
+              Tags
+              Description
+              image {
+                url
+              }
+              Detail{
+                ... on ComponentProjectsGraphic{
+                  id
+                  Solution_Text
+                  Solution_graphic {url}
+                  
+                }
+                ... on ComponentProjectsHmw{
+                  id
+                  HowMightWe
+                }
+                ... on ComponentProjectsOutline{
+                  id
+                  project_info
+                  project_role
+                }
+                 ... on ComponentProjectsTheProblem{
+                  id
+                  Problem_text
+                  Problem_illustration{url}
+                }
+              }
+              
           }
         }
       `,
