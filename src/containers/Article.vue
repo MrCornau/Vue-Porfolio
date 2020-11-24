@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="article">
     <div class="article-detail__header-image">
       <img
         v-if="article.Header_Image"
@@ -15,20 +15,11 @@
         <h1>{{ article.Header_Explanation }}</h1>
       </div>
 
-    <div v-if="article.content" class="article-detail__info">
-      <h3>{{article.content}}</h3>
+    <div  class="article-detail__info">
+      <p>{{article.content}}</p>
     </div>
-    <div class="article-detail__domains">
-      <h2>Domains</h2>
-      <div class="article-detail_domains__Tags" >
-        <div v-for="tag in slicedArray" v-bind:key="tag.id">
-          <div class="article-detail_domains__Tags__Tag" v-bind:style="{ 'background-color': article.color}" >
-              <box-icon v-bind:name="tag.icon" size="lg" animation='tada-hover' color="#253031"></box-icon>
-               <p>{{ tag.content }}</p>
-            </div>
-        </div>
-      </div>
-    </div>
+    <Domains  :Domains="slicedArray" :articleColor="article.color"/>
+    
 
     </div>
   </div>
@@ -37,6 +28,7 @@
 <script>
 var moment = require("moment");
 import gql from "graphql-tag";
+import Domains from "../components/Domains"
 
 export default {
   data() {
@@ -47,14 +39,13 @@ export default {
       routeParam: this.$route.params.id,
       
     }
-    
-    
   },
   components: {
+    Domains
   },
   computed: {
       slicedArray: function () {
-    return this.article.Tags.tags.slice(1,5);
+    return this.article.Tags.tags.length>1 ? this.article.Tags.tags.slice(1,5) : [];
     }
   },
 
