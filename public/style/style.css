@@ -11,6 +11,10 @@ body {
   max-width: 1800px;
 }
 
+.footer{ 
+  min-height: 500px;
+}
+
 
 /* --------------------- Articles  --------------------- */ 
 

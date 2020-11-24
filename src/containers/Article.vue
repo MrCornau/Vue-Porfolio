@@ -20,9 +20,9 @@
     </div>
     <div class="article-detail__domains">
       <h2>Domains</h2>
-      <div class="article-detail_domains__Tags">
-        <div v-for="(tag,index) in article.Tags.tags" v-bind:key="tag.id"  class="article-detail_domains__Tags--margin">
-            <div v-if="index<4" class="article-detail_domains__Tags__Tag" v-bind:style="{ 'background-color': article.color}"> 
+      <div class="article-detail_domains__Tags" >
+        <div v-for="tag in slicedArray" v-bind:key="tag.id">
+          <div class="article-detail_domains__Tags__Tag" v-bind:style="{ 'background-color': article.color}" >
               <box-icon v-bind:name="tag.icon" size="lg" animation='tada-hover' color="#253031"></box-icon>
                <p>{{ tag.content }}</p>
             </div>
@@ -45,10 +45,19 @@ export default {
       moment: moment,
       api_url: process.env.VUE_APP_STRAPI_API_URL,
       routeParam: this.$route.params.id,
-    };
+      
+    }
+    
+    
   },
   components: {
   },
+  computed: {
+      slicedArray: function () {
+    return this.article.Tags.tags.slice(1,5);
+    }
+  },
+
   apollo: {
     article: {
       query: gql`
@@ -100,7 +109,7 @@ export default {
         return {
           id: this.routeParam,
         };
-      },
+      }
     },
   },
 };

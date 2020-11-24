@@ -8,13 +8,14 @@
     </div>
     
     <router-view :key="$route.fullPath" ></router-view>
-    
+    <Footer/>
   </div>
 </template>
 
 <script>
 import Nav from "./components/Nav.vue";
 import MobileNav from "./components/MobileNav";
+import Footer from "./components/Footer.vue"
 
 export default {
   name: "App",
@@ -35,6 +36,6 @@ export default {
     window.addEventListener("resize", this.handleView);
   },
 
-  components: { Nav, MobileNav },
+  components: { Nav, MobileNav, Footer },
 };
 </script>
