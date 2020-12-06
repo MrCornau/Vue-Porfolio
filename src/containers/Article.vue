@@ -20,6 +20,7 @@
     </div>
     <Domains  :Domains="slicedArray" :articleColor="article.color"/>
     <Outlines :ProjectInfo="article.Detail[1].project_info" :ProjectRole="article.Detail[1].project_role" :articleColor="article.color" />
+
     </div>
   </div>
 </template>
@@ -29,6 +30,7 @@ var moment = require("moment");
 import gql from "graphql-tag";
 import Domains from "../components/Domains";
 import Outlines from "../components/Outlines";
+
 
 
 export default {
@@ -43,7 +45,8 @@ export default {
   },
   components: {
     Domains,
-    Outlines
+    Outlines,
+ 
   },
   computed: {
       slicedArray: function () {
