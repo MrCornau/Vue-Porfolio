@@ -24,6 +24,7 @@
     <HowMightWe v-if="HMW" :HowMightWe="HMW"  :articleColor="article.color" />
   <div class="article-detail__container article-detail__width">
     <Problem v-if="problem" :problem="problem" />
+    <Solution v-if="solution" :solution="solution" />
   </div>
   </div>
 </template>
@@ -34,7 +35,8 @@ import gql from "graphql-tag";
 import Domains from "../components/Domains";
 import Outlines from "../components/Outlines";
 import HowMightWe from "../components/HowMightWe";
-import Problem from "../components/Problem"
+import Problem from "../components/Problem";
+import Solution from "../components/Solution"
 
 export default {
   data() {
@@ -50,7 +52,8 @@ export default {
     Domains,
     Outlines,
     HowMightWe,
-    Problem
+    Problem,
+    Solution
  
   },
   computed: {
@@ -65,7 +68,11 @@ export default {
       },
       problem: function(){
         return this.article.Detail.find(element => element.name === 'problem');
-      }
+      },
+      solution: function(){
+        return this.article.Detail.find(element => element.name === 'solution');
+      },
+      
   },
 
   apollo: {
@@ -90,6 +97,7 @@ export default {
             Detail {
               ... on ComponentProjectsGraphic {
                 id
+                name
                 Solution_Text
                 Solution_graphic {
                   url

@@ -1,20 +1,24 @@
 <template>
+    <div>
+
   <div class="article-detail__domains">
     <h2>The Solution</h2>
     <div class="Article-detail__description">
-      <div class="Article-detail__description--text">{{ solution.Problem_text }}</div>
-      <div class="Article-detail__description__inlineImages">
+      <div class="Article-detail__description--text">{{ solution.Solution_Text }}</div>
+    </div>
+  </div>
+
+   <div class="Article-detail__description__Image">
        
           <img
             class="Article-detail__description__inlineImages--size"
-            v-if="images"
-            :src="api_url + images.url"
+            
+            :src="api_url + solution.Solution_graphic[0].url"
             alt="nothing"
           />
       
       </div>
     </div>
-  </div>
 </template>
 
 <script>
