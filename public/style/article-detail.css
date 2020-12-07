@@ -7,7 +7,33 @@
   display: grid;
 }
 
+.howMightWe{
+  margin-top: 100px;
+}
+
+.howMightWe-container{
+  display: flex;
+  justify-content: row;
+  align-items: center;
+  gap: 2em;
+  padding:40px 0 40px 0;
+}
+
+.howMightWe-container__icon{
+  height:5em;
+  width: 5em;
+}
+
 @media only screen and (max-width: 600px) {
+
+  .howMightWe{
+    margin-top: 50px;
+  }
+
+  .howMightWe-container__icon{
+    display: none;
+  }
+
     .article-detail__width {
         max-width: 90vw;
       }
@@ -67,6 +93,11 @@
 }
 
 @media only screen and (min-width: 600px) and (max-width: 1200px) and (orientation: portrait) {
+
+  .howMightWe-container__icon{
+    display: none;
+  }
+
     .article-detail__width {
         max-width: 80vw;
       }
@@ -247,6 +278,7 @@
     width: 70%;
   }
   .article-detail_domains__Tags__Tag {
+    border-radius: 3px;
     padding-top: 20%;
     padding-bottom: 20%;
     display: flex;
@@ -261,5 +293,33 @@
     width: 70%;
     grid-column-gap: 2em;
   }
-  
+
+  .problem__description{
+    justify-self: flex-end;
+      width: 70%;
+  }
+  .problem__description--text{
+    column-count: 2;
+  }
+  .problem__description__images{
+    margin-top: 38px;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    justify-content: space-between;
+    flex-grow: 1;
+    flex-basis: 0;
+    gap: 1em;
+
+  }
+  .problem__description__images__imagebox{
+   
+    flex-grow: 1;
+    flex-basis: 0;
+
+  }
+  .problem__description__images__image{
+    max-width: 100%;
+  }
+
 }

@@ -20,8 +20,11 @@
     </div>
     <Domains  :Domains="slicedArray" :articleColor="article.color"/>
     <Outlines :ProjectInfo="article.Detail[1].project_info" :ProjectRole="article.Detail[1].project_role" :articleColor="article.color" />
-
     </div>
+    <HowMightWe v-if="HMW" :HowMightWe="HMW"  :articleColor="article.color" />
+  <div class="article-detail__container article-detail__width">
+    <Problem v-if="problem" :problem="problem" />
+  </div>
   </div>
 </template>
 
@@ -30,8 +33,8 @@ var moment = require("moment");
 import gql from "graphql-tag";
 import Domains from "../components/Domains";
 import Outlines from "../components/Outlines";
-
-
+import HowMightWe from "../components/HowMightWe";
+import Problem from "../components/Problem"
 
 export default {
   data() {
@@ -46,12 +49,23 @@ export default {
   components: {
     Domains,
     Outlines,
+    HowMightWe,
+    Problem
  
   },
   computed: {
       slicedArray: function () {
     return this.article.Tags.tags.length>1 ? this.article.Tags.tags.slice(1,5) : [];
-    }
+    },
+      HMW: function(){
+        return this.article.Detail.find(element => element.name === 'hmw');
+      },
+      projectDetail: function(){
+        return this.article.Detail.find(element => element.name === 'projectDetail');
+      },
+      problem: function(){
+        return this.article.Detail.find(element => element.name === 'problem');
+      }
   },
 
   apollo: {
@@ -84,6 +98,7 @@ export default {
               ... on ComponentProjectsHmw {
                 id
                 HowMightWe
+                name
               }
               ... on ComponentProjectsOutline {
                 id
@@ -92,6 +107,7 @@ export default {
               }
               ... on ComponentProjectsTheProblem {
                 id
+                name
                 Problem_text
                 Problem_illustration {
                   url
