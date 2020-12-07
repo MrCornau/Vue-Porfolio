@@ -90,6 +90,38 @@
     grid: auto;
     grid-row-gap: 2em;
   }
+
+
+  .Article-detail__description{
+margin-top: 20px;
+  }
+  .Article-detail__description--text{
+    column-count: 1;
+  }
+  .Article-detail__description__inlineImages{
+    margin-top: 38px;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    justify-content: space-between;
+    gap: 1em;
+  }
+
+  .Article-detail__description__Image{
+    margin-top: 64px;
+  }
+
+  .Article-detail__description__inlineImages__box{
+    flex-grow: 1;
+    flex-basis: 0;
+  }
+  .Article-detail__description__inlineImages--size{
+    max-width: 100%;
+  }
+
+
+
+
 }
 
 @media only screen and (min-width: 600px) and (max-width: 1200px) and (orientation: portrait) {
@@ -159,6 +191,37 @@
     width: 70%;
     grid-row-gap: 2em;
   }
+  .Article-detail__description{
+    justify-self: flex-end;
+      width: 70%;
+  }
+
+      .Article-detail__description--text{
+        column-count: 1;
+      }
+      .Article-detail__description__inlineImages{
+        margin-top: 38px;
+        display: flex;
+        flex-wrap: nowrap;
+        overflow: hidden;
+        justify-content: space-between;
+        gap: 1em;
+      }
+    
+      .Article-detail__description__Image{
+        margin-top: 64px;
+      }
+    
+      .Article-detail__description__inlineImages__box{
+        flex-grow: 1;
+        flex-basis: 0;
+      }
+      .Article-detail__description__inlineImages--size{
+        max-width: 100%;
+      }
+    
+
+
 }
 
 @media only screen and (min-width: 600px) and (max-width: 1200px) and (orientation: landscape) {
@@ -225,6 +288,36 @@
     width: 70%;
     grid-row-gap: 2em;
   }
+
+  .Article-detail__description{
+    justify-self: flex-end;
+      width: 70%;
+  }
+
+      .Article-detail__description--text{
+        column-count: 1;
+      }
+      .Article-detail__description__inlineImages{
+        margin-top: 38px;
+        display: flex;
+        flex-wrap: nowrap;
+        overflow: hidden;
+        justify-content: space-between;
+        gap: 1em;
+      }
+    
+      .Article-detail__description__Image{
+        margin-top: 64px;
+      }
+    
+      .Article-detail__description__inlineImages__box{
+        flex-grow: 1;
+        flex-basis: 0;
+      }
+      .Article-detail__description__inlineImages--size{
+        max-width: 100%;
+      }
+    
 
 
 
@@ -311,7 +404,7 @@
   }
 
   .Article-detail__description__Image{
-    margin-top: 38px;
+    margin-top: 64px;
   }
 
   .Article-detail__description__inlineImages__box{
@@ -322,4 +415,16 @@
     max-width: 100%;
   }
 
+}
+
+
+
+@media only screen and (min-width: 1900px) {
+  .article-detail__width {
+    max-width: 50vw;
+  }
+  .howMightWe-container__icon{
+    height:9em;
+    width: 9em;
+  }
 }

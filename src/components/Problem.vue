@@ -6,7 +6,7 @@
       <div class="Article-detail__description__inlineImages">
         <div
           class="Article-detail__description__inlineImages__box"
-          v-for="images in problem.Problem_illustration"
+          v-for="images in ProblemImage"
           v-bind:key="images.id"
         >
           <img
@@ -26,10 +26,24 @@ export default {
   data() {
     return {
       api_url: process.env.VUE_APP_STRAPI_API_URL,
+      mobileView: true,
+      ProblemImage:[]
     };
+  },
+  computed:{
+
   },
   props: {
     problem: Object,
+  },
+  methods: {
+    handleView() {
+      this.mobileView = window.innerWidth <= 740;
+      this.mobileView ? this.ProblemImage = this.problem.Problem_illustration.slice(0,2): this.ProblemImage = this.problem.Problem_illustration;
+  }},
+  created() {
+    this.handleView();
+    window.addEventListener("resize", this.handleView);
   },
 };
 </script>
