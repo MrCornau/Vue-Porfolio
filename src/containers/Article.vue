@@ -25,6 +25,7 @@
   <div class="article-detail__container article-detail__width">
     <Problem v-if="problem" :problem="problem" />
     <Solution v-if="solution" :solution="solution" />
+    <Presentator v-if="article.Presentation" :Content="article.Presentation"/>
   </div>
   </div>
 </template>
@@ -37,6 +38,7 @@ import Outlines from "../components/Outlines";
 import HowMightWe from "../components/HowMightWe";
 import Problem from "../components/Problem";
 import Solution from "../components/Solution"
+import Presentator from "../components/Presentator"
 
 export default {
   data() {
@@ -53,7 +55,8 @@ export default {
     Outlines,
     HowMightWe,
     Problem,
-    Solution
+    Solution,
+    Presentator
  
   },
   computed: {
@@ -94,6 +97,14 @@ export default {
             image {
               url
             }
+
+            Presentation{
+                ...on ComponentProjectsProjectPresentation{
+                  Description_Presentation
+                  scroll
+                  Content
+                  content_video{url}
+                }}
             Detail {
               ... on ComponentProjectsGraphic {
                 id
