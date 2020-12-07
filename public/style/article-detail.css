@@ -294,31 +294,26 @@
     grid-column-gap: 2em;
   }
 
-  .problem__description{
+  .Article-detail__description{
     justify-self: flex-end;
       width: 70%;
   }
-  .problem__description--text{
+  .Article-detail__description--text{
     column-count: 2;
   }
-  .problem__description__images{
+  .Article-detail__description__inlineImages{
     margin-top: 38px;
     display: flex;
     flex-wrap: nowrap;
     overflow: hidden;
     justify-content: space-between;
-    flex-grow: 1;
-    flex-basis: 0;
     gap: 1em;
-
   }
-  .problem__description__images__imagebox{
-   
+  .Article-detail__description__inlineImages__box{
     flex-grow: 1;
     flex-basis: 0;
-
   }
-  .problem__description__images__image{
+  .Article-detail__description__inlineImages--size{
     max-width: 100%;
   }
 
