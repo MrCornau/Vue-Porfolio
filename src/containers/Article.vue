@@ -1,5 +1,5 @@
 <template>
-  <div v-if="article">
+  <div v-if="article.Detail">
     <div class="article-detail__header-image">
       <img
         v-if="article.Header_Image"
@@ -19,7 +19,7 @@
       <p>{{article.content}}</p>
     </div>
     <Domains  :Domains="slicedArray" :articleColor="article.color"/>
-    <Outlines :ProjectInfo="article.Detail[1].project_info" :ProjectRole="article.Detail[1].project_role" :articleColor="article.color" />
+    <Outlines  :ProjectInfo="article.Detail[1].project_info" :ProjectRole="article.Detail[1].project_role" :articleColor="article.color" />
     </div>
     <HowMightWe v-if="HMW" :HowMightWe="HMW"  :articleColor="article.color" />
   <div class="article-detail__container article-detail__width">
@@ -55,7 +55,7 @@ export default {
   },
   computed: {
       slicedArray: function () {
-    return this.article.Tags.tags.length>1 ? this.article.Tags.tags.slice(1,5) : [];
+      return this.article.Tags? this.article.Tags.tags.slice(1,5) : [];
     },
       HMW: function(){
         return this.article.Detail.find(element => element.name === 'hmw');
