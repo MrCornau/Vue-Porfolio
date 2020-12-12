@@ -25,8 +25,9 @@
   <div class="article-detail__container article-detail__width">
     <Problem v-if="problem" :problem="problem" />
     <Solution v-if="solution" :solution="solution" />
-    <Presentator v-if="article.Presentation" :Content="article.Presentation"/>
+  
   </div>
+    <Presentator v-if="article.Presentation" :Content="article.Presentation"/>
   </div>
 </template>
 
