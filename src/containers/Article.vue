@@ -18,8 +18,8 @@
     <div  class="article-detail__info">
       <p>{{article.content}}</p>
     </div>
-    <Domains  :Domains="slicedArray" :articleColor="article.color"/>
-    <Outlines  :ProjectInfo="article.Detail[1].project_info" :ProjectRole="article.Detail[1].project_role" :articleColor="article.color" />
+    <Domains   :Domains="slicedArray" :articleColor="article.color"/>
+    <Outlines :ProjectInfo="article.Detail[1].project_info" :ProjectRole="article.Detail[1].project_role" :articleColor="article.color" />
     </div>
     <HowMightWe v-if="HMW" :HowMightWe="HMW"  :articleColor="article.color" />
   <div class="article-detail__container article-detail__width">

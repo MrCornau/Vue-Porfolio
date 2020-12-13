@@ -19,20 +19,13 @@
   padding:40px 0 40px 0;
 }
 
-.howMightWe-container__icon{
-  height:5em;
-  width: 5em;
-}
+/* .howMightWe-container__icon{
+  font-size: 10em;
+} */
 
 @media only screen and (max-width: 600px) {
 
-  .howMightWe{
-    margin-top: 50px;
-  }
 
-  .howMightWe-container__icon{
-    display: none;
-  }
 
     .article-detail__width {
         max-width: 90vw;
@@ -126,9 +119,6 @@ margin-top: 20px;
 
 @media only screen and (min-width: 600px) and (max-width: 1200px) and (orientation: portrait) {
 
-  .howMightWe-container__icon{
-    display: none;
-  }
 
     .article-detail__width {
         max-width: 80vw;
@@ -423,8 +413,5 @@ margin-top: 20px;
   .article-detail__width {
     max-width: 50vw;
   }
-  .howMightWe-container__icon{
-    height:9em;
-    width: 9em;
-  }
+
 }
