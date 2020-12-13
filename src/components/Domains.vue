@@ -4,7 +4,9 @@
       <div class="article-detail_domains__Tags" >
         <div v-for="tag in Domains" v-bind:key="tag.id">
           <div class="article-detail_domains__Tags__Tag" v-bind:style="{ 'background-color': articleColor}" >
-              <box-icon v-bind:name="tag.icon" size="lg" animation='tada-hover' color="#253031"></box-icon>
+              <!-- <box-icon v-bind:name="tag.icon" size="lg" animation='' color="#253031"></box-icon> -->
+              <i v-bind:class="['bx-' + tag.icon]" class='bx bx-md' style="color:#253031"></i>
+              
                <p>{{ tag.content }}</p>
             </div>
         </div>
