@@ -1,9 +1,9 @@
 <template>
   <div class="presenter">
-    <div v-for="presenter in Content" :key="presenter.Description_Presentation">
+    <div v-for="(presenter, index) in Content" :key="presenter.Description_Presentation">
       <div v-if="presenter.scroll">
         <div class="presenter-container">
-          <div class="presenter-container__image-box">
+          <div v-bind:class="{'presenter--right' : index % 2 == 1}" class="presenter-container__image-box">
             <div class="presenter-container__image-box--inside">
               <img
                 class="presenter-container__image-box__image"
@@ -39,15 +39,44 @@
         </div>
       </div>
 
-      <div v-if="!presenter.scroll">
-        <video width="320" height="240" controls 
-         :src="api_url + presenter.content_video[1].url"
+<div v-if="!presenter.scroll">
+        <div class="presenter-container">
+          <div v-bind:class="{'presenter--right' : index % 2 == 1}" class="presenter-container__image-box">
+            <div class="presenter-container__image-box--inside">
+              <video 
+              class="presenter-container__image-box__video"
+         :src="api_url + presenter.content_video[selectedVideo].url"
+         autoplay
         >
           {{  presenter.Description_Presentation}}
           Your browser does not support the video tag.
         </video>
-             <h2>{{ presenter.Description_Presentation }}</h2>
+            </div>
+          </div>
 
+          <div class="presenter-container__Info">
+            <h2>{{ presenter.Description_Presentation }}</h2>
+
+            <div class="presenter-container__Info__Button-Container">
+              <div
+                v-for="(StateButton, index) in presenter.Content.states"
+                :key="StateButton.name"
+              >
+                <button
+                  class="presenter__Button"
+                  @click="playVideo(index)"
+                  v-bind:class="{ 'active-Button': index == selectedVideo }"
+                >
+                  {{ StateButton.name }}
+                </button>
+              </div>
+            </div>
+
+            <div>
+              {{ presenter.Content.states[selectedVideo].description }}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -59,6 +88,8 @@ export default {
     return {
       scrollevelPercent: "0%",
       activeButton: 0,
+      activeVideoButton: 0,
+      selectedVideo:0,
       api_url: process.env.VUE_APP_STRAPI_API_URL,
     };
   },
@@ -69,6 +100,9 @@ export default {
     scrollevel(percentage, index) {
       this.scrollevelPercent = percentage;
       this.activeButton = index;
+    },
+    playVideo(index) {
+      this.selectedVideo = index;
     },
   },
 };
@@ -85,9 +119,13 @@ export default {
   margin: auto;
   max-width: 90%;
   gap: 2em;
+  margin-bottom: 50vh;
 }
 
+
+
 .presenter-container__image-box {
+
   min-width: 60vw;
   overflow: hidden;
   border-radius: 3.5px;
@@ -108,6 +146,14 @@ export default {
   transition: 1s;
   position: absolute;
 }
+
+.presenter-container__image-box__video {
+  max-width: 100%;
+  transition: 1s;
+  position: absolute;
+  top: 0%;
+}
+
 
 .presenter__Button {
   border-radius: 4px;
@@ -195,9 +241,15 @@ export default {
     flex-wrap: wrap;
     gap: 0.5em;
   }
+  .presenter--right{
+  order: 4;
+}
 }
 
 @media only screen and (min-width: 1200px) {
+  .presenter--right{
+  order: 4;
+}
 }
 
 .presenter {
