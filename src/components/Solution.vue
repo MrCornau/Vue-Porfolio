@@ -4,7 +4,7 @@
   <div class="article-detail__domains">
     <h2>The Solution</h2>
     <div class="Article-detail__description">
-      <div class="Article-detail__description--text">{{ solution.Solution_Text }}</div>
+      <p class="Article-detail__description--text">{{ solution.Solution_Text }}</p>
     </div>
   </div>
 

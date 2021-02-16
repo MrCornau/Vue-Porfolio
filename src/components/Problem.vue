@@ -2,7 +2,7 @@
   <div class="article-detail__domains">
     <h2>The Problem</h2>
     <div class="Article-detail__description">
-      <div class="Article-detail__description--text">{{ problem.Problem_text }}</div>
+      <p class="Article-detail__description--text">{{ problem.Problem_text }}</p>
       <div class="Article-detail__description__inlineImages">
         <div
           class="Article-detail__description__inlineImages__box"
