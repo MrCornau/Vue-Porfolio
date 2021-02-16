@@ -2,6 +2,7 @@
   <div class="presenter">
     <div v-for="(presenter, index) in Content" :key="presenter.Description_Presentation">
       <div v-if="presenter.scroll">
+       <div class="center">
         <div class="presenter-container">
           <div v-bind:class="{'presenter--right' : index % 2 == 1}" class="presenter-container__image-box">
             <div class="presenter-container__image-box--inside">
@@ -15,15 +16,15 @@
           </div>
 
           <div class="presenter-container__Info">
-            <h2>{{ presenter.Description_Presentation }}</h2>
+            <h2 class="margin-bottom--M">{{ presenter.Description_Presentation }}</h2>
 
-            <div class="presenter-container__Info__Button-Container">
+            <div class="presenter-container__Info__Button-Container ">
               <div
                 v-for="(StateButton, index) in presenter.Content.states"
                 :key="StateButton.name"
               >
                 <button
-                  class="presenter__Button"
+                  class="presenter__Button "
                   @click="scrollevel(StateButton.scroll, index)"
                   v-bind:class="{ 'active-Button': index == activeButton }"
                 >
@@ -32,14 +33,16 @@
               </div>
             </div>
 
-            <div>
+            <p class="margin-top--M">
               {{ presenter.Content.states[activeButton].description }}
-            </div>
+            </p>
           </div>
+        </div>
         </div>
       </div>
 
 <div v-if="!presenter.scroll">
+  <div class="center margin-top--XL ">
         <div class="presenter-container">
           <div v-if="presenter.Kind == 'Desktop'" v-bind:class="{'presenter--right' : index % 2 == 1}" class="presenter-container__image-box">
             <div  class="presenter-container__image-box--inside">
@@ -67,8 +70,8 @@
             </div>
           </div>
 
-          <div class="presenter-container__Info">
-            <h2>{{ presenter.Description_Presentation }}</h2>
+          <div class="presenter-container__Info margin-bottom--M">
+            <h2 class="margin-bottom--M">{{ presenter.Description_Presentation }}</h2>
 
             <div class="presenter-container__Info__Button-Container">
               <div
@@ -85,11 +88,12 @@
               </div>
             </div>
 
-            <div>
+            <p class="margin-top--M">
               {{ presenter.Content.states[selectedVideo].description }}
-            </div>
+            </p>
           </div>
         </div>
+  </div>
       </div>
     </div>
   </div>
@@ -129,10 +133,17 @@ export default {
   display: -moz-box;
   display: -ms-flexbox;
   display: flex;
-  margin: auto;
   max-width: 90%;
-  gap: 2em;
-  margin-bottom: 50vh;
+  --gap: 30px;
+  --column-gap: var(--gap);
+  --row-gap: var(--gap);
+  margin: calc(var(--row-gap) / -2) calc(var(--column-gap) / -2);
+}
+
+
+
+.presenter-container   > * {
+  margin: calc(var(--row-gap) / 2) calc(var(--column-gap) / 2);
 }
 
 
@@ -145,6 +156,7 @@ export default {
   box-shadow: 0 2.5px 14px 4px rgba(0, 70, 255, 0.13),
     0 3.5px 7px 0 rgba(0, 0, 0, 0.19);
   background-color: #d8d8d8;
+
 }
 
 .presenter-container__image-box--phone{
@@ -210,8 +222,6 @@ export default {
 }
 
 .presenter-container__Info__Button-Container {
-  margin-top: 50px;
-  margin-bottom: 50px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

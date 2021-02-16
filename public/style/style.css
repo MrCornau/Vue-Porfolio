@@ -20,6 +20,39 @@ body {
 }
 
 
+
+
+/* --------------------- flex-Gap fix  --------------------- */ 
+.margin-top--S {margin-top: 16px;}
+.margin-top--M {margin-top: 32px;}
+.margin-top--L {margin-top: 64px;}
+.margin-top--XL {margin-top: 128px;} 
+
+.margin-bottom--S {margin-bottom:  16px;}
+.margin-bottom--M {margin-bottom:  32px;}
+.margin-bottom--L {margin-bottom:  64px;}
+.margin-bottom--XL {margin-bottom: 128px;} 
+
+@media only screen and (min-width:100px) and (max-width: 1200px) and (orientation: portrait) {
+  .margin-top--S {margin-top: 8px;}
+  .margin-top--M {margin-top: 8px;}
+  .margin-top--L {margin-top: 32px;}
+  .margin-top--XL {margin-top: 128px;} 
+  
+  .margin-bottom--S {margin-bottom:  8px;}
+  .margin-bottom--M {margin-bottom:  8px;}
+  .margin-bottom--L {margin-bottom:  32px;}
+  .margin-bottom--XL {margin-bottom: 128px;} 
+
+}
+
+
+.center{
+  display: flex;
+  justify-content: center;
+}
+
+
 /* --------------------- flex-Gap fix  --------------------- */ 
 
 .flex {

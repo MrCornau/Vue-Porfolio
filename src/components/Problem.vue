@@ -3,14 +3,14 @@
     <h2>The Problem</h2>
     <div class="Article-detail__description">
       <p class="Article-detail__description--text">{{ problem.Problem_text }}</p>
-      <div class="Article-detail__description__inlineImages">
+      <div class="Article-detail__description__inlineImages ">
         <div
           class="Article-detail__description__inlineImages__box"
           v-for="images in ProblemImage"
           v-bind:key="images.id"
         >
           <img
-            class="Article-detail__description__inlineImages--size"
+            class="Article-detail__description__inlineImages--size margin-top--M"
             v-if="images"
             :src="api_url + images.url"
             alt="nothing"
