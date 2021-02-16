@@ -34,7 +34,7 @@ export default {
     };
   },
   props: {
-    article: Array,
+    article: Object,
   },
   components: {
     ArticlesTag,
