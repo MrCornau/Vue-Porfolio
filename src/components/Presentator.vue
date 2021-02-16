@@ -235,10 +235,6 @@ export default {
   .presenter-container__Info__Button-Container {
     margin-top: 20px;
     margin-bottom: 20px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 0.5em;
   }
 }
 
@@ -251,10 +247,6 @@ export default {
     width: 70%;
     margin-top: 20px;
     margin-bottom: 20px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 0.5em;
   }
 
   .presenter-container__Info {
@@ -271,10 +263,6 @@ export default {
     width: 100%;
     margin-top: 20px;
     margin-bottom: 20px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 0.5em;
   }
   .presenter--right{
   order: 4;

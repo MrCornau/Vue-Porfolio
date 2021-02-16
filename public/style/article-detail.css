@@ -9,15 +9,30 @@
 
 .howMightWe{
   margin-top: 100px;
+  display: flex;
+    justify-content: center;
 }
+
+
 
 .howMightWe-container{
   display: flex;
-  justify-content: row;
   align-items: center;
-  gap: 2em;
   padding:40px 0 40px 0;
+  margin:auto;
+  --gap: 30px;
+  --column-gap: var(--gap);
+  --row-gap: var(--gap);
+  margin: calc(var(--row-gap) / -2) calc(var(--column-gap) / -2);
 }
+
+
+
+.howMightWe-container  > * {
+  margin: calc(var(--row-gap) / 2) calc(var(--column-gap) / 2);
+}
+
+
 
 /* .howMightWe-container__icon{
   font-size: 10em;

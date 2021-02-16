@@ -1,5 +1,5 @@
 <template>
-  <div class="tag ">
+  <div class="tag flex">
     <div  v-for="(tag, index) in tags" :key="tag.id">
       <div v-if="mobileView && index < 2" class="tag__box primary-font-color caption">
         <!-- <box-icon v-bind:name="tag.icon" class="icon" animation='tada-hover' color="#374cff"></box-icon> -->

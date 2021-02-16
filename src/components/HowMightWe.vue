@@ -22,7 +22,7 @@ export default {
 
 
 .howMightWe-container__icon{
-    font-size: 50px;
+    font-size: 430%;
 }
 
 @media only screen and (max-width: 600px) {
@@ -45,8 +45,7 @@ export default {
 
 @media only screen and (min-width: 1900px) {
   .howMightWe-container__icon{
-    height:9em;
-    width: 9em;
+ 
   }
 }
 
