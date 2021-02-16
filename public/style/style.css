@@ -1,8 +1,8 @@
 body {
   background-color: white;
-  font-family: 'Heebo', sans-serif;
   font-style: normal;
   font-weight: 100;
+
   margin: 0px;
 }
 
@@ -34,7 +34,7 @@ video:focus { outline:none; }
 .margin-bottom--L {margin-bottom:  64px;}
 .margin-bottom--XL {margin-bottom: 128px;} 
 
-@media only screen and (min-width:100px) and (max-width: 1200px) and (orientation: portrait) {
+@media only screen and (min-width:100px) and (max-width: 600px) and (orientation: portrait) {
   .margin-top--S {margin-top: 8px;}
   .margin-top--M {margin-top: 32px;}
   .margin-top--L {margin-top: 64px;}

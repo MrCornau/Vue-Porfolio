@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
 *{
   margin: 0;
   padding: 0;
@@ -5,7 +7,7 @@
   -moz-hyphens: auto;
   -ms-hyphens: auto;
   hyphens: auto;
-  font-family: 'Heebo', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   overflow-wrap: break-word;
   word-wrap: break-word;
 
@@ -16,6 +18,7 @@
 html {
   font-size: 16px;
   text-rendering: optimizeLegibility; /* font-size 1em = 10px on default browser settings */
+  font-family: 'Space Grotesk', sans-serif;
 }
 
 .black{
@@ -45,6 +48,7 @@ h5{
 p{
   font-weight:400;
   line-height: 1.4;
+  
 }
 
 /* Colors */

@@ -33,7 +33,7 @@
               </div>
             </div>
 
-            <p class="margin-top--S">
+            <p class="margin-top--S presenter__description">
               {{ presenter.Content.states[activeButton].description }}
             </p>
           </div>
@@ -70,7 +70,7 @@
             </div>
           </div>
 
-          <div class="presenter-container__Info margin-bottom--M">
+          <div class="presenter-container__Info margin-bottom--M presenter-container--phone">
             <h2 class="margin-bottom--S">{{ presenter.Description_Presentation }}</h2>
 
             <div class="presenter-container__Info__Button-Container">
@@ -88,7 +88,7 @@
               </div>
             </div>
 
-            <p class="margin-top--S">
+            <p class="margin-top--S presenter__description ">
               {{ presenter.Content.states[selectedVideo].description }}
             </p>
           </div>
@@ -169,7 +169,7 @@ export default {
   position: relative;
   width: 100%;
   padding-top: 62%;
-  overflow: hidden;
+
 }
 
 .presenter-container__image-box--inside--phone{
@@ -187,7 +187,6 @@ export default {
 
 .presenter-container__image-box__video {
   max-width: 100%;
-  transition: 1s;
   position: absolute;
   top: 0%;
 }
@@ -220,6 +219,8 @@ export default {
   flex-direction: column;
   justify-content: center;
 }
+
+
 
 .presenter-container__Info__Button-Container {
   display: flex;
@@ -271,14 +272,12 @@ export default {
 
   .presenter-container__Info {
     display: flex;
-    max-width: 80vw;
-    margin: auto;
+
     flex-direction: column;
     justify-content: center;
   }
 }
-
-@media only screen and (min-width: 600px) and (max-width: 1200px) and (orientation: landscape) {
+@media only screen and (min-width: 600px) and (max-width: 900px) and (orientation: landscape) {
   .presenter-container__Info__Button-Container {
     width: 100%;
     margin-top: 20px;
@@ -287,13 +286,62 @@ export default {
   .presenter--right{
   order: 4;
 }
+.presenter-container--phone{
+  max-width: 30vw;
+}
+.presenter-container__image-box {
+
+  min-width: 40vw;
+
+}
+.presenter__description{
+  display: none;
+}
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 900px) and (max-width: 1200px) and (orientation: landscape) {
+  .presenter-container__Info__Button-Container {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
   .presenter--right{
   order: 4;
 }
+.presenter-container--phone{
+  max-width: 30vw;
 }
+}
+
+@media only screen and (min-width: 1200px)and (max-width: 1900px) {
+  .presenter--right{
+  order: 4;
+}
+.presenter-container{
+margin: 50px auto 20vh auto;
+}
+.presenter-container--phone{
+  max-width: 30vw;
+}
+}
+
+
+@media only screen and (min-width: 1900px) {
+  .presenter--right{
+  order: 4;
+}
+.presenter-container--phone{
+   max-width: 20vw;
+}
+.presenter-container__Info{
+    max-width: 20vw;
+}
+.presenter-container{
+margin: 50px auto 20vh auto;
+}
+
+}
+
 
 .presenter {
   margin-top: 50px;
@@ -301,4 +349,9 @@ export default {
   background-color: #f5f5f5;
   padding-bottom: 550px;
 }
+
+
+
 </style>
+
+
