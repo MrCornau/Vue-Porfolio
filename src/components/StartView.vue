@@ -1,9 +1,10 @@
 <template>
- <div class="start-view">
+ <div class="start-view" >
       <div class="start-view__container global--width">
         <span class="start-view__left" v-html="header.text" />
         <div class="start-view__right">
-          <img
+          <img 
+            v-if="header.image"
             class="start-view__right__image"
             :src="api_url + header.image.url"
             alt=""

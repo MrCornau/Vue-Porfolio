@@ -16,7 +16,7 @@
           </div>
 
           <div class="presenter-container__Info">
-            <h2 class="margin-bottom--M">{{ presenter.Description_Presentation }}</h2>
+            <h2 class="margin-bottom--S">{{ presenter.Description_Presentation }}</h2>
 
             <div class="presenter-container__Info__Button-Container ">
               <div
@@ -33,7 +33,7 @@
               </div>
             </div>
 
-            <p class="margin-top--M">
+            <p class="margin-top--S">
               {{ presenter.Content.states[activeButton].description }}
             </p>
           </div>
@@ -71,7 +71,7 @@
           </div>
 
           <div class="presenter-container__Info margin-bottom--M">
-            <h2 class="margin-bottom--M">{{ presenter.Description_Presentation }}</h2>
+            <h2 class="margin-bottom--S">{{ presenter.Description_Presentation }}</h2>
 
             <div class="presenter-container__Info__Button-Container">
               <div
@@ -88,7 +88,7 @@
               </div>
             </div>
 
-            <p class="margin-top--M">
+            <p class="margin-top--S">
               {{ presenter.Content.states[selectedVideo].description }}
             </p>
           </div>

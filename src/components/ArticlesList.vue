@@ -1,10 +1,10 @@
 <template>
-  <div class="articles">
+  <div  class="articles">
     <div>
       <div class="articles__heading global--width">
         <h1>Selected Projects</h1>
       </div>
-      <div
+      <div 
         v-for="(article, index) in articles"
         :key="article.id"
       >
