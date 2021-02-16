@@ -1,6 +1,6 @@
 body {
   background-color: white;
-  font-family: neue-haas-grotesk-display, sans-serif;
+  font-family: 'Heebo', sans-serif;
   font-style: normal;
   font-weight: 100;
   margin: 0px;
@@ -19,6 +19,20 @@ body {
   outline: none;
 }
 
+
+/* --------------------- flex-Gap fix  --------------------- */ 
+
+.flex {
+  display: flex;
+  --gap: 0px;
+  --column-gap: var(--gap);
+  --row-gap: var(--gap);
+  margin: calc(var(--row-gap) / -2) calc(var(--column-gap) / -2);
+}
+
+.flex > * {
+  margin: calc(var(--row-gap) / 2) calc(var(--column-gap) / 2);
+}
 
 /* --------------------- Articles  --------------------- */ 
 

@@ -41,8 +41,21 @@
 
 <div v-if="!presenter.scroll">
         <div class="presenter-container">
-          <div v-bind:class="{'presenter--right' : index % 2 == 1}" class="presenter-container__image-box">
-            <div class="presenter-container__image-box--inside">
+          <div v-if="presenter.Kind == 'Desktop'" v-bind:class="{'presenter--right' : index % 2 == 1}" class="presenter-container__image-box">
+            <div  class="presenter-container__image-box--inside">
+              <video 
+              class="presenter-container__image-box__video"
+         :src="api_url + presenter.content_video[selectedVideo].url"
+         autoplay
+        >
+          {{  presenter.Description_Presentation}}
+          Your browser does not support the video tag.
+        </video>
+            </div>
+          </div>
+
+          <div v-if="presenter.Kind == 'Phone'" v-bind:class="{'presenter--right' : index % 2 == 1}" class="presenter-container__image-box--phone">
+            <div  class="presenter-container__image-box--inside--phone">
               <video 
               class="presenter-container__image-box__video"
          :src="api_url + presenter.content_video[selectedVideo].url"
@@ -134,10 +147,23 @@ export default {
   background-color: #d8d8d8;
 }
 
+.presenter-container__image-box--phone{
+  min-width: 60vw;
+  display: flex;
+  justify-content: center;
+}
+
 .presenter-container__image-box--inside {
   position: relative;
   width: 100%;
   padding-top: 62%;
+  overflow: hidden;
+}
+
+.presenter-container__image-box--inside--phone{
+  position: relative;
+  width: 37.5%;
+  padding-top: 80%;
   overflow: hidden;
 }
 
@@ -189,8 +215,17 @@ export default {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 0.5em;
+  display: flex;
+  --gap: 10px;
+  --column-gap: var(--gap);
+  --row-gap: var(--gap);
+  margin: calc(var(--row-gap) / -2) calc(var(--column-gap) / -2);
 }
+
+.presenter-container__Info__Button-Container  > * {
+  margin: calc(var(--row-gap) / 2) calc(var(--column-gap) / 2);
+}
+
 
 @media only screen and (max-width: 600px) {
   .presenter-container {

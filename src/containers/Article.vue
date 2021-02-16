@@ -105,6 +105,7 @@ export default {
                   scroll
                   Content
                   content_video{url}
+                  Kind
                 }}
             Detail {
               ... on ComponentProjectsGraphic {

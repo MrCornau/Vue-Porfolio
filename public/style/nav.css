@@ -2,6 +2,7 @@
 
 nav{
     list-style-type: none;
+    font-weight: 800;
   }
   
 .nav-big--sticky {
@@ -27,7 +28,6 @@ nav{
     flex-wrap: nowrap;
     background: none;
     list-style-type: none;
-    font-family: NHaasGroteskDSPro-75Bd;
   }
   
   .nav-big__logo {
@@ -62,7 +62,7 @@ nav{
     display: flex;
     justify-content: space-between;   
     flex-wrap: nowrap;
-    font-family: NHaasGroteskDSPro-75Bd;
+   
   }
 
     
@@ -85,7 +85,6 @@ nav{
     transition: 1s cubic-bezier(.52,.49,.19,1.04);
     width: 100vw;
     background: white;
-    font-family: NHaasGroteskDSPro-75Bd;
     text-align: center;
     transform: translate(0px, -93%);
   
