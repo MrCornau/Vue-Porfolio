@@ -2,7 +2,7 @@
   <div class="presenter">
     <div v-for="(presenter, index) in Content" :key="presenter.Description_Presentation">
       <div v-if="presenter.scroll">
-       <div class="center">
+       <div class="center Full-Viewport">
         <div class="presenter-container">
           <div v-bind:class="{'presenter--right' : index % 2 == 1}" class="presenter-container__image-box">
             <div class="presenter-container__image-box--inside">
@@ -42,7 +42,7 @@
       </div>
 
 <div v-if="!presenter.scroll">
-  <div class="center margin-top--XL ">
+  <div class="center Full-Viewport">
         <div class="presenter-container">
           <div v-if="presenter.Kind == 'Desktop'" v-bind:class="{'presenter--right' : index % 2 == 1}" class="presenter-container__image-box">
             <div  class="presenter-container__image-box--inside">
@@ -160,7 +160,7 @@ export default {
 }
 
 .presenter-container__image-box--phone{
-  min-width: 60vw;
+  min-width: 30vw;
   display: flex;
   justify-content: center;
 }
@@ -174,13 +174,13 @@ export default {
 
 .presenter-container__image-box--inside--phone{
   position: relative;
-  width: 37.5%;
-  padding-top: 80%;
+  width: 100%;
+  padding-top: 180%;
   overflow: hidden;
 }
 
 .presenter-container__image-box__image {
-  max-width: 100%;
+  width: 100%;
   transition: 1s;
   position: absolute;
 }
@@ -246,6 +246,18 @@ export default {
     margin-top: 20px;
     margin-bottom: 20px;
   }
+
+  .presenter-container__image-box--phone{
+  min-width: 30vw;
+  display: flex;
+  justify-content: center;
+}
+.presenter-container__image-box--inside--phone{
+  position: relative;
+  width: 70%;
+  padding-top: 120%;
+  overflow: hidden;
+}
 }
 
 @media only screen and (min-width: 600px) and (max-width: 1200px) and (orientation: portrait) {
@@ -255,8 +267,6 @@ export default {
 
   .presenter-container__Info__Button-Container {
     width: 70%;
-    margin-top: 20px;
-    margin-bottom: 20px;
   }
 
   .presenter-container__Info {

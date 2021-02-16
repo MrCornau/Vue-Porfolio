@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div v-if="this.categories[4].articles">
     <StartView />
-    <ArticlesList :articles="this.categories[3].articles || []"></ArticlesList>
+    <ArticlesList :articles=" sortedArray || []"></ArticlesList>
     <OtherArticles
       :articles="this.categories[4].articles || []"
     ></OtherArticles>
@@ -15,6 +15,7 @@ import OtherArticles from "../components/OtherArticles.vue";
 import gql from "graphql-tag";
 
 export default {
+  
   components: {
    
     StartView,
@@ -24,8 +25,26 @@ export default {
   data() {
     return {
       categories: [],
+      ArrayToSort:[]
     };
+   
   },
+  computed: {
+      sortedArray: function() {
+      function compare(a, b) {
+        if (a.Position < b.Position)
+          return -1;
+        if (a.Position > b.Position)
+          return 1;
+        return 0;
+      }
+      
+      let ArrayToSort = [...this.categories[3].articles];
+      console.log('lalalala'+ ArrayToSort.sort(compare))
+      return ArrayToSort.sort(compare);
+    }
+  },
+
   apollo: {
     categories: {
       query: gql`
@@ -34,6 +53,7 @@ export default {
             id
             articles {
               id
+              Position
               title
               Year
               Tags
