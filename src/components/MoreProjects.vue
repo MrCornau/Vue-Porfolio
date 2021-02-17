@@ -1,27 +1,30 @@
 <template>
-  <div v-if="this.categories[4].articles" class="projectslider">
-      <div class="projectslider__container">
-
-    <div
-      class="projectslider__image"
-      v-for="article in CombinedArray"
-      :key="article.id"
-    >
-    <div class="projectslider__project">
-
-      <router-link
-        :to="{ path: '/article/' + article.id }"
-        class="other-articles__container__image articles__container--marginL"
-      >
-        <img
-          class="other-articles__container__image--size "
-          :src="api_url + article.image[0].url"
-          alt="nothing"
-        />
-      </router-link>
+  <div v-if="this.categories[4].articles" class="margin-top--M">
+      <div class="article-detail__container article-detail__width">
+          <h2>More Projects</h2>
+      </div>
+      <div class="projectslider margin-top--M">
+    <div class="projectslider__container">
+      <div v-for="article in CombinedArray" :key="article.id">
+        <div class="projectslider__project">
+          <router-link
+            :to="{ path: '/article/' + article.id }"
+            class="projectslider__image"
+          >
+            <img
+              class="more-articles__container__image--size"
+              :src="api_url + article.image[0].url"
+              alt="nothing"
+            />
+          </router-link>
+          <div>
+            <p class="black">{{ article.Year }}</p>
+            <h5 class="black">{{ article.title }}</h5>
+          </div>
+        </div>
+      </div>
+      <div class="end"></div>
     </div>
-    </div>
-    <div class="end"></div>
       </div>
   </div>
 </template>
@@ -41,9 +44,9 @@ export default {
   components: {},
   computed: {
     CombinedArray: function() {
-    function shuffle(array) {
-            return array.sort(() => Math.random() - 0.5);
-    }
+      function shuffle(array) {
+        return array.sort(() => Math.random() - 0.5);
+      }
       let Array1 = [...this.categories[3].articles];
       let Array2 = [...this.categories[4].articles];
       let NewArray = shuffle(Array1.concat(Array2));
@@ -77,35 +80,51 @@ export default {
 </script>
 
 <style scoped>
-.projectslider{
-    align-items: center;
-   height: 100vh;
-    }
-.projectslider__container{
-    padding-left:15%;
-    display: flex;
-   overflow-x: auto;
+.projectslider__container {
+  padding-left: 20%;
+  display: flex;
+  overflow-x: auto;
 
-     --gap: 30px;
+  --gap: 40px;
   --column-gap: var(--gap);
   --row-gap: var(--gap);
   margin: calc(var(--row-gap) / -2) calc(var(--column-gap) / -2);
 }
 
-
-
-.projectslider__container  > * {
+.projectslider__container > * {
   margin: calc(var(--row-gap) / 2) calc(var(--column-gap) / 2);
 }
-.projectslider__project{
+.projectslider__project {
   width: 300px;
   flex-shrink: 0;
-  height: 80%;
-}
-.end{
-    min-width: 200px;
-    min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  --gap: 10px;
+  --column-gap: var(--gap);
+  --row-gap: var(--gap);
+  margin: calc(var(--row-gap) / -2) calc(var(--column-gap) / -2);
 }
 
+.projectslider__project > * {
+  margin: calc(var(--row-gap) / 2) calc(var(--column-gap) / 2);
+}
 
+.projectslider__image {
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25vh;
+  overflow: hidden;
+}
+
+.end {
+  min-width: 200px;
+  min-height: 100%;
+}
+
+.more-articles__container__image--size {
+  object-fit: cover;
+  height: 100%;
+}
 </style>
