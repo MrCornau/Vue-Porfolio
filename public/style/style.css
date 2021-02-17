@@ -447,6 +447,19 @@ video:focus { outline:none; }
 
   }
 
+  @media only screen and (min-width: 1900px) {
+
+
+    .articles__container__image {
+      height: 60vh;
+    }
+
+  }
+
+
+
+
+
 /* --------------------- Tags  --------------------- */ 
 
 .tag {
