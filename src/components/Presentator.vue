@@ -153,8 +153,7 @@ export default {
   min-width: 60vw;
   overflow: hidden;
   border-radius: 3.5px;
-  box-shadow: 0 2.5px 14px 4px rgba(0, 70, 255, 0.13),
-    0 3.5px 7px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 8px 5px 24px 3px rgba(0,0,0,0.23);
   background-color: #d8d8d8;
 
 }
@@ -345,9 +344,8 @@ margin: 50px auto 20vh auto;
 
 .presenter {
   margin-top: 50px;
-  padding-top: 150px;
+  padding-top: 50px;
   background-color: #f5f5f5;
-  padding-bottom: 550px;
 }
 
 
