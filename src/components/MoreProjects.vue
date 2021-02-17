@@ -127,4 +127,83 @@ export default {
   object-fit: cover;
   height: 100%;
 }
+
+
+@media only screen and (max-width: 600px) {
+.projectslider__container {
+  padding-left: 5%;
+}
+.projectslider__image {
+  height: 15vh;
+}
+.projectslider__project {
+  width: 200px;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 900px) and (orientation: landscape) {
+.projectslider__container {
+  padding-left: 10%;
+}
+.projectslider__image {
+  height: 30vh;
+}
+.projectslider__project {
+  width: 200px;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1200px) and (orientation: portrait) {
+.projectslider__container {
+  padding-left: 10%;
+}
+.projectslider__image {
+  height: 20vh;
+}
+.projectslider__project {
+  width: 400px;
+  }
+
+}
+
+@media only screen and (min-width: 900px) and (max-width: 1200px) and (orientation: landscape) {
+.projectslider__container {
+  padding-left: 10%;
+}
+.projectslider__image {
+  height: 20vh;
+}
+.projectslider__project {
+  width: 300px;
+  }
+
+}
+
+@media only screen and (min-width: 1200px)and (max-width: 1900px) {
+.projectslider__image {
+  height: 30vh;
+}
+.projectslider__project {
+  width: 400px;
+  }
+    
+}
+
+@media only screen and (min-width: 1900px) {
+    .projectslider__container {
+  padding-left: 25%;
+}
+.projectslider__image {
+  height: 30vh;
+}
+.projectslider__project {
+  width: 500px;
+  }
+    
+}
+
+
+
+
+
 </style>
