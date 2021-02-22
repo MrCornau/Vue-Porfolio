@@ -5,7 +5,7 @@
       <div class="nav-mobile">
         <div id="nav-mobile__logo">
           <router-link :to="{ path: '/' }" >
-            Josh Cornau <span class="nav-mobile__indicator-mobile">{{route.replace("/","")}}</span>
+            Josh Cornau <span  v-if="!skipQuery&&article" class="nav-mobile__indicator-mobile">/ {{article.title}}</span>
           </router-link>
         </div>
         <div class="hamburger-nav">
@@ -51,6 +51,7 @@
 </template>
 
 <script>
+import gql from "graphql-tag";
 
 export default {
   name: "Nav",
@@ -58,7 +59,10 @@ export default {
     return {
       categories: [],
       showNav: false,
-      page:0
+      page:0,
+      api_url: process.env.VUE_APP_STRAPI_API_URL,
+      routeParam: this.$route.params.id,
+      skipQuery: true
     };
   },
   props: {
@@ -73,9 +77,46 @@ export default {
       if(route === '/'){return 'work'}
       else{
         console.log(route.match(/\d+/)[0]);
-        return categories.[route.match(/\d+/)[0]].name;
+        return categories[route.match(/\d+/)[0]].name;
       }
+    },
+    checkRoute(){
+        console.log(this.$route.params.id)
+        if(this.$route.params.id){
+          this.skipQuery = false;
+      
+        }
+        else{
+          this.skipQuery = true;
+        
+        }
     }
+  },
+  beforeMount(){
+    this.checkRoute()
+   
+  }
+  ,
+   apollo: {
+    article: {
+      
+      query: gql`
+        query Articles($id: ID!) {
+          article(id: $id) {
+            id
+            title
+          }
+        }
+      `,
+      variables() {
+        return {
+          id: this.routeParam,
+        };
+      },
+    skip () {
+      return this.skipQuery
+    },
+    },
   }
 };
 </script>

@@ -1,10 +1,10 @@
 <template>
   <div id="app">
     <div>
-    <MobileNav v-if="mobileView" v-bind:route="$route.fullPath" v-bind:pages="pages"/>
+    <MobileNav v-if="mobileView" :key="$route.params.id" v-bind:route="$route.fullPath" v-bind:pages="pages"/>
     </div>
   <div>
-    <Nav v-if="!mobileView" v-bind:route="$route.fullPath" v-bind:pages="pages"/>
+    <Nav v-if="!mobileView" :key="$route.params.id"  v-bind:route="$route.fullPath" v-bind:pages="pages"/>
     </div>
     
     <router-view :key="$route.fullPath" ></router-view>

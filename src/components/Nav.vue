@@ -4,12 +4,12 @@
     <ul class="nav-big__menu global--width">
       <li class="nav-big__logo">
         <router-link :to="{ path: '/' }">
-          Josh Cornau
+          Josh Cornau <span  v-if="!skipQuery&&article" class="nav-mobile__indicator-mobile">/ {{article.title}}</span>
         </router-link>
       </li>
       <li class="nav-big__push"></li>
       <li class="nav-big__item">
-        <router-link :to="{ path: '/' }" class="nav__blueline" v-bind:class="{ 'nav__blueline--selected' : '/' == route}">
+        <router-link :to="{ path: '/' }" class="nav__blueline" v-bind:class="{ 'nav__blueline--selected' : '/' == route || route.includes('article')}">
           Work
         </router-link>
       </li>
@@ -28,12 +28,15 @@
 </template>
 
 <script>
+import gql from "graphql-tag";
 
 export default {
   name: "Nav",
   data() {
     return {
-      
+      api_url: process.env.VUE_APP_STRAPI_API_URL,
+      routeParam: this.$route.params.id,
+      skipQuery: true
     };
   },
   props: {
@@ -42,6 +45,44 @@ export default {
     },pages:{
       type: Array,
     }
+  },
+  methods:{
+    checkRoute(){
+        console.log(this.$route.params.id)
+        if(this.$route.params.id){
+          this.skipQuery = false;
+      
+        }
+        else{
+          this.skipQuery = true;
+        
+        }
+    }
+  },
+  beforeMount(){
+    this.checkRoute()
+  }
+  ,
+   apollo: {
+    article: {
+      
+      query: gql`
+        query Articles($id: ID!) {
+          article(id: $id) {
+            id
+            title
+          }
+        }
+      `,
+      variables() {
+        return {
+          id: this.routeParam,
+        };
+      },
+    skip () {
+      return this.skipQuery
+    },
+    },
   }
 };
 </script>

@@ -125,7 +125,8 @@ export default {
 
 .more-articles__container__image--size {
   object-fit: cover;
-  height: 100%;
+  max-width: 120%;
+  max-height: 120%;
 }
 
 
