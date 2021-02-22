@@ -47,6 +47,7 @@
           <div v-if="presenter.Kind == 'Desktop'" v-bind:class="{'presenter--right' : index % 2 == 1}" class="presenter-container__image-box">
             <div  class="presenter-container__image-box--inside">
               <video 
+              v-if="!presenter.Content.states[selectedVideo].isImage"
               class="presenter-container__image-box__video"
          :src="api_url + presenter.content_video[selectedVideo].url"
          autoplay
@@ -54,6 +55,13 @@
           {{  presenter.Description_Presentation}}
           Your browser does not support the video tag.
         </video>
+        <img
+        v-if="presenter.Content.states[selectedVideo].isImage"
+                class="presenter-container__image-box__video"
+                 :src="api_url + presenter.content_video[selectedVideo].url"
+                alt="nothing"
+              />
+
             </div>
           </div>
 
