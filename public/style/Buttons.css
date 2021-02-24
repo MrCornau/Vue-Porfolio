@@ -30,6 +30,41 @@
   }
 
 
+
+.download-Button{
+    display: inline-block;
+      border: none;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border-radius: 2.5px;
+      background: #ffffff;
+      border: solid 2px black;
+      margin: 0;
+      text-decoration: none;
+      text-transform: uppercase;
+      cursor: pointer;
+      text-align: center;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+    }
+    
+    .download-Button:hover {
+      box-shadow: 0 5px 10px 0 rgba(77, 7, 7, 0.15), 0 5px 10px 0 rgba(0, 0, 0, 0.1),
+        inset 0 -1px 2.5px 0 rgba(255, 255, 255, 0.3);
+    }
+    
+    .download-Button a {
+      display: flex;
+      justify-content: center;
+      color: black;
+      margin-left: 20px;
+      margin-right: 20px;
+      }
+    
+      .download-Button a i {
+        margin-left: 10px;
+      }
+
   @media only screen and (max-width: 600px) {
 
 

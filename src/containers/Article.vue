@@ -28,6 +28,7 @@
   
   </div>
     <Presentator v-if="article.Presentation" :Content="article.Presentation"/>
+    <MoreInformation :Content="article.More_Infos" :articleColor="article.color" class="margin-bottom--XL"/>
     <MoreProjects></MoreProjects>
   </div>
 
@@ -45,6 +46,7 @@ import Problem from "../components/Problem";
 import Solution from "../components/Solution"
 import Presentator from "../components/Presentator"
 import MoreProjects from "../components/MoreProjects"
+import MoreInformation from "../containers/ArticleDetail/MoreInformation"
 
 export default {
   data() {
@@ -63,7 +65,8 @@ export default {
     Problem,
     Solution,
     Presentator,
-    MoreProjects
+    MoreProjects,
+    MoreInformation
  
   },
   computed: {
