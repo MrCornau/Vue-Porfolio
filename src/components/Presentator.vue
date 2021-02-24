@@ -252,6 +252,7 @@ export default {
 @media only screen and (max-width: 600px) {
   .presenter-container {
     flex-direction: column;
+    margin: 50px auto 20vh auto;
   }
 
   .presenter-container__Info__Button-Container {
@@ -275,6 +276,7 @@ export default {
 @media only screen and (min-width: 600px) and (max-width: 1200px) and (orientation: portrait) {
   .presenter-container {
     flex-direction: column;
+    margin: 50px auto 20vh auto;
   }
 
   .presenter-container__Info__Button-Container {
@@ -308,6 +310,10 @@ export default {
 .presenter__description{
   display: none;
 }
+
+ .presenter-container{
+margin: 50px auto 20vh auto;
+}
 }
 
 @media only screen and (min-width: 900px) and (max-width: 1200px) and (orientation: landscape) {
@@ -316,6 +322,9 @@ export default {
     margin-top: 20px;
     margin-bottom: 20px;
   }
+  .presenter-container{
+margin: 50px auto 20vh auto;
+}
   .presenter--right{
   order: 4;
 }
