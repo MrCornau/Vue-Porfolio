@@ -1,6 +1,6 @@
 <template>
   <div class="presenter">
-    <div v-for="(presenter, index) in Content" :key="presenter.Description_Presentation">
+    <div v-for="(presenter, index) in Content" :key="index">
       <div v-if="presenter.scroll">
        <div class="center Full-Viewport">
         <div class="presenter-container">
@@ -43,22 +43,22 @@
 
 <div v-if="!presenter.scroll">
   <div class="center Full-Viewport">
-        <div class="presenter-container">
-          <div v-if="presenter.Kind == 'Desktop'" v-bind:class="{'presenter--right' : index % 2 == 1}" class="presenter-container__image-box">
+        <div  class="presenter-container">
+          <div v-if="presenter.Kind == 'Desktop'|| presenter.Kind =='Other'" v-bind:class="{'presenter--right' : index % 2 == 1,'presenter-container_image-box--desktop' : presenter.Kind == 'Desktop'}"  class="presenter-container__image-box" >
             <div  class="presenter-container__image-box--inside">
               <video 
-              v-if="!presenter.Content.states[selectedVideo].isImage"
+              v-if="!presenter.Content.states[selectedVideo[index]].isImage"
               class="presenter-container__image-box__video"
-         :src="api_url + presenter.content_video[selectedVideo].url"
+         :src="api_url + presenter.content_video[selectedVideo[index]].url"
          autoplay
         >
           {{  presenter.Description_Presentation}}
           Your browser does not support the video tag.
         </video>
         <img
-        v-if="presenter.Content.states[selectedVideo].isImage"
+        v-if="presenter.Content.states[selectedVideo[index]].isImage"
                 class="presenter-container__image-box__video"
-                 :src="api_url + presenter.content_video[selectedVideo].url"
+                 :src="api_url + presenter.content_video[selectedVideo[index]].url"
                 alt="nothing"
               />
 
@@ -69,7 +69,7 @@
             <div  class="presenter-container__image-box--inside--phone">
               <video 
               class="presenter-container__image-box__video"
-         :src="api_url + presenter.content_video[selectedVideo].url"
+         :src="api_url + presenter.content_video[selectedVideo[index]].url"
          autoplay
         >
           {{  presenter.Description_Presentation}}
@@ -79,17 +79,17 @@
           </div>
 
           <div class="presenter-container__Info margin-bottom--M presenter-container--phone">
-            <h2 class="margin-bottom--S">{{ presenter.Description_Presentation }}</h2>
+            <h2 class="margin-bottom--S">{{presenter.Description_Presentation}}</h2>
 
             <div class="presenter-container__Info__Button-Container">
               <div
-                v-for="(StateButton, index) in presenter.Content.states"
+                v-for="(StateButton, index2) in presenter.Content.states"
                 :key="StateButton.name"
               >
                 <button
                   class="presenter__Button"
-                  @click="playVideo(index)"
-                  v-bind:class="{ 'active-Button': index == selectedVideo }"
+                  @click="playVideo(index2, index)"
+                  v-bind:class="{ 'active-Button': index2 == selectedVideo[index]}"
                 >
                   {{ StateButton.name }}
                 </button>
@@ -97,7 +97,7 @@
             </div>
 
             <p class="margin-top--S presenter__description ">
-              {{ presenter.Content.states[selectedVideo].description }}
+              {{ presenter.Content.states[selectedVideo[index]].description }}
             </p>
           </div>
         </div>
@@ -114,7 +114,7 @@ export default {
       scrollevelPercent: "0%",
       activeButton: 0,
       activeVideoButton: 0,
-      selectedVideo:0,
+      selectedVideo:[0,0,0,0,0],
       api_url: process.env.VUE_APP_STRAPI_API_URL,
     };
   },
@@ -126,10 +126,12 @@ export default {
       this.scrollevelPercent = percentage;
       this.activeButton = index;
     },
-    playVideo(index) {
-      this.selectedVideo = index;
+    playVideo(index2, index) {
+      this.selectedVideo.splice(index, 1, index2)
+      // this.selectedVideo[index] = index2;
+    console.log(this.selectedVideo[index]);
     },
-  },
+  }
 };
 </script>
 
@@ -160,10 +162,12 @@ export default {
 
   min-width: 60vw;
   overflow: hidden;
+}
+
+.presenter-container_image-box--desktop{
   border-radius: 3.5px;
   box-shadow: 8px 5px 24px 3px rgba(0,0,0,0.23);
   background-color: #d8d8d8;
-
 }
 
 .presenter-container__image-box--phone{
