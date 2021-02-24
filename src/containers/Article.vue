@@ -105,6 +105,13 @@ export default {
               url
             }
 
+            More_Infos{
+             Supervisors
+             TeamMates
+          	 Dokumentation
+          			{url}
+            }
+
             Presentation{
                 ...on ComponentProjectsProjectPresentation{
                   Description_Presentation
