@@ -40,8 +40,23 @@ export default {
       categories: [],
     };
   },
+  
+  props: {
+    title: String,
+  },
 
   components: {},
+  
+  methods: {
+    console(foo) {
+      console.log(foo);
+    },
+    arrayRemove(arr, value) { 
+        return arr.filter(function(ele){ 
+            return ele.title != value; 
+        });
+    }
+  },
   computed: {
     CombinedArray: function() {
       function shuffle(array) {
@@ -49,9 +64,14 @@ export default {
       }
       let Array1 = [...this.categories[3].articles];
       let Array2 = [...this.categories[4].articles];
-      let NewArray = shuffle(Array1.concat(Array2));
-      return NewArray;
-    },
+      let NewArray = shuffle(Array1).concat(shuffle(Array2));
+      this.console('New:'+NewArray);
+      let FinalArray = this.arrayRemove(NewArray, this.title)
+      this.console('Final:'+this.title);
+      this.console(FinalArray);
+      return FinalArray;
+      
+    }
   },
 
   apollo: {

@@ -29,7 +29,7 @@
   </div>
     <Presentator v-if="article.Presentation" :Content="article.Presentation"/>
     <MoreInformation :Content="article.More_Infos" :articleColor="article.color" class="margin-bottom--XL"/>
-    <MoreProjects></MoreProjects>
+    <MoreProjects :title="article.title" ></MoreProjects>
   </div>
 
 
