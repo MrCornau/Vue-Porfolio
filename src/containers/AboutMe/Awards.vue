@@ -13,7 +13,11 @@
           <div >{{ information.time }}</div>
           <div>
             <h5 class="primary-dark">{{ information.Kind }}</h5>
-           
+           <img
+              class="Timeline--Awards--Batch"
+              :src="api_url + batches[0].url"
+              alt="nothing"
+            />
           </div>
         </div>
       </div>
@@ -34,6 +38,9 @@ export default {
     },
     title:{
         type: String,
+    },
+    batches:{
+        Object
     }
   },
 };
@@ -54,5 +61,10 @@ export default {
   grid-column-gap: 1em;
   grid-row-gap: 4em;
   width: 100%;
+}
+
+.Timeline--Awards--Batch{
+    margin-top: 20px;
+    max-width: 60%;
 }
 </style>

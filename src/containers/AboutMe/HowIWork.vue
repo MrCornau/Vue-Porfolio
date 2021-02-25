@@ -2,9 +2,9 @@
     <div>
 
   <div class="article-detail__domains white">
-    <h2>How I Work</h2>
+    <h2>{{title}}</h2>
     <div class="Article-detail__description">
-      <p class="Article-detail__description--text">{{ content.HowIWork }}</p>
+      <p class="Article-detail__description--text">{{ content }}</p>
     </div>
   </div>
 
@@ -12,8 +12,8 @@
        
           <img
             class="Article-detail__description__inlineImages--size"
-            v-if="content.HowIWorkImage"
-            :src="api_url + content.HowIWorkImage.url"
+            v-if="image"
+            :src="api_url + image"
             alt="nothing"
           />
       
@@ -30,7 +30,13 @@ export default {
   },
   props: {
      content: {
-      type: Object,
+      type: String,
+    },
+    title:{
+        type: String,
+    },
+    image:{
+        type:String,
     }
   },
 };
