@@ -22,10 +22,10 @@
     <Outlines :ProjectInfo="article.Detail[1].project_info" :ProjectRole="article.Detail[1].project_role" :articleColor="article.color" />
     </div>
     <HowMightWe v-if="HMW" :HowMightWe="HMW"  :articleColor="article.color" />
+
   <div class="article-detail__container article-detail__width">
     <Problem v-if="problem" :problem="problem" />
     <Solution v-if="solution" :solution="solution" />
-  
   </div>
     <Presentator v-if="article.Presentation" :Content="article.Presentation"/>
     <MoreInformation :Content="article.More_Infos" :articleColor="article.color" class="margin-bottom--XL"/>

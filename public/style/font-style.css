@@ -24,6 +24,14 @@ html {
   color:#253031;
 }
 
+.white{
+  color: white;
+}
+
+
+.primary-dark{
+  color:#69A5FF;
+}
 
 
 h4{
@@ -34,7 +42,7 @@ h4{
 
 h3{
   font-size: 1.2em;
-  color: #253031;
+ 
   font-weight: 500;
 }
 
@@ -101,7 +109,6 @@ a{
   h1 {
     font-size: 1em;
     line-height: 130%;
-    color: #253031;
   }
   .paragraph{
     font-size: 1em;
@@ -113,7 +120,7 @@ a{
   h1 {
     font-size: 1.6em;
     line-height: 130%;
-    color: #253031;
+ 
   }
   .paragraph{
     font-size: 1em;
@@ -126,7 +133,7 @@ a{
   h1 {
     font-size: 2em;
     line-height: 130%;
-    color: #253031;
+   
   }
 }
 
@@ -135,7 +142,7 @@ a{
   h1 {
     font-size: 2.5em;
     line-height: 130%;
-    color: #253031;
+   
   }
 }
 
@@ -143,7 +150,7 @@ a{
   h1 {
     font-size: 2em;
     line-height: 130%;
-    color: #253031;
+   
   }
 }
 
@@ -152,10 +159,9 @@ a{
   h1 {
     font-size: 2.5em;
     line-height: 130%;
-    color: #253031;
+  
   }
 }
-
 
 
 
