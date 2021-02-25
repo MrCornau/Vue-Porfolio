@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" v-bind:class="{'dark-background': '/about' == $route.fullPath,'light-background': '/about' != $route.fullPath}" >
     <div>
     <MobileNav v-if="mobileView" :key="$route.params.id" v-bind:route="$route.fullPath" v-bind:pages="pages"/>
     </div>
@@ -39,3 +39,14 @@ export default {
   components: { Nav, MobileNav, Footer },
 };
 </script>
+<style scoped>
+.light-background{
+  background-color: white;
+  transition: 0.5s cubic-bezier(.52,.49,.19,1.04);
+}
+
+.dark-background{ 
+  background-color: #1C1A1B;
+  transition: 0.5s cubic-bezier(.52,.49,.19,1.04);
+}
+</style>

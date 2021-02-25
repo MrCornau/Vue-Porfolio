@@ -85,7 +85,6 @@ nav{
   left: 0;
   width: 100vw;
   z-index: 999999;
-  background-color: white;
 }
   
   #navigation-icon {
@@ -97,7 +96,6 @@ nav{
     position: fixed;
     transition: 1s cubic-bezier(.52,.49,.19,1.04);
     width: 100vw;
-    background: white;
     text-align: center;
     transform: translate(0px, -93%);
   

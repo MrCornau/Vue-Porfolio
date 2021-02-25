@@ -1,7 +1,7 @@
 /* eslint-disable */
 <template>
   <nav>
-    <div class=" nav-mobile--sticky">
+    <div class=" nav-mobile--sticky" v-bind:class="{'nav-big-black-background': '/about' == route,'nav-big--white-background': '/about' != route}">
       <div class="nav-mobile">
         <div id="nav-mobile__logo">
           <router-link :to="{ path: '/' }" >
@@ -9,9 +9,9 @@
           </router-link>
         </div>
         <div class="hamburger-nav">
-        <button class="hamburger-nav hamburger hamburger--collapse " type="button" @click="showNav = !showNav" v-bind:class="{ 'is-active': showNav }">
+        <button class="hamburger-nav hamburger hamburger--collapse" type="button" @click="showNav = !showNav" v-bind:class="{ 'is-active': showNav }" >
           <span class="hamburger-box">
-            <span class="hamburger-inner"></span>
+            <span class="hamburger-inner hamburger-inner--light" v-bind:class="{'hamburger-inner--dark': '/about' == route,'hamburger-inner--light': '/about' != route}"></span>
           </span>
         </button>
         </div>
@@ -19,7 +19,7 @@
     </div>
     <div
       class="nav-mobile__menue-mobile nav--shadow"
-      v-bind:class="{ 'nav-mobile--folded': showNav }"
+      v-bind:class="{ 'nav-mobile--folded': showNav ,'nav-big-black-background': '/about' == route,'nav-big--white-background': '/about' != route}"
     >
       <ul class="nav-mobile__ul">
         <li class="nav-mobile__item" 
@@ -39,7 +39,7 @@
             :to="{ path: page.path }"
             :key="page.name"
             class="nav__blueline"
-             v-bind:class="{ 'nav__blueline--selected' : page.path == route}"
+             v-bind:class="{ 'nav__blueline--selected' : page.path == route,'nav-blueline--dark': '/about' == route,'nav-blueline--white': '/about' != route}"
            
           >
             {{ page.name }}
