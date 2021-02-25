@@ -1,6 +1,6 @@
 /* eslint-disable */
 <template>
-  <nav class="nav-big--sticky nav-big--white-background nav--shadow">
+  <nav class="nav-big--sticky nav-big--white-background nav--shadow" v-bind:class="{'nav-big-black-background': '/about' == route,'nav-big--white-background': '/about' != route}">
     <ul class="nav-big__menu global--width">
       <li class="nav-big__logo">
         <router-link :to="{ path: '/' }">
@@ -9,7 +9,7 @@
       </li>
       <li class="nav-big__push"></li>
       <li class="nav-big__item">
-        <router-link :to="{ path: '/' }" class="nav__blueline" v-bind:class="{ 'nav__blueline--selected' : '/' == route || route.includes('article')}">
+        <router-link :to="{ path: '/' }" class="nav__blueline nav-blueline--white" v-bind:class="{ 'nav__blueline--selected' : '/' == route || route.includes('article')}">
           Work
         </router-link>
       </li>
@@ -18,7 +18,7 @@
           :to="{ path: page.path }"
           :key="page.name"
            class="nav__blueline"
-             v-bind:class="{ 'nav__blueline--selected' : page.path == route}"
+             v-bind:class="{ 'nav__blueline--selected' : page.path == route, 'nav-blueline--dark': '/about' == route,'nav-blueline--white': '/about' != route}"
         >
           {{ page.name }}
         </router-link>
@@ -48,7 +48,7 @@ export default {
   },
   methods:{
     checkRoute(){
-        console.log(this.$route.params.id)
+     console.log(this.route)
         if(this.$route.params.id){
           this.skipQuery = false;
       
@@ -57,10 +57,18 @@ export default {
           this.skipQuery = true;
         
         }
+    },
+    logID(){
+    // console.log(this.routeParam)
+    // console.log(this.$route.path)
+
     }
   },
   beforeMount(){
     this.checkRoute()
+  },
+  mounted(){
+    this.logID()
   }
   ,
    apollo: {
@@ -87,4 +95,11 @@ export default {
 };
 </script>
 
-<style lang="css"></style>
+<style lang="css">
+
+
+.About-Page{
+  background-color: chartreuse !important;
+}
+
+</style>

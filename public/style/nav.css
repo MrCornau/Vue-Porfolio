@@ -10,12 +10,24 @@ nav{
     top: 0;
     width: 100%;
     z-index: 999999;
-    background-color: white;
   }
   
   .nav-big--white-background{
     background-color: white;
+    transition: 0.5s cubic-bezier(.52,.49,.19,1.04);
   }
+
+  .nav-big-black-background{
+    background-color:#272727;
+    transition: 0.5s cubic-bezier(.52,.49,.19,1.04);
+  }
+
+  .nav-big-black-background a{
+    color: white;
+    transition: 0.5s cubic-bezier(.52,.49,.19,1.04);
+  }
+
+
   
   .nav--shadow{
     box-shadow: 0 1px 2px 0 rgba(79, 58, 58, 0.1), 0 2.5px 5px 0 rgba(0, 0, 0, 0.05);
@@ -51,6 +63,7 @@ nav{
     margin-left: 30px;
     width: auto;
     text-transform: uppercase;
+    color: hotpink;
   }
   
   
@@ -138,11 +151,20 @@ nav{
     width: 0;
     height: 6px;
     top: 1.5em;
-    background-color:blue;
     visibility: hidden;
     transition: all 0s ease-in-out;
-  
+    background-color:blue;
   }
+.nav-blueline--white::before{
+  background-color:blue;
+}
+.nav-blueline--dark::before{
+  background-color:#69A5FF;
+}
+
+
+
+
   
   .nav__blueline--selected::before {
     visibility: visible;

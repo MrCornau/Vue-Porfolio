@@ -10,7 +10,6 @@
   font-family: 'Space Grotesk', sans-serif;
   overflow-wrap: break-word;
   word-wrap: break-word;
-
   -ms-word-break: break-all;
 }
 
@@ -66,6 +65,7 @@ p{
 a{
   text-decoration: none;
   color: #253031;
+  transition: 0.5s cubic-bezier(.52,.49,.19,1.04);
 }
 
 .caption{
