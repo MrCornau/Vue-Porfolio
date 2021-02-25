@@ -20,8 +20,14 @@
    <Awards v-if="this.aboutMePage.Awards" :test="this.aboutMePage.Awards" :title="'Awards'" :batches="this.aboutMePage.AwardsBatches" />
  </div>
 <div class="article-detail__width center article-detail__container">
-  <HowIWork :content="this.aboutMePage.AboutMeText"  :title="'About Me'" class="margin-bottom--XL"/>
-  <imageSlider></imageSlider>
+  <HowIWork :content="this.aboutMePage.AboutMeText"  :title="'About Me'" class="margin-bottom--XS"/>
+</div>
+<div class="article-detail__width center article-detail__container">
+  <ImageSlider v-if="this.aboutMePage.AboutMeGalery"  :images="this.aboutMePage.AboutMeGalery"></imageSlider>
+</div>
+
+<div class="article-detail__width center article-detail__container">
+  <Contact :content="this.aboutMePage.Contact.Contact" ></Contact>
 </div>
 
 </div>
@@ -37,7 +43,8 @@ import Head from "./AboutMe/Head.vue";
 import HowIWork from "./AboutMe/HowIWork.vue";
 import Timeline from "./AboutMe/Timeline.vue";
 import Awards from "./AboutMe/Awards.vue";
-import imageSlider from "./AboutMe/ImageSlider.vue"
+import ImageSlider from "./AboutMe/ImageSlider.vue"
+import Contact from "./AboutMe/Contact.vue"
 
 export default {
   data: function() {
@@ -52,7 +59,8 @@ export default {
     HowIWork,
     Timeline,
     Awards,
-    imageSlider
+    ImageSlider,
+    Contact
   },
 
   apollo: {
