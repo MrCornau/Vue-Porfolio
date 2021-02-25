@@ -40,7 +40,7 @@ export default {
       }
       
       let ArrayToSort = [...this.categories[3].articles];
-      console.log('lalalala'+ ArrayToSort.sort(compare))
+      //console.log('lalalala'+ ArrayToSort.sort(compare))
       return ArrayToSort.sort(compare);
     }
   },

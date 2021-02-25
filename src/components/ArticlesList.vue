@@ -60,7 +60,7 @@ export default {
   computed: {},
   created: function() {
     // `this` points to the vm instance
-    console.log("a is: " + this.articles);
+   // console.log("a is: " + this.articles);
   },
 };
 </script>

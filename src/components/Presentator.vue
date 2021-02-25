@@ -129,7 +129,7 @@ export default {
     playVideo(index2, index) {
       this.selectedVideo.splice(index, 1, index2)
       // this.selectedVideo[index] = index2;
-    console.log(this.selectedVideo[index]);
+    //console.log(this.selectedVideo[index]);
     },
   }
 };

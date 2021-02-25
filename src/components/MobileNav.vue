@@ -76,7 +76,7 @@ export default {
     getIndicatorText(route, categories){
       if(route === '/'){return 'work'}
       else{
-        console.log(route.match(/\d+/)[0]);
+       // console.log(route.match(/\d+/)[0]);
         return categories[route.match(/\d+/)[0]].name;
       }
     },

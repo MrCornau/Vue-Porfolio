@@ -65,10 +65,10 @@ export default {
       let Array1 = [...this.categories[3].articles];
       let Array2 = [...this.categories[4].articles];
       let NewArray = shuffle(Array1).concat(shuffle(Array2));
-      this.console('New:'+NewArray);
+      //this.console('New:'+NewArray);
       let FinalArray = this.arrayRemove(NewArray, this.title)
-      this.console('Final:'+this.title);
-      this.console(FinalArray);
+      //this.console('Final:'+this.title);
+      //this.console(FinalArray);
       return FinalArray;
       
     }
