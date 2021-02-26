@@ -7,7 +7,7 @@
         v-for="(article) in articles"
         :key="article.id"
       >
-      <small-article class="" :article="article" :routePath="'/blog/'"></small-article>
+      <small-article class="" :article="article" :routePath="'/impressions/'"></small-article>
       </div>
 
 

@@ -1,8 +1,8 @@
 <template>
   <div v-if="this.microProjects[0]" >
-    <BlogList :article=" this.Selected[0] || []" :routePath="'/blog/'" ></BlogList>
+    <BlogList :article=" this.Selected[0] || []" :routePath="'/impressions/'" ></BlogList>
        <OtherBlogArticles
-      :articles="this.NotSelected || []" :routePath="'/blog/'"
+      :articles="this.NotSelected || []" :routePath="'/impressions/'"
     ></OtherBlogArticles>
 
 </div>

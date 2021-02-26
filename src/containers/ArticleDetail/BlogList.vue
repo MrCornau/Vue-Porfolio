@@ -16,7 +16,7 @@
             class="articles__container__distance"
           
           ></div>
-          <router-link :to="{ path: '/blog/' + article.id }" class="blog__container__image" >
+          <router-link :to="{ path: '/impressions/' + article.id }" class="blog__container__image" >
         
              
             <img

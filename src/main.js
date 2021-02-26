@@ -26,16 +26,12 @@ const router = new VueRouter({
       components: require("./containers/Article.vue")
     },
     {
-      path: "/blog/:id",
+      path: "/impressions/:id",
       components: require("./containers/BlogDetail.vue")
     },
     {
       path: "/testside",
       components: require("./containers/TestSide.vue")
-    },
-    {
-      path: "/blog",
-      components: require("./containers/Blog.vue")
     },
     {
       path: "/impressions",

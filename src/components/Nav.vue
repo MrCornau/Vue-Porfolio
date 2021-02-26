@@ -4,7 +4,8 @@
     <ul class="nav-big__menu global--width">
       <li class="nav-big__logo">
         <router-link :to="{ path: '/' }">
-          Josh Cornau <span  v-if="!skipQuery&&article" class="nav-mobile__indicator-mobile">/ {{article.title}}</span>
+          Josh Cornau 
+          <span  v-if="!skipQuery&&article&&route.includes('article')" class="nav-mobile__indicator-mobile">/ {{article.title}}</span>
         </router-link>
       </li>
       <li class="nav-big__push"></li>
@@ -48,7 +49,7 @@ export default {
   },
   methods:{
     checkRoute(){
-     console.log(this.route)
+     console.log(this.$route.params.id)
         if(this.$route.params.id){
           this.skipQuery = false;
       
@@ -90,7 +91,7 @@ export default {
     skip () {
       return this.skipQuery
     },
-    },
+    }
   }
 };
 </script>
