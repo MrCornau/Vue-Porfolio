@@ -17,15 +17,15 @@
               class="articles__container--marginL articles__container__tag"
               v-bind:tags="article.Tags.tags"
             />
-            <Button v-bind:path="'/article/' + article.id" v-bind:name="'more info'" class="articles__container__info--order"/>
+            <Button v-bind:path="routePath + article.id" v-bind:name="'more info'" class="articles__container__info--order"/>
           </div>
           <div
             class="articles__container__distance"
             v-bind:class="{ 'articles__container__distance--order': index % 2 == 1 }"
           ></div>
-          <router-link :to="{ path: '/article/' + article.id }" class="articles__container__image" >
+          <router-link :to="{ path: routePath + article.id }" class="articles__container__image" >
         
-             
+           
             <img
               class="articles__container__image--size"
               :src="api_url + article.image[0].url"
@@ -52,6 +52,7 @@ export default {
   },
   props: {
     articles: Array,
+    routePath:String
   },
   components: {
     ArticlesTag,

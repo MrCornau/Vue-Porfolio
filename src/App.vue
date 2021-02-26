@@ -23,7 +23,7 @@ export default {
     return {
       mobileView: true,
       showNav: false,
-      pages:[{path:'/blog',name:'Blog'},{path:'/microprojects',name:'Micro-Projects'},{path:'/about',name:'about'}]
+      pages:[{path:'/impressions',name:'Impressions'},{path:'/about',name:'about'}]
     };
   },
   methods: {

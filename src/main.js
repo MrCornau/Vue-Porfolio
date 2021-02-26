@@ -26,6 +26,10 @@ const router = new VueRouter({
       components: require("./containers/Article.vue")
     },
     {
+      path: "/blog/:id",
+      components: require("./containers/BlogDetail.vue")
+    },
+    {
       path: "/testside",
       components: require("./containers/TestSide.vue")
     },
@@ -34,7 +38,7 @@ const router = new VueRouter({
       components: require("./containers/Blog.vue")
     },
     {
-      path: "/microprojects",
+      path: "/impressions",
       components: require("./containers/MicroProjects.vue")
     },
     {

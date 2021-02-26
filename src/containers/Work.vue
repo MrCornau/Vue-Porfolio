@@ -1,9 +1,9 @@
 <template>
-  <div v-if="this.categories[4].articles">
+  <div v-if="this.categories[3].articles">
     <StartView />
-    <ArticlesList :articles=" sortedArray || []"></ArticlesList>
+    <ArticlesList :articles=" sortedArray || []" :routePath="'/article/'"></ArticlesList>
     <OtherArticles
-      :articles="this.categories[4].articles || []"
+      :articles="this.categories[3].articles || []" :routePath="'/article/'"
     ></OtherArticles>
   </div>
 </template>
@@ -39,7 +39,7 @@ export default {
         return 0;
       }
       
-      let ArrayToSort = [...this.categories[3].articles];
+      let ArrayToSort = [...this.categories[2].articles];
       //console.log('lalalala'+ ArrayToSort.sort(compare))
       return ArrayToSort.sort(compare);
     }

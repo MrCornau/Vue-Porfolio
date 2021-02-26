@@ -1,16 +1,13 @@
 <template>
   <div class="articles">
     <div>
-      <div class="articles__heading global--width">
-        <h1>Other Projects</h1>
-      </div>
       <div class="global--width other-articles__container">
     <div
         class=""
         v-for="(article) in articles"
         :key="article.id"
       >
-      <small-article class="" :article="article" :routePath="routePath"></small-article>
+      <small-article class="" :article="article" :routePath="'/blog/'"></small-article>
       </div>
 
 
@@ -32,7 +29,7 @@ export default {
   },
   props: {
     articles: Array,
-    routePath: String
+
   },
   components: {
     SmallArticle,

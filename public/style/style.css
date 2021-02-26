@@ -151,7 +151,7 @@ video:focus { outline:none; }
 
   .other-articles__container__image {
     order: 2;
-    height: 40vh;
+    height: 30vh;
     background-color: #f5f5f5;
     overflow: hidden;
   }
