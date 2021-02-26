@@ -1,12 +1,17 @@
 <template>
   <div v-if="article.Detail">
-    <div class="article-detail__header-image">
+    <div v-if="!article.Videolink" class="article-detail__header-image">
       <img
         v-if="article.Header_Image"
         class=""
         :src="api_url + article.Header_Image.url"
         alt="nothing"
       />
+    </div> 
+    <div v-if="article.Videolink" class="article-detail__header-video" v-bind:style="{ 'background-color': white}">
+    <div class="Video-Player--Container">
+      <iframe :src="article.Videolink" class="Video-Player" :width="playerWidth" :height="playerHeight" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+      </div>
     </div>
 
     <div class="article-detail__container article-detail__width">
@@ -47,6 +52,7 @@ import Solution from "../components/Solution"
 import Presentator from "../components/Presentator"
 import MoreProjects from "../components/MoreProjects"
 import MoreInformation from "../containers/ArticleDetail/MoreInformation"
+//  import { vueVimeoPlayer } from 'vue-vimeo-player'
 
 export default {
   data() {
@@ -55,6 +61,8 @@ export default {
       moment: moment,
       api_url: process.env.VUE_APP_STRAPI_API_URL,
       routeParam: this.$route.params.id,
+      playerWidth:840,
+      playerHeight:540
       
     }
   },
@@ -66,9 +74,22 @@ export default {
     Solution,
     Presentator,
     MoreProjects,
-    MoreInformation
+    MoreInformation,
+    // vueVimeoPlayer
  
   },
+
+  methods: {
+    handleView() {
+      this.playerWidth = window.innerWidth*0.95;
+      this.playerHeight = window.innerWidth*0.53125*0.95;
+    },
+  },
+  created() {
+    this.handleView();
+    window.addEventListener("resize", this.handleView);
+  },
+
   computed: {
       slicedArray: function () {
       return this.article.Tags? this.article.Tags.tags.slice(1,5) : [];
@@ -95,6 +116,7 @@ export default {
           article(id: $id) {
             id
             title
+            Videolink
             Year
             content
             Tags
@@ -163,3 +185,39 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+
+
+.Video-Player--Container{
+    margin: auto;
+    height: 100% !important;
+}
+
+.article-detail__header-video{
+   margin-top: 0px;
+  display: flex;
+}
+
+@media only screen and (max-width: 600px) {
+.Video-Player--Container{
+    padding-top: 70px;
+}
+}
+@media only screen and (min-width: 600px) and (max-width: 1200px) and (orientation: portrait) {
+  .Video-Player--Container{
+    padding-top: 80px;
+}
+}
+
+@media only screen and (min-width: 900px) and (max-width: 1200px) and (orientation: landscape) {
+    .Video-Player--Container{
+    padding-top: 80px;
+}
+}
+@media only screen and (min-width: 1200px) {
+     .Video-Player--Container{
+    padding-top: 80px;
+}
+}
+</style>
