@@ -71,7 +71,7 @@ export default {
   apollo: {
     microProjects: {
       query: gql`
-         query MicroProject {
+         query MicroProjects {
           microProjects {
             isSelected
             title

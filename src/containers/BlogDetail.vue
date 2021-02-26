@@ -1,9 +1,13 @@
 <template>
   <div >
-{{microProjects}}
+
 <h1>hallloooo</h1>
 <h1>hallloooo</h1>
 <h1>hallloooo</h1>
+  <div v-if="this.microProject.title">
+{{this.microProject}}
+  </div>
+
   </div>
 </template>
 
@@ -16,7 +20,7 @@ import gql from "graphql-tag";
 export default {
   data() {
     return {
-      article: {},
+      microProject: [],
       moment: moment,
       api_url: process.env.VUE_APP_STRAPI_API_URL,
       routeParam: this.$route.params.id,
@@ -43,14 +47,19 @@ export default {
   },
 
   apollo: {
-    microProjects: {
+    microProject: {
       query: gql`
-         query MicroProject($id: ID!) {
-          microProjects(id: $id){
-         
+         query microProject($id: ID!) {
+          microProject(id: $id){
+           
             title
-            
-            
+            content
+            image{url}
+            publishedAt
+            description
+            Tags
+            publishedAt
+           
           }
         }
       `, variables() {
