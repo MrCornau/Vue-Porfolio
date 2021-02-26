@@ -4,12 +4,18 @@
 
 <Head :content="this.aboutMePage"></Head>
 <div>
+  <div class="article-detail__width center article-detail__container">
+  <HowIWork :content="this.aboutMePage.AboutMeText"  :title="'About Me'" class="margin-bottom--XS"/>
+</div>
+  <div class="article-detail__width center article-detail__container">
+  <ImageSlider v-if="this.aboutMePage.AboutMeGalery"  :images="this.aboutMePage.AboutMeGalery" class="margin-bottom--XL"></imageSlider>
+</div>
 <div class="article-detail__width center article-detail__container">
   <HowIWork :content="this.aboutMePage.HowIWork" :image="this.aboutMePage.HowIWorkImage.url" :title="'How I Work'" class="margin-bottom--XL"/>
  
 </div>
 <div class="article-detail__width center article-detail__container">
- <Timeline  v-if="this.aboutMePage.ProfessionalExperience" :content="this.aboutMePage.ProfessionalExperience || []" :title="'Professional Experience'"/>
+ <Timeline  v-if="this.aboutMePage.ProfessionalExperience" :content="this.aboutMePage.ProfessionalExperience || []" :title="'Experience'"/>
  </div>
  
 <div class="article-detail__width center article-detail__container">
@@ -19,12 +25,8 @@
 <div class="article-detail__width center article-detail__container">
    <Awards v-if="this.aboutMePage.Awards" :test="this.aboutMePage.Awards" :title="'Awards'" :batches="this.aboutMePage.AwardsBatches" />
  </div>
-<div class="article-detail__width center article-detail__container">
-  <HowIWork :content="this.aboutMePage.AboutMeText"  :title="'About Me'" class="margin-bottom--XS"/>
-</div>
-<div class="article-detail__width center article-detail__container">
-  <ImageSlider v-if="this.aboutMePage.AboutMeGalery"  :images="this.aboutMePage.AboutMeGalery"></imageSlider>
-</div>
+
+
 
 <div class="article-detail__width center article-detail__container">
   <Contact :content="this.aboutMePage.Contact.Contact" ></Contact>

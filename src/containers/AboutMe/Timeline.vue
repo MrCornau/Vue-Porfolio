@@ -56,4 +56,13 @@ export default {
   grid-row-gap: 4em;
   width: 100%;
 }
+
+@media only screen and (max-width: 600px) {
+  .Timeline--Items {
+
+  grid-template-columns: 3fr;
+  grid-column-gap: 0.5em;
+  grid-row-gap: 0em;
+}
+}
 </style>

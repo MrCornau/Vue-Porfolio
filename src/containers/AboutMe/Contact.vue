@@ -39,5 +39,15 @@ export default {
     justify-content: space-between;
 }
 
+.article-detail_domains__Tags__Tag{
+  transition-duration: 0.15s;
+}
+
+.article-detail_domains__Tags__Tag:hover { 
+    transform: scale(1.05); 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    transition-duration: 0.15s;
+    }
+
 
 </style>
