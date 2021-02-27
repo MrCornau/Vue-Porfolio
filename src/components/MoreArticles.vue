@@ -1,7 +1,7 @@
 <template>
-  <div v-if="this.categories[3].articles" class="margin-top--M">
+  <div v-if="this.microProjects" class="margin-top--M">
       <div class="article-detail__container article-detail__width">
-          <h2>Projects you may also like</h2>
+          <h2>Articles you may also like</h2>
       </div>
       <div class="projectslider margin-top--M">
     <div class="projectslider__container">
@@ -13,12 +13,12 @@
           >
             <img
               class="more-articles__container__image--size"
-              :src="api_url + article.image[0].url"
+              :src="api_url + article.image.url"
               alt="nothing"
             />
           </router-link>
           <div>
-            <p class="black">{{ article.Year }}</p>
+            <p class="black">{{ article.publishedAt }}</p>
             <h5 class="black">{{ article.title }}</h5>
           </div>
         </div>
@@ -37,7 +37,7 @@ export default {
     return {
       api_url: process.env.VUE_APP_STRAPI_API_URL,
       header: [],
-      categories: [],
+      microProjects: [],
     };
   },
   
@@ -62,9 +62,8 @@ export default {
       function shuffle(array) {
         return array.sort(() => Math.random() - 0.5);
       }
-      let Array1 = [...this.categories[2].articles];
-      let Array2 = [...this.categories[3].articles];
-      let NewArray = shuffle(Array1).concat(shuffle(Array2));
+      let Array1 = [...this.microProjects];
+      let NewArray = shuffle(Array1);
       this.console('New:'+Array1);
       let FinalArray = this.arrayRemove(NewArray, this.title)
       this.console('Final:'+this.title);
@@ -73,29 +72,26 @@ export default {
       
     }
   },
-
   apollo: {
-    categories: {
+    microProjects: {
       query: gql`
-        query Categories {
-          categories {
+         query MicroProjects {
+          microProjects {
+            isSelected
+            title
+           
+            image{url}
+            publishedAt
+            description
+            Tags
+            publishedAt
             id
-            articles {
-              id
-              Position
-              title
-              Year
-              Tags
-              Description
-              image {
-                url
-              }
-            }
+            
           }
         }
       `,
     },
-  },
+  }
 };
 </script>
 

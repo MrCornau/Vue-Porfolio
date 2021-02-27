@@ -8,7 +8,7 @@
         alt="nothing"
       />
     </div> 
-    <div v-if="article.Videolink" class="article-detail__header-video" v-bind:style="{ 'background-color': white}">
+    <div v-if="article.Videolink" class="article-detail__header-video" v-bind:style="{ 'background-color': 'white'}">
     <div class="Video-Player--Container">
       <iframe :src="article.Videolink" class="Video-Player" :width="playerWidth" :height="playerHeight" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
       </div>

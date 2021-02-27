@@ -20,13 +20,31 @@
         <h1>{{ microProject.title }}</h1>
       </div>
     </div>
-    <div class="MarkdownWrapper">
-       <vue-markdown-it class="ImageSize"
-          v-if="microProject.content"
-          :content="microProject.content"
-          :options="this.options"
+    <div class="MarkdownWrapper  " v-if="microProject.MoreInfoContent">
+      <li class="impression--Information ">{{microProject.publishedAt}}</li>
+      <ul v-for="Collaborators in microProject.MoreInfoContent.TeamMates.Collaborators" :key="Collaborators.id" class="impression--Information ">
+            <li class="blue"><a :href="'https://'+Collaborators.Website"  target="_blank" >  / {{Collaborators.Name}}</a></li>
+      </ul>
+    <div v-for="content in microProject.AAMicroContent" :key="content.id">
+      <div class="" v-if="content.AATextContainer">
+        <vue-markdown-it class="MarkdownWrapper-Content margin-bottom--M"
+          :content="content.AATextContainer"
         />
+      </div>
+      <div class="" v-if="content.ImageContainer_Micro">
+        <img
+        v-if="microProject.blodHeaderImage"
+        class="MarkdownWrapper-Content margin-bottom--M"
+        :src="api_url + content.ImageContainer_Micro.url"
+        alt="nothing"
+      />
+      </div>
     </div>
+
+    </div>
+    <MoreArticles class="margin-top--XL" :title="microProject.title"></MoreArticles>
+<!-- <MoreInformation v-if="microProject.MoreInfoContent" :Content="microProject.MoreInfoContent" :articleColor="'#374cff'" class="margin-bottom--XL"/> -->
+    
   </div>
 </template>
 
@@ -34,6 +52,8 @@
 var moment = require("moment");
 import gql from "graphql-tag";
 import VueMarkdownIt from "markdown-it-vue";
+import MoreArticles from "../components/MoreArticles.vue"
+// import MoreInformation from "../containers/ArticleDetail/MoreInformation"
 //  import { vueVimeoPlayer } from 'vue-vimeo-player'
 
 export default {
@@ -55,8 +75,9 @@ export default {
     }
   },
   components: {
-VueMarkdownIt
- 
+VueMarkdownIt,
+MoreArticles
+  // MoreInformation,
   },
 
   methods: {
@@ -86,8 +107,16 @@ VueMarkdownIt
             publishedAt
            BlogVideolink
             blodHeaderImage{url}
-          }
-        }
+            AAMicroContent{
+     ... on ComponentMoreInfoTextMicroprojectcontent{AATextContainer}
+      ... on ComponentMoreInfoImageMicroprojectcontent{ImageContainer_Micro{url}}
+
+            
+    }
+
+     MoreInfoContent{
+             TeamMates
+        }}}
       `, variables() {
         return {
           id: this.routeParam,
@@ -100,13 +129,26 @@ VueMarkdownIt
 
 <style scoped>
 
+.impression--Information {
+  display: inline;
+  list-style-type: none;
+  padding-right: 5px;
+  float: left;
+  margin-bottom: 10px;
+  color: blue !important;
+}
+.blue{
+    color: blue !important;
+}
+
+
 .MarkdownWrapper{
   margin: 50px auto 0 auto ;
   max-width: 40%;
   
 }
 
-.ImageSize {
+.MarkdownWrapper-Content {
   width: 100%;
  overflow: hidden;
 }
@@ -136,10 +178,20 @@ VueMarkdownIt
 .Video-Player--Container{
     padding-top: 70px;
 }
+.MarkdownWrapper{
+  
+  max-width: 90%;
+  
+}
 }
 @media only screen and (min-width: 600px) and (max-width: 1200px) and (orientation: portrait) {
   .Video-Player--Container{
     padding-top: 80px;
+}
+.MarkdownWrapper{
+  
+  max-width: 70%;
+  
 }
 }
 
@@ -147,12 +199,27 @@ VueMarkdownIt
     .Video-Player--Container{
     padding-top: 80px;
 }
+.MarkdownWrapper{
+  
+  max-width: 50%;
+  
+}
 }
 @media only screen and (min-width: 1200px) {
      .Video-Player--Container{
     padding-top: 80px;
 }
 }
+@media only screen and (min-width: 1900px) {
+     .Video-Player--Container{
+    padding-top: 80px;
+}
+.MarkdownWrapper{
+  
+  max-width: 30%;
+  
+}}
+
 
 
 </style>

@@ -11,14 +11,14 @@
             <h5>Supervisors</h5>
             <br>
             <ul v-for="Supervisor in Content.Supervisors.Supervisors" :key="Supervisor.id">
-            <li class="more-information__List"><a :href="'https://'+ Supervisor.Website"  target="_blank" > {{Supervisor.Name}}</a></li>
+            <li class="more-information__List"><a class="base-font-color" :href="'https://'+ Supervisor.Website"  target="_blank" > {{Supervisor.Name}}</a></li>
             </ul>
       </div>
       <div>
             <h5>Collaborators</h5> 
             <br>  
             <ul v-for="Collaborators in Content.TeamMates.Collaborators" :key="Collaborators.id">
-            <li class="more-information__List"><a :href="'https://'+Collaborators.Website"  target="_blank" >{{Collaborators.Name}}</a></li>
+            <li class="more-information__List "><a :href="'https://'+Collaborators.Website"  target="_blank" class="base-font-color">{{Collaborators.Name}}</a></li>
             </ul>
       </div>
     </div>
