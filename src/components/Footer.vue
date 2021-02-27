@@ -142,10 +142,5 @@ justify-content: space-between;
 
 
 }
-@media only screen and (min-width: 600px) and (max-width: 900px) and (orientation: landscape) {}
-@media only screen and (min-width: 900px) and (max-width: 1200px) and (orientation: landscape) {}
-@media only screen and (min-width: 1200px)and (max-width: 1900px) {}
-@media only screen and (min-width: 1900px) {}
-
 
 </style>
