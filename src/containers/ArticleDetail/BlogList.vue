@@ -10,7 +10,7 @@
               class="articles__container--marginL articles__container__tag"
               v-bind:tags="article.Tags.tags"
             />
-            <Button v-bind:path="'/article/' + article.id" v-bind:name="'more info'" class="articles__container__info--order"/>
+            <Button v-bind:path="'/impressions/' + article.id" v-bind:name="'more info'" class="articles__container__info--order"/>
           </div>
           <div
             class="articles__container__distance"

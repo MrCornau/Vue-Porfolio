@@ -42,7 +42,7 @@
     </div>
 
     </div>
-    <MoreArticles class="margin-top--XL" :title="microProject.title"></MoreArticles>
+    <MoreArticles class="margin-top--XL margin-bottom--XL" :title="microProject.title" ></MoreArticles>
 <!-- <MoreInformation v-if="microProject.MoreInfoContent" :Content="microProject.MoreInfoContent" :articleColor="'#374cff'" class="margin-bottom--XL"/> -->
     
   </div>
