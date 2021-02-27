@@ -5,7 +5,9 @@
       <div class="nav-mobile">
         <div id="nav-mobile__logo">
           <router-link :to="{ path: '/' }" >
-            Josh Cornau <span  v-if="!skipQuery&&article" class="nav-mobile__indicator-mobile">/ {{article.title}}</span>
+            Josh Cornau 
+            <span  v-if="!skipQuery&&article" class="nav-mobile__indicator-mobile">/ {{article.title}}</span>
+            <span  v-if="!skipQueryBlog&&microProject" class="nav-mobile__indicator-mobile">/ {{microProject.title}}</span>
           </router-link>
         </div>
         <div class="hamburger-nav">
@@ -62,7 +64,8 @@ export default {
       page:0,
       api_url: process.env.VUE_APP_STRAPI_API_URL,
       routeParam: this.$route.params.id,
-      skipQuery: true
+      skipQuery: true,
+      skipQueryBlog:true
     };
   },
   props: {
@@ -81,16 +84,20 @@ export default {
       }
     },
     checkRoute(){
-        console.log(this.$route.params.id)
-        if(this.$route.params.id){
+     console.log(this.$route.params.id)
+        if(this.$route.params.id && this.route.includes('article')){
           this.skipQuery = false;
-      
+          this.skipQueryBlog = true;
+        }
+        else if(this.$route.params.id && this.route.includes('impressions')){
+            this.skipQuery = true;
+            this.skipQueryBlog = false;
         }
         else{
           this.skipQuery = true;
-        
+          this.skipQueryBlog = true;
         }
-    }
+    },
   },
   beforeMount(){
     this.checkRoute()
@@ -116,9 +123,31 @@ export default {
     skip () {
       return this.skipQuery
     },
+    }
+
+    ,
+  microProject: {
+      query: gql`
+         query microProject($id: ID!) {
+          microProject(id: $id){
+           
+            title
+            id
+          }
+        }
+      `,
+      variables() {
+        return {
+          id: this.routeParam,
+        };
+      },
+    skip () {
+      return this.skipQueryBlog
     },
+    }
   }
 };
 </script>
 
 <style lang="css"></style>
+

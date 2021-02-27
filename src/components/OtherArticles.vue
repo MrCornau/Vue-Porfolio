@@ -2,7 +2,7 @@
   <div class="articles">
     <div>
       <div class="articles__heading global--width">
-        <h1>Other Projects</h1>
+        <h1>Archiv</h1>
       </div>
       <div class="global--width other-articles__container">
     <div

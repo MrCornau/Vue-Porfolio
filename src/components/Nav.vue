@@ -5,7 +5,8 @@
       <li class="nav-big__logo">
         <router-link :to="{ path: '/' }" class="base-font-color">
           Josh Cornau 
-          <span  v-if="!skipQuery&&article&&route.includes('article')" class="nav-mobile__indicator-mobile">/ {{article.title}}</span>
+          <span  v-if="!skipQuery&&article" class="nav-mobile__indicator-mobile">/ {{article.title}}</span>
+          <span  v-if="!skipQueryBlog&&microProject" class="nav-mobile__indicator-mobile">/ {{microProject.title}}</span>
         </router-link>
       </li>
       <li class="nav-big__push"></li>
@@ -19,8 +20,8 @@
           :to="{ path: page.path }"
           :key="page.name"
            class="nav__blueline base-font-color"
-             v-bind:class="{ 'nav__blueline--selected' : page.path == route, 'nav-blueline--dark': '/about' == route,'nav-blueline--white': '/about' != route}"
-        >
+            
+             v-bind:class="{ 'nav__blueline--selected' : page.path == route,  'nav-blueline--dark': '/about' == route,'nav-blueline--white': '/about' != route}">
           {{ page.name }}
         </router-link>
       </li>
@@ -37,7 +38,8 @@ export default {
     return {
       api_url: process.env.VUE_APP_STRAPI_API_URL,
       routeParam: this.$route.params.id,
-      skipQuery: true
+      skipQuery: true,
+      skipQueryBlog:true
     };
   },
   props: {
@@ -50,13 +52,17 @@ export default {
   methods:{
     checkRoute(){
      console.log(this.$route.params.id)
-        if(this.$route.params.id){
+        if(this.$route.params.id && this.route.includes('article')){
           this.skipQuery = false;
-      
+          this.skipQueryBlog = true;
+        }
+        else if(this.$route.params.id && this.route.includes('impressions')){
+            this.skipQuery = true;
+            this.skipQueryBlog = false;
         }
         else{
           this.skipQuery = true;
-        
+          this.skipQueryBlog = true;
         }
     },
     logID(){
@@ -92,7 +98,29 @@ export default {
       return this.skipQuery
     },
     }
+
+    ,
+  microProject: {
+      query: gql`
+         query microProject($id: ID!) {
+          microProject(id: $id){
+           
+            title
+            id
+          }
+        }
+      `,
+      variables() {
+        return {
+          id: this.routeParam,
+        };
+      },
+    skip () {
+      return this.skipQueryBlog
+    },
+    }
   }
+  
 };
 </script>
 
