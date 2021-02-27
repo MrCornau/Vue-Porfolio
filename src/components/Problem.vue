@@ -2,14 +2,16 @@
   <div class="article-detail__domains">
     <h2>The Problem</h2>
     <div class="Article-detail__description">
-      <p class="Article-detail__description--text">{{ problem.Problem_text }}</p>
+      <p v-scrollanimation v-bind:style="{'transition-delay': '0s'}" class="Article-detail__description--text">{{ problem.Problem_text }}</p>
       <div class="Article-detail__description__inlineImages ">
         <div
           class="Article-detail__description__inlineImages__box"
-          v-for="images in ProblemImage"
+          v-for="(images, index) in ProblemImage"
           v-bind:key="images.id"
+           v-scrollanimation v-bind:style="{'transition-delay': 0.1*index+'s'}" 
         >
           <img
+         
             class="Article-detail__description__inlineImages--size margin-top--M"
             v-if="images"
             :src="api_url + images.url"
@@ -47,3 +49,17 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+
+.before-enter{
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease-in-out;
+}
+
+.enter {
+  opacity: 1;
+  transform: translateY(0px);
+}
+</style>

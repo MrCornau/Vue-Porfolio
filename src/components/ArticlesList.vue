@@ -10,9 +10,9 @@
       >
         <div class="articles__container global--width">
           <div class="articles__container__info" v-bind:class="{ 'articles__container__info--order': index % 2 == 1 }">
-            <h4 class="articles__container--marginSM articles__container__info__time">{{ article.Year }}</h4>
-            <h2 class="articles__container--marginSM articles__container__info--order">{{ article.title }}</h2>
-            <p class="articles__container--marginL articles__container__info--order articles__container__info__description">{{ article.Description }}</p>
+            <h4 v-scrollanimation class="articles__container--marginSM articles__container__info__time">{{ article.Year }}</h4>
+            <h2  v-scrollanimation class="articles__container--marginSM articles__container__info--order">{{ article.title }}</h2>
+            <p  v-scrollanimation class="articles__container--marginL articles__container__info--order articles__container__info__description">{{ article.Description }}</p>
             <ArticlesTag
               class="articles__container--marginL articles__container__tag"
               v-bind:tags="article.Tags.tags"
@@ -23,7 +23,7 @@
             class="articles__container__distance"
             v-bind:class="{ 'articles__container__distance--order': index % 2 == 1 }"
           ></div>
-          <router-link :to="{ path: routePath + article.id }" class="articles__container__image" >
+          <router-link :to="{ path: routePath + article.id }" class="articles__container__image" v-scrollanimation>
         
            
             <img
@@ -65,3 +65,16 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.before-enter{
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.9s ease-out;
+}
+
+.enter {
+  opacity: 1;
+  transform: translateY(0px);
+}
+</style>

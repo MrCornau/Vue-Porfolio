@@ -1,7 +1,7 @@
 <template>
   <div class="footer" v-bind:class="{'dark-background':'/about' == route}">
     <ul class="Footer--List">
-      <li v-bind:class="{'white':'/about' == route,'black':'/about' != route }" class="Imprint"><a href="/imprint">Imprint</a></li>
+      <li class="Imprint"><a href="/imprint" class="Imprint-link" v-bind:class="{'white':'/about' == route,'black':'/about' != route }">Imprint</a></li>
       <li>
         <ul class="Contact-list" >
         <li v-for="contact in footer.AAContacts.Contact" :key="contact.id" >
@@ -64,6 +64,9 @@ export default {
     background-color: #272727;
 }
 
+.Imprint-link{
+    list-style: none;
+}
 
 
 .footer {

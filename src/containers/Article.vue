@@ -16,12 +16,12 @@
 
     <div class="article-detail__container article-detail__width">
       <div class="article-detail__heading">
-        <h1>{{ article.title }}</h1>
-        <h1>{{ article.Header_Explanation }}</h1>
+        <h1 v-scrollanimation>{{ article.title }}</h1>
+        <h1 v-scrollanimation v-bind:style="{'transition-delay': '0.2s'}">{{ article.Header_Explanation }}</h1>
       </div>
 
     <div  class="article-detail__info">
-      <p>{{article.content}}</p>
+      <p v-scrollanimation v-bind:style="{'transition-delay': '0.3s'}">{{article.content}}</p>
     </div>
     <Domains   :Domains="slicedArray" :articleColor="article.color"/>
     <Outlines :ProjectInfo="article.Detail[1].project_info" :ProjectRole="article.Detail[1].project_role" :articleColor="article.color" />
@@ -187,6 +187,17 @@ export default {
 </script>
 
 <style scoped>
+
+.before-enter{
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.7s ease-out;
+}
+
+.enter {
+  opacity: 1;
+  transform: translateY(0px);
+}
 
 
 .Video-Player--Container{

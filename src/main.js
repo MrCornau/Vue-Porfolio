@@ -6,9 +6,13 @@ import apolloClient from "./vue-apollo";
 
 import App from "./App.vue";
 
+import ScrollAnimation from './directives/scrollanimation'
+
 Vue.use(VueApollo);
 Vue.use(VueRouter);
 Vue.config.productionTip = false;
+
+Vue.directive('scrollanimation', ScrollAnimation);
 
 const apolloProvider = new VueApollo({
   defaultClient: apolloClient
