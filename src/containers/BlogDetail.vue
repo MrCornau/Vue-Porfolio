@@ -1,20 +1,39 @@
 <template>
   <div >
-
-<h1>hallloooo</h1>
-<h1>hallloooo</h1>
-<h1>hallloooo</h1>
-  <div v-if="this.microProject.title">
-{{this.microProject}}
-  </div>
-
+    <div v-if="microProject">
+    <div v-if="!microProject.BlogVideolink" class="article-detail__header-image">
+      <img
+        v-if="microProject.blodHeaderImage"
+        class=""
+        :src="api_url + microProject.blodHeaderImage.url"
+        alt="nothing"
+      />
+    </div> 
+    <div v-if="microProject.BlogVideolink" class="article-detail__header-video" v-bind:style="{ 'background-color': white}">
+    <div class="Video-Player--Container">
+      <iframe :src="microProject.BlogVideolink" class="Video-Player" :width="playerWidth" :height="playerHeight" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+    </div>
+    <div class="article-detail__container article-detail__width">
+      <div class="article-detail__heading">
+        <h1>{{ microProject.title }}</h1>
+      </div>
+    </div>
+    <div class="MarkdownWrapper">
+       <vue-markdown-it class="ImageSize"
+          v-if="microProject.content"
+          :content="microProject.content"
+          :options="this.options"
+        />
+    </div>
   </div>
 </template>
 
 <script>
 var moment = require("moment");
 import gql from "graphql-tag";
-
+import VueMarkdownIt from "markdown-it-vue";
 //  import { vueVimeoPlayer } from 'vue-vimeo-player'
 
 export default {
@@ -25,12 +44,18 @@ export default {
       api_url: process.env.VUE_APP_STRAPI_API_URL,
       routeParam: this.$route.params.id,
       playerWidth:840,
-      playerHeight:540
+      playerHeight:540,
+      options: {
+ image: {
+    hAlign: 'right',
+    size:'x100',
+  }
       
+    }
     }
   },
   components: {
-
+VueMarkdownIt
  
   },
 
@@ -59,7 +84,8 @@ export default {
             description
             Tags
             publishedAt
-           
+           BlogVideolink
+            blodHeaderImage{url}
           }
         }
       `, variables() {
@@ -73,6 +99,27 @@ export default {
 </script>
 
 <style scoped>
+
+.MarkdownWrapper{
+  margin: 50px auto 0 auto ;
+  max-width: 40%;
+  
+}
+
+.ImageSize {
+  width: 100%;
+ overflow: hidden;
+}
+
+.ImageSize *{
+  width: 10%;
+  border: solid 2px firebrick;
+
+}
+
+
+
+
 
 
 .Video-Player--Container{
@@ -106,4 +153,6 @@ export default {
     padding-top: 80px;
 }
 }
+
+
 </style>

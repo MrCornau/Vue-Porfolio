@@ -17,6 +17,7 @@
     "core-js": "^3.6.5",
     "graphql": "^15.4.0",
     "graphql-tag": "^2.11.0",
+    "markdown-it-vue": "^1.1.6",
     "moment": "^2.29.1",
     "node-fetch": "^2.6.1",
     "vue": "^2.6.12",
