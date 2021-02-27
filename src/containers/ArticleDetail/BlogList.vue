@@ -61,21 +61,19 @@ export default {
 
 
 
-.blog__container__image{
 
-  order: 2;
-         height: 60vh;
-      background-color: #f5f5f5;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+.blog__container__image{
+    order: 2;
+    background-color: #f5f5f5;
+    overflow: hidden;
+    position: relative;
 }
 .blog-image--size{
-   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 120%;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transform: translate(-50%, 0);
+    left: 50%;
 }
 
 @media only screen and (max-width: 600px) {
@@ -83,17 +81,16 @@ export default {
         padding-top: 80px;
     }
      .blog__container__image{
-           
-         width: 100%;
-         height: 30vh;
+            padding-top: 56.25%;
+         
 }
 }
 @media only screen and (min-width: 600px) and (max-width: 1200px) and (orientation: portrait) {
  
        .blog__container__image{
-           margin-top: 60px;
+           margin-top: 90px;
          width: 100%;
-         height: 40vh;
+         padding-top: 56.25%;
 }
 }
 @media only screen and (min-width: 600px) and (max-width: 900px) and (orientation: landscape) {
@@ -105,7 +102,8 @@ export default {
     }
      .blog__container__image{
          width: 70%;
-         height: 50vh;
+         padding-top: 36.25%;
+      
 }
 }
 @media only screen and (min-width: 1200px)and (max-width: 1900px) {
@@ -114,7 +112,8 @@ export default {
     }
       .blog__container__image{
          width: 60%;
-         height: 55vh;
+         padding-top: 34.25%;
+        
 }
 }
 @media only screen and (min-width: 1900px) {
@@ -123,7 +122,8 @@ export default {
     }
     .blog__container__image{
     width: 60%;
-         height: 60vh;
+    padding-top:  34.25%;
+      
 }
 }
 </style>
