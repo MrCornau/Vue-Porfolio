@@ -32,19 +32,32 @@
         </li>
         <li
           class="nav-mobile__item"
-          v-for="page in pages"
-          v-bind:key="page.name"
           @click="showNav = !showNav"
             
         >
           <router-link
-            :to="{ path: page.path }"
-            :key="page.name"
+            :to="{ path: '/impressions' }"
+            :key="'impressions'"
             class="nav__blueline"
-             v-bind:class="{ 'nav__blueline--selected' : page.path == route,'nav-blueline--dark': '/about' == route,'nav-blueline--white': '/about' != route}"
+             v-bind:class="{ 'nav__blueline--selected' :  route.includes('/impressions'),'nav-blueline--dark': '/about' == route,'nav-blueline--white': '/about' != route}"
            
           >
-            {{ page.name }}
+            Blog-Post
+          </router-link>
+        </li>
+        <li
+          class="nav-mobile__item"
+          @click="showNav = !showNav"
+            
+        >
+          <router-link
+            :to="{ path: '/about' }"
+            :key="'about'"
+            class="nav__blueline"
+             v-bind:class="{ 'nav__blueline--selected' :  '/about' == route,'nav-blueline--dark': '/about' == route,'nav-blueline--white': '/about' != route}"
+           
+          >
+            About
           </router-link>
         </li>
       </ul>

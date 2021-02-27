@@ -15,16 +15,28 @@
           Work
         </router-link>
       </li>
-      <li class="nav-big__item" v-for="page in pages" v-bind:key="page.name">
+      <li class="nav-big__item" >
         <router-link
-          :to="{ path: page.path }"
-          :key="page.name"
+          :to="{ path: '/impressions' }"
+          :key="impressions"
            class="nav__blueline base-font-color"
             
-             v-bind:class="{ 'nav__blueline--selected' : page.path == route,  'nav-blueline--dark': '/about' == route,'nav-blueline--white': '/about' != route}">
-          {{ page.name }}
+             v-bind:class="{ 'nav__blueline--selected' : route.includes('/impressions'),  'nav-blueline--dark': '/about' == route,'nav-blueline--white': '/about' != route}">
+         Blog-Posts
         </router-link>
-      </li>
+       </li>
+       <li class="nav-big__item" >
+  <router-link
+          :to="{ path: '/about' }"
+          :key="About"
+           class="nav__blueline base-font-color"
+            
+             v-bind:class="{ 'nav__blueline--selected' : '/about' == route,  'nav-blueline--dark': '/about' == route,'nav-blueline--white': '/about' != route}">
+          About
+        </router-link>
+       </li>
+      
+     
     </ul>
   </nav>
 </template>
