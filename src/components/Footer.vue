@@ -1,7 +1,7 @@
 <template>
   <div class="footer" v-bind:class="{'dark-background':'/about' == route}">
     <ul class="Footer--List">
-      <li v-bind:class="{'white':'/about' == route,'black':'/about' != route }" class="Imprint"><a>Imprint</a></li>
+      <li v-bind:class="{'white':'/about' == route,'black':'/about' != route }" class="Imprint"><a href="/imprint">Imprint</a></li>
       <li>
         <ul class="Contact-list" >
         <li v-for="contact in footer.AAContacts.Contact" :key="contact.id" >

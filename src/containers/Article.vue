@@ -34,7 +34,7 @@
   </div>
     <Presentator v-if="article.Presentation" :Content="article.Presentation"/>
     <MoreInformation :Content="article.More_Infos" :articleColor="article.color" class="margin-bottom--XL"/>
-    <MoreProjects :title="article.title" ></MoreProjects>
+    <MoreProjects :title="article.title" :routeto="'/article/'" class="margin-bottom--XL"></MoreProjects>
   </div>
 
 

@@ -18,7 +18,7 @@
       <li class="nav-big__item" >
         <router-link
           :to="{ path: '/impressions' }"
-          :key="impressions"
+          :key="'impressions'"
            class="nav__blueline base-font-color"
             
              v-bind:class="{ 'nav__blueline--selected' : route.includes('/impressions'),  'nav-blueline--dark': '/about' == route,'nav-blueline--white': '/about' != route}">
@@ -28,7 +28,7 @@
        <li class="nav-big__item" >
   <router-link
           :to="{ path: '/about' }"
-          :key="About"
+          :key="'About'"
            class="nav__blueline base-font-color"
             
              v-bind:class="{ 'nav__blueline--selected' : '/about' == route,  'nav-blueline--dark': '/about' == route,'nav-blueline--white': '/about' != route}">

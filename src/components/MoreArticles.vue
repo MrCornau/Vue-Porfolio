@@ -8,7 +8,7 @@
       <div v-for="article in CombinedArray" :key="article.id">
         <div class="projectslider__project">
           <router-link
-            :to="{ path: '/article/' + article.id }"
+            :to="{ path: routeto + article.id }"
             class="projectslider__image"
           >
             <img
@@ -43,6 +43,7 @@ export default {
   
   props: {
     title: String,
+    routeto:String
   },
 
   components: {},

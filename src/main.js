@@ -40,6 +40,10 @@ const router = new VueRouter({
     {
       path: "/about",
       components: require("./containers/About.vue")
+    },
+    {
+      path: "/imprint",
+      components: require("./containers/imprint.vue")
     }
   ],
   scrollBehavior (to, from, savedPosition) {
