@@ -3,8 +3,8 @@
   <nav>
     <div class=" nav-mobile--sticky" v-bind:class="{'nav-big-black-background': '/about' == route,'nav-big--white-background': '/about' != route}">
       <div class="nav-mobile">
-        <div id="nav-mobile__logo">
-          <router-link :to="{ path: '/' }" >
+        <div id="nav-mobile__logo ">
+          <router-link :to="{ path: '/' }" class="base-font-color">
             Josh Cornau 
             <span  v-if="!skipQuery&&article" class="nav-mobile__indicator-mobile">/ {{article.title}}</span>
             <span  v-if="!skipQueryBlog&&microProject" class="nav-mobile__indicator-mobile">/ {{microProject.title}}</span>
@@ -28,7 +28,7 @@
     
 
         @click="showNav = !showNav;" >
-          <router-link :to="{ path: '/' }" class="nav__blueline" v-bind:class="{ 'nav__blueline--selected' : '/' == route}"> Work</router-link>
+          <router-link :to="{ path: '/' }" class="nav__blueline base-font-color" v-bind:class="{ 'nav__blueline--selected' : '/' == route}"> Work</router-link>
         </li>
         <li
           class="nav-mobile__item"
@@ -38,7 +38,7 @@
           <router-link
             :to="{ path: '/impressions' }"
             :key="'impressions'"
-            class="nav__blueline"
+            class="nav__blueline base-font-color"
              v-bind:class="{ 'nav__blueline--selected' :  route.includes('/impressions'),'nav-blueline--dark': '/about' == route,'nav-blueline--white': '/about' != route}"
            
           >
@@ -53,7 +53,7 @@
           <router-link
             :to="{ path: '/about' }"
             :key="'about'"
-            class="nav__blueline"
+            class="nav__blueline base-font-color"
              v-bind:class="{ 'nav__blueline--selected' :  '/about' == route,'nav-blueline--dark': '/about' == route,'nav-blueline--white': '/about' != route}"
            
           >
