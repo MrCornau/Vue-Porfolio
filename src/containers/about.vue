@@ -10,10 +10,16 @@
   <div class="article-detail__width center article-detail__container">
   <ImageSlider v-if="this.aboutMePage.AboutMeGalery"  :images="this.aboutMePage.AboutMeGalery" class="margin-bottom--XL"></imageSlider>
 </div>
+
+<div class="article-detail__width center article-detail__container">
+  <Contact :content="this.aboutMePage.Contact.Contact" class="margin-bottom--XL"  ></Contact>
+</div>
+
 <div class="article-detail__width center article-detail__container">
   <HowIWork :content="this.aboutMePage.HowIWork" :image="this.aboutMePage.HowIWorkImage.url" :title="'How I Work'" class="margin-bottom--XL"/>
  
 </div>
+
 <div class="article-detail__width center article-detail__container">
  <Timeline  v-if="this.aboutMePage.ProfessionalExperience" :content="this.aboutMePage.ProfessionalExperience || []" :title="'Experience'"/>
  </div>
@@ -23,14 +29,11 @@
  </div>
 
 <div class="article-detail__width center article-detail__container">
-   <Awards v-if="this.aboutMePage.Awards" :test="this.aboutMePage.Awards" :title="'Awards'" :batches="this.aboutMePage.AwardsBatches" />
+   <Awards v-if="this.aboutMePage.Awards" :test="this.aboutMePage.Awards" :title="'Awards'" :batches="this.aboutMePage.AwardsBatches" class="margin-bottom--XL"/>
  </div>
 
 
 
-<div class="article-detail__width center article-detail__container">
-  <Contact :content="this.aboutMePage.Contact.Contact" ></Contact>
-</div>
 
 </div>
 

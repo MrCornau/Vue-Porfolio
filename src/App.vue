@@ -7,8 +7,9 @@
     <Nav v-if="!mobileView" :key="$route.params.id"  v-bind:route="$route.fullPath" v-bind:pages="pages"/>
     </div>
     
+ 
     <router-view :key="$route.fullPath" ></router-view>
-    <Footer/>
+    <Footer v-bind:route="$route.fullPath"/>
   </div>
 </template>
 
