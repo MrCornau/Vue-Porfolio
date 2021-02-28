@@ -21,7 +21,7 @@
     </div>
     <div
       class="nav-mobile__menue-mobile nav--shadow"
-      v-bind:class="{ 'nav-mobile--folded': showNav ,'nav-big-black-background': '/about' == route,'nav-big--white-background': '/about' != route}"
+      v-bind:class="{ 'nav-mobile--folded': showNav ,'nav-big-black-background': '/about' == route,'nav-big--white-background': !route.includes('/about')}"
     >
       <ul class="nav-mobile__ul">
         <li class="nav-mobile__item" 

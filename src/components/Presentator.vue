@@ -4,7 +4,7 @@
       <div v-if="presenter.scroll">
        <div class="center Full-Viewport">
         <div class="presenter-container">
-          <div v-bind:class="{'presenter--right' : index % 2 == 1}" class="presenter-container__image-box">
+          <div v-scrollanimation v-bind:style="{'transition-delay': '0.1s'}" v-bind:class="{'presenter--right' : index % 2 == 1}" class="presenter-container__image-box">
             <div class="presenter-container__image-box--inside">
               <img
                 class="presenter-container__image-box__image"
@@ -16,7 +16,7 @@
           </div>
 
           <div class="presenter-container__Info">
-            <h2 class="margin-bottom--S">{{ presenter.Description_Presentation }}</h2>
+            <h2  v-scrollanimation v-bind:style="{'transition-delay': '0s'}" class="margin-bottom--S">{{ presenter.Description_Presentation }}</h2>
 
             <div class="presenter-container__Info__Button-Container ">
               <div
@@ -24,6 +24,7 @@
                 :key="StateButton.name"
               >
                 <button
+                 v-scrollanimation v-bind:style="{'transition-delay': 0.1*index+'s'}"
                   class="presenter__Button "
                   @click="scrollevel(StateButton.scroll, index)"
                   v-bind:class="{ 'active-Button': index == activeButton }"
@@ -33,7 +34,7 @@
               </div>
             </div>
 
-            <p class="margin-top--S presenter__description">
+            <p  v-scrollanimation v-bind:style="{'transition-delay': '0.3s'}" class="margin-top--S presenter__description">
               {{ presenter.Content.states[activeButton].description }}
             </p>
           </div>
@@ -44,7 +45,7 @@
 <div v-if="!presenter.scroll">
   <div class="center Full-Viewport">
         <div  class="presenter-container">
-          <div v-if="presenter.Kind == 'Desktop'|| presenter.Kind =='Other'" v-bind:class="{'presenter--right' : index % 2 == 1,'presenter-container_image-box--desktop' : presenter.Kind == 'Desktop'}"  class="presenter-container__image-box" >
+          <div v-scrollanimation v-bind:style="{'transition-delay': '0.1s'}" v-if="presenter.Kind == 'Desktop'|| presenter.Kind =='Other'" v-bind:class="{'presenter--right' : index % 2 == 1,'presenter-container_image-box--desktop' : presenter.Kind == 'Desktop'}"  class="presenter-container__image-box" >
             <div  class="presenter-container__image-box--inside">
               <video 
               v-if="!presenter.Content.states[selectedVideo[index]].isImage"
@@ -65,7 +66,7 @@
             </div>
           </div>
 
-          <div v-if="presenter.Kind == 'Phone'" v-bind:class="{'presenter--right' : index % 2 == 1}" class="presenter-container__image-box--phone">
+          <div v-scrollanimation v-bind:style="{'transition-delay': '0.1s'}" v-if="presenter.Kind == 'Phone'" v-bind:class="{'presenter--right' : index % 2 == 1}" class="presenter-container__image-box--phone">
             <div  class="presenter-container__image-box--inside--phone">
               <video 
               class="presenter-container__image-box__video"
@@ -79,7 +80,7 @@
           </div>
 
           <div class="presenter-container__Info margin-bottom--M presenter-container--phone">
-            <h2 class="margin-bottom--S">{{presenter.Description_Presentation}}</h2>
+            <h2 v-scrollanimation v-bind:style="{'transition-delay': '0s'}" class="margin-bottom--S">{{presenter.Description_Presentation}}</h2>
 
             <div class="presenter-container__Info__Button-Container">
               <div
@@ -87,6 +88,7 @@
                 :key="StateButton.name"
               >
                 <button
+                v-scrollanimation v-bind:style="{'transition-delay': 0.1*index2+'s'}"
                   class="presenter__Button"
                   @click="playVideo(index2, index)"
                   v-bind:class="{ 'active-Button': index2 == selectedVideo[index]}"
@@ -96,7 +98,7 @@
               </div>
             </div>
 
-            <p class="margin-top--S presenter__description ">
+            <p class="margin-top--S presenter__description " v-scrollanimation v-bind:style="{'transition-delay': '0.3s'}">
               {{ presenter.Content.states[selectedVideo[index]].description }}
             </p>
           </div>
@@ -136,6 +138,18 @@ export default {
 </script>
 
 <style scoped>
+
+.before-enter{
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease-in-out;
+}
+
+.enter {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
 .presenter-container {
   display: -webkit-flex;
   display: -webkit-box;

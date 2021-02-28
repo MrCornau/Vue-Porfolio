@@ -15,6 +15,7 @@ nav{
   .nav-big--white-background{
     background-color: white;
     transition: 0.5s cubic-bezier(.52,.49,.19,1.04);
+    z-index: 999;
   }
 
   .nav-big-black-background{
