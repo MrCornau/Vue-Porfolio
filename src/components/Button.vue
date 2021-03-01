@@ -20,8 +20,8 @@ export default {
 .before-enter{
   opacity: 0;
   transform: translateY(50px);
-  transition: all 1.2s ease-out;
-  transition-delay: 0.5s;
+  transition: all 0.4s ease-out;
+  transition-delay: 0.4s;
 }
 
 .enter {

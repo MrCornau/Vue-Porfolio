@@ -39,7 +39,7 @@ export default {
 .before-enter{
   opacity: 0;
   transform: translateY(50px);
-  transition: all 1s ease-in-out;
+  transition: all 0.7s ease-in-out;
 }
 
 .enter {

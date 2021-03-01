@@ -28,7 +28,7 @@
     
 
         @click="showNav = !showNav;" >
-          <router-link :to="{ path: '/' }" class="nav__blueline base-font-color" v-bind:class="{ 'nav__blueline--selected' : '/' == route}"> Work</router-link>
+          <router-link :to="{ path: '/' }" class="nav__blueline base-font-color" v-bind:class="{ 'nav__blueline--selected' : '/' == route ||route.includes('/article') }"> Work</router-link>
         </li>
         <li
           class="nav-mobile__item"

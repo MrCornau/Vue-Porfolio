@@ -9,8 +9,8 @@
               class="articles__container__tag"
               v-bind:tags="article.Tags.tags.slice(0, 2)"
             />
-            <p v-scrollanimation v-if="article.Description"  v-bind:style="{'transition-delay': '0.3s'}" class="articles__container--marginL articles__container__info--order articles__container__info__description black">{{ article.Description }}</p>
-            <p v-scrollanimation v-if="article.description" v-bind:style="{'transition-delay': '0.3s'}" class="articles__container--marginL articles__container__info--order articles__container__info__description black">{{ article.description }}</p>
+            <p v-scrollanimation v-if="article.Description"  v-bind:style="{'transition-delay': '0.2s'}" class="articles__container--marginL articles__container__info--order articles__container__info__description black">{{ article.Description }}</p>
+            <p v-scrollanimation v-if="article.description" v-bind:style="{'transition-delay': '0.2s'}" class="articles__container--marginL articles__container__info--order articles__container__info__description black">{{ article.description }}</p>
           </div>
           <router-link v-scrollanimation :to="{ path: routePath + article.id }" class="other-articles__container__image articles__container--marginL" v-bind:style="{'transition-delay': '0s'}" >
         
@@ -60,7 +60,7 @@ export default {
 .before-enter{
   opacity: 0;
   transform: translateY(50px);
-  transition: all 0.7s ease-out;
+  transition: all 0.3s ease-out;
 }
 
 .enter {

@@ -70,7 +70,7 @@ export default {
 .before-enter{
   opacity: 0;
   transform: translateY(50px);
-  transition: all 0.9s ease-out;
+  transition: all 0.5s ease-out;
 }
 
 .enter {

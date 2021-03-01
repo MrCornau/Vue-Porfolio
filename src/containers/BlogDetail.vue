@@ -17,21 +17,21 @@
     </div>
     <div class="article-detail__container article-detail__width">
       <div class="article-detail__heading">
-        <h1>{{ microProject.title }}</h1>
+        <h1 v-scrollanimation>{{ microProject.title }}</h1>
       </div>
     </div>
-    <div class="MarkdownWrapper  " v-if="microProject.MoreInfoContent">
+    <div v-scrollanimation  class="MarkdownWrapper  " v-if="microProject.MoreInfoContent">
       <li class="impression--Information ">{{microProject.publishedAt}}</li>
       <ul v-for="Collaborators in microProject.MoreInfoContent.TeamMates.Collaborators" :key="Collaborators.id" class="impression--Information ">
             <li class="blue"><a :href="'https://'+Collaborators.Website"  target="_blank" >  / {{Collaborators.Name}}</a></li>
       </ul>
     <div v-for="content in microProject.AAMicroContent" :key="content.id">
-      <div class="" v-if="content.AATextContainer">
-        <vue-markdown-it class="MarkdownWrapper-Content margin-bottom--M"
+      <div  class="" v-if="content.AATextContainer" >
+        <vue-markdown-it  class="MarkdownWrapper-Content margin-bottom--M"
           :content="content.AATextContainer"
         />
       </div>
-      <div class="" v-if="content.ImageContainer_Micro">
+      <div  class="" v-if="content.ImageContainer_Micro">
         <img
         v-if="microProject.blodHeaderImage"
         class="MarkdownWrapper-Content margin-bottom--M"
@@ -129,6 +129,18 @@ MoreArticles
 </script>
 
 <style scoped>
+
+.before-enter{
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.7s ease-out;
+}
+
+.enter {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
 
 .impression--Information {
   display: inline;
